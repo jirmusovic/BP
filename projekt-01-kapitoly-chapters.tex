@@ -12,6 +12,7 @@
 \newtheorem{example}{Příklad}
 \newtheorem{graph}{Obr\' azek}
 \newtheorem{sentence}{Věta}
+\newtheorem{tabul}{Tabulka}
 \newcommand{\comment}[1]{}
 
 \chapter{Úvod}
@@ -42,14 +43,14 @@ Nech\v t je např. vypsáno výběrové řízení modelingové agentury s požad
 
     čímž by došlo k paradoxu, že člověk který má 179,9 centimetr\r u je považován za nízkého a člověk se 180 centimetry za vysokého.
 
-    Takový problém je zp\r usoben tím, že byla výška modelována jako vlastnost, kterou m\r uže mít člověk pouze v nulové míře nebo na 100\%. Za určitě vysokého člověka byl považován někdo se 180 centimetry, 175 centimetr\r u vysoký člověk byl podle stejného přístupu určitě malý. Přičemž 175 centimetr\r u vysoký člověk je běžně považován do určité míry za vysokého. Přesně z toho d\r uvodu se zavedl pojem \textit{fuzzy množina}. 
+    Takový problém je zp\r usoben tím, že byla výška modelována jako vlastnost, kterou m\r uže mít člověk pouze v nulové míře nebo na 100\%. Za určitě vysokého člověka byl považován někdo se 180 centimetry, 175 centimetr\r u vysoký člověk byl podle stejného přístupu určitě malý. Přičemž 175 centimetr\r u vysoký člověk je běžně považován do určité míry za vysokého. Přesně z toho d\r uvodu se zavedl pojem \textit{fuzzy množina}, která náleží tzv. \textit{univerzu}. \textit{Univerzum} $X \in [0,\infty[$ teoreticky znamená množinu veškerých možných výšek všech lidí. Množina všech možných zájemc\r u je pak vyjádřitelná jako podmnožina $A$ univerza $X.$
     \begin{definition}
     \cite{navara}
         Fuzzy podmnožina univerza X (stručně fuzzy množina) je objekt A, který popisuje (zobecněná) charakteristická funkce (funkce příslušnosti) $\mu: X \rightarrow [0,1]$. Obor pravdivostních hodnot: $R(A) = \{\alpha \in [0,1]: (\exists x \in X : \mu_A(x) = \alpha)\} = \mu_A(X)$
     \end{definition}
-    Fuzzy množina nebo také neostrá množina je pak množina prvků takových, jejichž afiliace je k této množině odstupňovaná. Fuzzy množina staví na stejných pravidlech, jako klasická booleovská množina, s tím rozdílem, že příslušnost nemusí nabývat jen hodnot 0 a 1, ale jakoukoliv hodnotu z intervalu [0,1].
+    Fuzzy množina nebo také neostrá množina je pak množina prvků takových, jejichž afiliace je k této množině odstupňovaná. Fuzzy množina staví na stejných pravidlech, jako klasická booleovská množina, s tím rozdílem, že příslušnost nemusí nabývat jen hodnot 0 a 1, ale jakoukoliv hodnotu z intervalu [0,1]. 
     
-    Ve fuzzy matematice se dále zavedl pojem Funkce příslušnosti.
+    Ve fuzzy matematice se dále zavedl pojem funkce příslušnosti.
     \begin{definition}
         \cite{Kolo} Funkce příslušnosti fuzzy množiny A na (ostré) množině X: $\mu_A : X \rightarrow  [0,1].$ Stupe\v n příslušnosti x $\in A$ tedy m\r uže být libovolné číslo $\alpha \in [0,1]$.
     \end{definition}
@@ -222,6 +223,7 @@ Pro hodnoty $0$ a $1$ se fuzzy negace shoduje s klasickou negac\'i.
          Tedy i tyto funkce jsou fuzzy negace.
 
          \begin{graph} Grafy dříve zmíněných funkcí $N_s$, $N_{\bot}$,$ N_{\top}$, $N_1$ a $N_2.$\\
+         \\
             \resizebox{150pt}{!}{%zde se meni velikost grafu
                 \begin{tikzpicture}
                 \hspace*{-2cm}
@@ -372,6 +374,8 @@ Takže negace $N_S$ a $N_2$ jsou involutivní a tím pádem tak\'e siln\'e negac
             \begin{tikzpicture}
             \hspace*{3cm}
             	\begin{axis}[
+                        width=8cm,  % Nastavte požadovanou šířku grafu
+                        height=8cm,
                         axis lines=middle,
                         xlabel=$x$,
                         ylabel=$y$,
@@ -409,7 +413,7 @@ Základní vlastnosti fuzzy konjunkcí jsou:
     \item \textbf{Soudržnost:}\\
     Pro hodnoty 0 a 1 se fuzzy konjunkce shoduje s klasickou konjunkcí.
     \item \textbf{Kontinuita hodnot:}\\
-    Fuzzy konjunkce nepracuje jenom s  ostrými hodnotami „pravda“ a „nepravda“, ale na stupni neurčitosti či specifickým číselném zápisu, který reflektuje stupeň nepravdivosti.
+    Fuzzy konjunkce nepracuje jenom s  ostrými hodnotami „pravda“ a „nepravda“, ale na stupni neurčitosti či specifickým číselném zápisu, který reflektuje stupeň pravdivosti.
     \item \textbf{Monotonie:}\\
     Fuzzy konjunkce je monotonní operace, tedy pokud A$\leq$ B$\leq$ C$\leq$ D, pak A$\land$B$\leq$ C$\land$D, což znamená, že s rostoucími vstupními hodnotami rostou i výsledky jejich konjunkce.
 \end{enumerate}
@@ -421,16 +425,15 @@ Základní vlastnosti fuzzy konjunkcí jsou:
     \end{definition}
 
 \begin{remark}
-    Existuje velké množství operátor\r u fuzzy konjunkcí, mezi které patří triangulární normy, minima, Lukasiewiczova T-norma, produktní norma a další. Triangulárním normám je pak věnována celá následující podkapitola.
+    Fuzzy konjunkce mohou být modelovány pomocí triangulárních norem, kterým je věnována celá následující podkapitola.
 \end{remark}
 
-\subsection{Triangul\'arn\'i normy} Definicia, priklad, ked tri axiomy funguju a jedna nefunguje, priklad styroch znamych t-noriem (minimum, Luk., sucin, drastic), zname triedy-napr. Frank, Yager atd, pridat vhodne obrazky. Konstrukcie spojitych-len definicia a poznamka, ze su vytvorene len pomocou bijektivnych fcii, ale daju sa konstruovat aj nespojite a preto treba zobecnit pojem inverznej fcie. Nic dalsie zatial netreba, ak budeme potrebovat nejaku spec. vlastnost t-noriem, tak potom pridame. Deadline 25.9.\\
+\subsection{Triangul\'arn\'i normy} 
 
-
-Jak již bylo zmíněno, fuzzy konjunkce mohou být formovány pomocí triangulárních norem, zjednodušeně t-norem. 
+Jak již bylo zmíněno, fuzzy konjunkce mohou být modelov\' any pomocí triangulárních norem, zjednodušeně t-norem. 
 \begin{definition}
 \cite{hlinena}
-    Triangulární norma je binární operace na jednotkovém intervale [0,1], tj. funkce $T: [0,1]^2 \rightarrow [0,1]$ taková, že pro každé $x, y, z \in [0,1]$ jsou splněné následující axiomy:
+    Triangulární norma je binární operace na jednotkovém intervale [0,1], t.j. funkce $T: [0,1]^2 \rightarrow [0,1]$ taková, že pro každé $x, y, z \in [0,1]$ jsou splněné následující axiomy:
     \begin{enumerate}
         \item \textbf{Komutativnost:} $T(x,y) = T(y,x)$,
         \item \textbf{Asociativita:} $T(x, T(y, z)) = T(T(x, y), z)$,
@@ -443,7 +446,7 @@ Jak již bylo zmíněno, fuzzy konjunkce mohou být formovány pomocí triangul�
     Funkce je t-norma v případě, že spl\v nuje alespo\v n 3 ze 4 axiom\r u popsaných výše.
 \end{remark}
 
-\begin{example}
+\begin{example} Na několika příkladech jsou uvedeny funkce, které vždy spl\v nují 3 ze 4 axiom\r u.\\
     Funkce $F_1 : [0, 1]^2 \rightarrow [0, 1]$ daná přepisem\\
     $$F_1(x,y) = 13,$$
     spl\v nuje axiomy 1., 2., 3., ale nespl\v nuje axiom 4.\\
@@ -459,7 +462,7 @@ Jak již bylo zmíněno, fuzzy konjunkce mohou být formovány pomocí triangul�
 \end{example}
 
 Mezi základní triangulární normy se řadí minimová, součinová, Łukasiewiczova t-norma a drastický součin.
-\begin{definition}
+\begin{example}
 \cite{hlinena}
     \begin{enumerate}
     \item \textbf{Minimová t-norma} $T_M: [0,1]^2 \rightarrow [0,1]$
@@ -472,7 +475,7 @@ Mezi základní triangulární normy se řadí minimová, součinová, Łukasiew
     $$T_D:(x)=\begin{cases} min(x,y), & \mbox{pokud }  max(x,y) = 1,\\ 
     0, &  jinak.  \end{cases}$$
 \end{enumerate}
-\end{definition}
+\end{example}
 
 \begin{graph} Minimová t-norma $T_M$, Součinová t-norma $T_P$, Łukasiewiczova t-norma $T_L$, Drastický součin $T_D$.\\
 
@@ -558,14 +561,13 @@ Mezi základní triangulární normy se řadí minimová, součinová, Łukasiew
     $$T(1,x)=T(x,1)=x,$$
     $$T(0,x)=T(x,0)=0.$$
 \end{remark}
-
 \begin{definition}
+\cite{hlinena}
     \begin{itemize}
-    \cite{hlinena}
         \item Pokud pro t-normy $T_1$ a $T_2$ je
-        pro každý bod $(x,y) \in [0,1]^2$ splněná nerovnost
-        $T_1(x,y)\leq ~T_2(x,y),$ znamená to, že $T_1$ je {\em slabší} než $T_2$,
-        nebo $T_2$ je {\em silnější} než $T_1$ a píšeme $T_1\leq T_2$.
+        pro každý bod $(x,y) \in [0,1]^2$ splněná nerovnost\\
+        $T_1(x,y)\leq ~T_2(x,y),$ znamená to, že $T_1$ je slabší než $T_2$,
+        nebo $T_2$ je silnější než $T_1$ a píšeme $T_1\leq T_2$.
         \item  Pokud pro t-normy $T_1$ a $T_2$ platí, že $T_1 \leq T_2$ a
         $T_1 \ne T_2,$ t.j. pokud $T_1 \leq T_2$, ale $T_1(x_0,y_0) <
         T_2(x_0,y_0)$ pro nějaký bod $(x_0,y_0) \in [0,1]^2$, tak $T_1<T_2$.
@@ -595,15 +597,15 @@ Dále je možné zkoumat parametrické třídy t-norem. Mezi známé parametrick
     \item \textbf{Sugeno-Weberovy t-normy:}
     $$T_p^{SW}:(x,y)=\begin{cases}  T_D(x,y), & \mbox{pokud } p = -1,\\
                                     max(0,\frac{x+y-1+pxy}{1+p}) , & \mbox{pokud } -1 < p < +\infty,\\
-                                    T_P(x,y), & \mbox{pokud } p = +\infty,
+                                    T_P(x,y), & \mbox{pokud } p = +\infty.
                                     \end{cases}$$
 \end{itemize}
 
-\subsubsection{Konstrukce triangulárních norem}
+\subsection{Konstrukce triangulárních norem}
 
 Mezi nejznámější konstrukce t-norem patří:
 \begin{itemize}
-    \item \textbf{Ordinální součet:}\\
+    \item \textbf{Ordinální součet:}
     \begin{definition}
     \cite{hlinena}
         Nech\v t $(T_\alpha)_{\alpha \in A}$ je třída t-norem a
@@ -623,13 +625,13 @@ Mezi nejznámější konstrukce t-norem patří:
         Nech\v t je funkce $f:[0,1] \to [0,\infty]$ spojitá a klesající, přičemž
         $f(1)=0$, potom je předpisem
         $$ T_{<f>}(x,y)=f^{-1}(\min(f(x)+f(y),f(0)))$$
-        dána t-norma a funkce $f$ se nazývá {\em aditivní generátor} t-normy
+        dána t-norma a funkce $f$ se nazývá aditivní generátor t-normy
         $T_{<f>}.$
         
         Nech\v t je funkce $g:[0,1] \to [0,1]$ spojitá a rostoucí, přičemž
         $g(1)=1$, potom je předpisem
         $$ T^{<g>}(x,y)=g^{-1}(\max(g(x).g(y),g(0)))$$
-        dána t-norma a funkce $g$ se nazývá {\em multiplikativní generátor} t-normy
+        dána t-norma a funkce $g$ se nazývá multiplikativní generátor t-normy
         $T^{<g>}.$
     \end{definition}
     \item \textbf{$\varphi$-transformace}
@@ -644,7 +646,7 @@ Mezi nejznámější konstrukce t-norem patří:
     \end{definition}
 \end{itemize}
 
-\subsubsection{Konstrukce spojitých archimedovských triangulárních norem}
+\subsection{Konstrukce spojitých archimedovských triangulárních norem}
 \begin{definition}
     T-norma je archimedovská, pokud pro všechny body $(x,y) \in ]0,1[^2$ existuje $n \in N$ takové, že $$x_T^{(n)} < y.$$
 \end{definition}
@@ -666,26 +668,712 @@ Mezi nejznámější konstrukce t-norem patří:
     $$T(x,y)=\varphi^{-1}(T_P(\varphi(x),\varphi(y))).$$
 \end{sentence}
 
-Spojité archimedovské t-normy se tedy konstruují pomocí bijekce. Pro konstrukci nespojitých t-norem použití bijekce není bezpodmínečně nutné. Místo bijekce se pak využívá zevšeobecnění funkce inverzní, tj. že se k danému zobrazení $f: A \rightarrow B$ přiřazuje prvk\r um z množiny B prvky množiny A, tedy obraz\r um zobrazení $f$ jejich vzory.
+Spojité archimedovské t-normy se tedy mohou konstruovat pomocí bijekce. Pro konstrukci nespojitých t-norem, které nemají inverzní funkci na celém intervalu, není použití bijekce vhodné. Místo bijekce se pak využívá zevšeobecnění funkce inverzní, t.j. že se k danému zobrazení $f: A \rightarrow B$ přiřazuje prvk\r um z množiny B prvky množiny A, tedy obraz\r um zobrazení $f$ jejich vzory.
 \begin{example}
+\cite{hlinena}
     Nech\v t je  $f_1:[0,1] \rightarrow [0,1]$  dána předpisem:
     $$f_1(x)=x^2.$$
-    Jelikož $f_1$ je bijekce, pro její inverzní a zevšeobecněnou inverzní funkcií
+    Jelikož $f_1$ je bijekce, pro její inverzní a zevšeobecněnou inverzní funkcí
     \newline$f_1^{(-1)}:[0,1] \rightarrow [0,1]$ zřejmě bude platit:
-    $$f_1^{-1}(x)=f_1^{(-1)}(x)= \sqrt{x}.$$
+    $$f_1^{(-1)}(x)=f_1^{(-1)}(x)= \sqrt{x}.$$
     Proto složením funkcí $f_1$ a $f_1^{(-1)}$ je
     identita na intervale $[0,1].$
+\end{example} 
+\begin{graph} Ukázka složení funkcí $f_1^{(-1)} $ a $ f_1$, nebo také zevšeobecnění inverzní funkce.\\
+
+    \resizebox{175pt}{!}{%zde se meni velikost grafu
+                \begin{tikzpicture}
+                \hspace*{5cm}
+                	\begin{axis}[
+                        axis lines=middle,
+                        xlabel={$x$},
+                        ylabel={$y$},
+                        xmin=0, xmax=1.1, 
+                        ymin=0, ymax=1.1, 
+                        xtick={0,0.2,0.4,0.6,0.8,1},
+                        ytick={0,0.2,0.4,0.6,0.8,1},
+                        legend style={at={(0.5,-0.2)}, anchor=north}
+                    ]
+                	\addplot[samples = 500,
+                            domain=0:1,
+                        	smooth,
+                        	ultra thick,
+                        	blue,] {x^2};
+                    
+                    \addplot[samples = 500,
+                            domain=0:1,
+                        	smooth,
+                        	ultra thick,
+                        	green,] {sqrt(x)};
+
+                    \addplot[samples = 500,
+                            domain=0:1,
+                        	dashed,
+                        	ultra thick,
+                        	red,] {x};
+                         
+                    \legend{$f_1$,
+                            $f_1^{(-1)}$,
+                            $f_1^{(-1)} \circ f_1$}
+                   
+                	\end{axis}
+                \end{tikzpicture}
+            }
+\end{graph}
+
+\subsection{Pseudoinverzn\'i funkce}
+
+Ke konstrukci t-norem lze také krom bijekce použít zevšeobecnění pseudoinverzu.
+\begin{example}
+    \cite{Kolo}
+    Nech\v t je dána funkce $f:[0,1]\rightarrow [0,\infty]$, která je klesající, spojitá a $f(1) = 0.$ Obor hodnot této funkce je interval $[0,f(0)]$, přičemž $f(0) \in \textbf{R}$ nebo $f(0) = \infty$, pokud je funkce $f$ shora neohraničená, t.j. pokud $\lim_{x \to 0^+}f(x) = \infty$. Protože $f$ je klesající, existuje k ní inverzní funkce $f^{(-1)}: [0,f(0)] \rightarrow [0,1].$ Po rozšíření funkce na celý interval $[0,\infty]$ tak, že se všem čísl\r um z intervalu $[f(0),\infty]$ přiřadí hodnota 0, vznikne funkce $$f^{-1}: [0,\infty] \rightarrow [0,1],$$
+    $$f^{(-1)}(u) = f^{(-1)}(min(u,f(0))),$$
+    která se nazývá \textbf{pseudo-inverz} k funkci $f.$
+\end{example}
+\begin{definition}
+    \cite{hlinena}
+    Nech\v t je $f:[a,b] \rightarrow [c,d]$ neklesající funkce, pak pro každé $y \in [c,d]$ je předpisem $$f^{(-1)}(y) = sup(x \in [a,b];f(x)<y)$$
+    definována pseudoinverzní funkce $f^{(-1)}$ k dané funkci f.
+\end{definition}
+\begin{definition}
+    \cite{hlinena}
+    Nech\v t je $f:[a,b] \rightarrow [c,d]$ nerostoucí (nekonstantní) funkce, pak pro každé $y \in [c,d]$ je předpisem $$f^{-1}(y) = sup(x \in [a,b];f(x)>y)$$
+    definována pseudoinverzní funkce $f^{(-1)}$ k dané funkci f.
+\end{definition}
+\begin{sentence} (Hliněná, Biba)
+    Nech\v t je $c$ kladné reálné číslo. Potom pro monot\'onní funkci $f:[0,1]\rightarrow
+    [0,\infty]$ plat\'i
+    $$\left (c\cdot f \right )^{(-1)}(x) = f^{(-1)}\left (\frac {x}{c} \right
+    ).$$
+\end{sentence}
+
+Generátory nespojitých t-norem tedy zřejmě nemusí být bijekce. Na následujícím příkladu je obdobně, jako v Příkladu 4. ukázka zevšeobecnění inverzní funkce.
+\begin{example}
+\cite{hlinena}
+\begin{enumerate}
+    \item Nech\v t je $f_2:[0,1] \rightarrow [0,1]$ dána předpisem:
+    $$f_2(x)= \begin{cases} \frac x2, & \mbox {pokud $x \in [0,\frac 12],$}
+    \\ \frac 14, & \mbox {pokud $x \in ]\frac 12,\frac 34],$}
+    \\ 3.x-2, & \mbox {pokud $x \in ]\frac 34,1]$.}
+    \end{cases}$$
+    Funkce $f_2$ není injekce, což znamená, že k ní neexistuje inverzní funkce. Na intervale $[0,\frac 12]$ je funkce $f_2$ spojitá a injektivní, proto na daném oboru hodnot $[f(0),f(\frac 12)]$ je
+    funkce $f_2^{(-1)}$ totožná s~inverzní funkcí
+    $f_{2/[f(0),f(\frac 12)]}^{-1}.$
+    Potom pro monot\'oní rozšíření inverzní funkce plat\'i
+    $$f_2^{(-1)}(x)= \begin{cases} 2x, & \mbox {pokud $x \in [0,\frac 14],$}
+    \\ \frac x3 + \frac 23, & \mbox {pokud $x \in ]\frac 14,1].$}
+    \end{cases}$$
+    Složení funkcí pak bude vypadat následovně:
+    $$g(x)=f_2^{(-1)} \circ f_2(x)=f_2^{(-1)} \left(f_2(x)\right)= \begin{cases} \frac 12,
+    & \mbox{pokud $x \in [\frac 12,\frac 34],$}
+    \\x, & \mbox {jinak.} \end{cases}$$
+    
+    \item Nech\v t je $f_3:[0,1] \rightarrow [0,1]$ dána předpisem:
+    $$f_3(x)= \begin{cases} 2x, & \mbox {pokud $x \in [0,\frac 14],$}
+    \\ \frac x3 + \frac 23, & \mbox {pokud $x \in ]\frac 14,1].$}
+    \end{cases}$$
+    Funkce $f_3$ je injektivní, takže k ní narozdíl od funkce $f_2$ existuje inverzní funkce. Jenomže funkce $f_3$ není bijektivní, tudíž její inverzní funkce nebude definována na celém intervalu $[0,1]$. 
+    Její jediné monot\' onní rozšíření na celý interval $[0,1]$ je dáno předpisem
+    $$f_3^{(-1)}(x)= \begin{cases} \frac x2, & \mbox {pokud $x \in [0,\frac 12],$}
+    \\ \frac 14, & \mbox {pokud $x \in ]\frac 12,\frac 34],$}
+    \\ 3.x-2, & \mbox {pokud $x \in ]\frac 34,1]$.}
+    \end{cases}$$
+\end{enumerate}
+\end{example}
+Následující grafy zobrazují zmíněné funkce $f_2$ a $f_3$ a jejich složení s inverzními funkcemi.
+
+\begin{graph} Zobrazení funkcí z Příkladu 6. Modře jsou vyznačeny (zleva) funkce $f_2$ a $f_3$, zeleně jejich zevšeobecněné inverzní funkce a červeně složené funkce $f_2^{(-1)} \circ f_2(x) $~a~$ f_3^{(-1)}\circ ~f_3(x).$\\
+     \begin{tikzpicture}
+        \begin{axis}[
+            width=7cm,  
+            height=7cm, 
+            xlabel=$x$,
+            ylabel=$y$,
+            domain=0:1,
+            colormap/viridis,
+            view={0}{90}, 
+        ]
+        
+        \addplot[domain=0:0.5, ultra thick, samples=100, blue] {x/2};
+        \addplot[domain=0.5:0.75, ultra thick, samples=100, blue] {1/4};
+        \addplot[domain=0.75:1, ultra thick, samples=100, blue] {3*x-2};
+
+        \addplot[domain=0:0.25, ultra thick, samples=100, green] {2*x};
+        \addplot[domain=0.25:1, ultra thick, samples=100, green] {(x/3) + (2/3)};
+        \addplot[green, mark=*] coordinates {(1/4, 1/2)};
+        \addplot[only marks, mark=*, mark size=3pt, mark options={fill=white}] coordinates {(1/4,3/4)};
+        
+
+        \addplot[domain=0:0.5, dashed, samples=100, red] {x}; 
+        \addplot[domain=0.5:0.75, dashed, samples=100, red] {1/2};
+        \addplot[domain=0.75:1, dashed, samples=100, red] {x};
+        \addplot[red, mark=*] coordinates {(3/4, 1/2)};
+        \addplot[only marks, mark=*, mark size=3pt, mark options={fill=white}] coordinates {(3/4,3/4)};
+
+        \end{axis}
+        \end{tikzpicture}
+        \begin{tikzpicture}
+        \begin{axis}[
+            width=7cm,  
+            height=7cm, 
+            xlabel=$x$,
+            ylabel=$y$,
+            domain=0:1,
+            colormap/viridis,
+            view={0}{90}, 
+        ]
+        
+        \addplot[domain=0:0.5, ultra thick, samples=100, green] {x/2};
+        \addplot[domain=0.5:0.75, ultra thick, samples=100, green] {1/4};
+        \addplot[domain=0.75:1, ultra thick, samples=100, green] {3*x-2};
+
+        \addplot[domain=0:0.25, ultra thick, samples=100, blue] {2*x};
+        \addplot[domain=0.25:1, ultra thick, samples=100, blue] {(x/3) + (2/3)};
+        \addplot[blue, mark=*] coordinates {(1/4, 1/2)};
+        \addplot[only marks, mark=*, mark size=3pt, mark options={fill=white}] coordinates {(1/4,3/4)};
+        
+
+        \addplot[domain=0:1, dashed, samples=100, red] {x}; 
+
+        \end{axis}
+        \end{tikzpicture}
+            
+\end{graph}
+
+Na Obrázku 7. lze zřejmě pozorovat následující situaci: $$f_2(x)=f_3^{(-1)}\text{ a } f_3(x)=f_2^{(-1)}(x), \text{ takže } (f_2^{(-1)})^{(-1)}(x)=f_2(x) \text{ a }
+            (f_3^{(-1)})^{(-1)}(x)=f_3(x).$$
+\begin{remark} Na předchozích příkladech bylo naznačeno konstruování pseudoinverzní funkce. Nech\v t je $f:[a,b] \rightarrow [x,d]$ neklesající funkce, lze si pak všimnout určitých poznatk\r u:
+    \begin{itemize}
+        \item pokud je funkce $f$ bijekce, tak platí $f^{(-1)}(x) = f^{-1}(x),$
+        \item  pokud je funkce $f$ rostoucí, její pseudoinverzní funkce je spojitá,
+        \item  pro každé $x \in [a,b]$ platí: $f^{(-1)}\circ f(x)\leq x.$
+    \end{itemize}
+    Nech\v t je $f:[a,b] \rightarrow [x,d]$ nerostoucí funkce:
+    \begin{itemize}
+        \item pokud je funkce $f$ bijekce, tak platí $f^{(-1)}(x) = f^{-1}(x),$
+        \item  pokud je funkce $f$ klesající, její pseudoinverzní funkce je spojitá,
+        \item  pro každé $x \in [a,b]$ platí: $f^{(-1)}\circ f(x)\leq x.$
+    \end{itemize}
+\end{remark}
+
+\begin{sentence} (Klement, Mesiar, Pap)
+    Nech\v t je $f:[0,1] \rightarrow [0,\infty]$ klesající funkce
+    taková, že $f(1)=0$ a pro všechny $(x,y) \in [0,1]^2$  je splněno
+    $$f(x)+f(y) \in H(f) \cup [f(0)^+,\infty].$$
+    Potom funkce dvou proměnných $T:[0,1]^2 \rightarrow [0,1]$ dána předpisem
+    $$T(x,y)=f^{(-1)}(f(x)+f(y))$$
+    je triangulární norma.
+\end{sentence}
+\begin{sentence}(Klement, Mesiar, Pap)
+    Nech\v t je $l:[0,1] \rightarrow [0,1]$ rostoucí funkce
+    taková, že $l(1)=1$ a pro všechny $(x,y) \in [0,1]^2$  je splněno
+    $$l(x).l(y) \in H(l) \cup [0,l(0)^+].$$
+    Potom funkce dvou proměnných $T:[0,1]^2 \rightarrow [0,1],$ dána předpisem
+    $$T(x,y)=l^{(-1)}(l(x).l(y)),$$
+    je triangulární norma.
+\end{sentence}
+
+Pseudoinverzní funkce používají k definici aditivního a multiplikativního generátoru
+
+\begin{definition}
+    \cite{hlinena}
+    Aditivní generátor t-normy $T$ je klesající funkce
+    $f:[0,1] \rightarrow [0,\infty],$ která je zprava-spojitá v~bodě $0,
+    f(1)=0$
+    a pro všechny $(x,y) \in [0,1]^2$ je splněno
+    $$f(x)+f(y) \in H(f) \cup [f(0),\infty],$$
+    přitom t-norma $T$ je dána předpisem:
+    $$T(x,y)=f^{(-1)}(f(x)+f(y)).$$
+\end{definition}
+\begin{definition}
+    \cite{hlinena}
+    Multiplikativní generátor t-normy $T$ je rostoucí funkce
+    $l:[0,1] \rightarrow [0,1],$ která je zprava-spojitá v~bodě $0, l(1)=1$
+    a pro všechny $(x,y) \in [0,1]^2$ je splněno
+    $$l(x).l(y) \in H(l) \cup [0,l(0)],$$
+    přitom t-norma $T$ je dána předpisem:
+    $$T(x,y)=l^{(-1)}(l(x).l(y)).$$
+\end{definition}
+
+\subsection{Fuzzy disjunkce} 
+Fuzzy disjunkce vyjadřuje stejně jako fuzzy konjunkce míru spojení dvou či více prvk \r u. Výsledek fuzzy disjunkce je hodnota $x \in [0,1],$ přičemž 0 značí neexistující spojitost mezi prvky a 1 značí, že jsou prvky plně spojeny.
+Základní vlastnosti fuzzy disjunkcí jsou:
+\begin{enumerate}
+    \item \textbf{Soudržnost:}\\
+    Pro hodnoty 0 a 1 se fuzzy disjunkce shoduje s klasickou disjunkcí.
+    \item \textbf{Kontinuita hodnot:}\\
+    Fuzzy disjunkce nepracuje jenom s  ostrými hodnotami „pravda“ a „nepravda“, ale na stupni neurčitosti či specifickým číselném zápisu, který reflektuje stupeň spojení prvk\r u.
+   \item \textbf{Monotonie:}\\
+    Fuzzy disjunkce je monotonní operace, tedy pokud A$\leq$ B$\leq$ C$\leq$ D, pak A$\lor$B$\leq$ C$\lor$D, což znamená, že s klesajícími vstupními hodnotami klesají i výsledky jejich disjunkce.
+\end{enumerate}
+
+\begin{definition}
+    \cite{hlinena}
+    Neklesající zobrazení $D: [0,1]^2 \rightarrow [0,1]$ se nazývá disjunktor, pokud pro libovolné $a, b \in [0,1]$ platí $$D(a,b) = 1  \text{ pokud }  a = 1, \text{nebo }  b = 1,$$
+    $$D(0,0) = 0.$$
+\end{definition}
+
+Operace fuzzy disjunkce může být definována různými způsoby, včetně Max-Min disjunkce a Pravd\v epodobnostn\' i disjunkce:
+\begin{enumerate}
+    \item \textbf{Max-Min disjunkce:}
+    Mezi nejtypičtější fuzzy disjunkci patří max-min disjunkce $D_M$.
+    $$D_M(A,B) = max(min(\mu_A(x), \mu_B(x)))$$
+    kde $\mu_A()x$ a $\mu_B(x)$ jsou příslušnostní funkce množin A a B pro daný prvek $x.$
+    \item \textbf{Pravd\v epodobnostn\' i disjunkce:}
+    Tato disjunkce je založena na Bayesově teorii pravděpodobnosti a kombinuje informace o pravděpodobnosti spojení A a B:
+    $$D_P(A,B) = \frac{\text{Pravděpodobnost spojení } A \text{ a } B}{\text{Pravděpodobnost spojení } A \text{ a } B + \text{Pravděpodobnost jejich průniku}}.$$
+\end{enumerate}
+
+Fuzzy disjunkce mohou být konstruovány pomocí triangulárních konorem.
+
+\subsection{Triangul\'arn\'i konormy} 
+\label{sec: Triangulární konormy}
+Triangulární konormy (zkráceně t-konormy) a t-normy jsou komplementární operace, což znamená, že se vzájemně dopl\v nují a v mnoha případech pak značí operace sobě opačné.
+\begin{definition}
+    \cite{hlinena}
+    Pokud je $T$ t-norma, tak její duální t-konorma $S: [0,1]^2 \rightarrow [0,1]$ je dána předpisem $$S(x,y) = 1 - T(1-x, 1-y).$$
+\end{definition}
+\begin{definition}
+    T-konorma je binární operace na intervalu $[0,1],$ t.j. funkce $S: [0,1]^2 \rightarrow [0,1]$ taková, že pro každé $x, y, z \in [0,1]$ jsou splněny následující axiomy:
+    \begin{enumerate}
+        \item \textbf{Komutativnost: } $S(x,y) = S(y,x),$
+        \item \textbf{Asociativita: } $S(x,S(y,z)) = S(S(x,y),z)$,
+        \item \textbf{Monotónnost:} pokud $y \leq z$ pak $T(x, y) \leq T(x, z)$,
+        \item \textbf{Okrajová podmínka: } $S(x,0) = x.$
+    \end{enumerate}
+\end{definition}
+
+Mezi základní triangulární konormy se obdobně (ale komplementárně) jako u t-norem řadí maximová a Łukasiewiczova t-norma, pravděpodobnostní a drastický součet.
+\begin{example}
+\cite{hlinena}
+    \begin{enumerate}
+    \item \textbf{Maximová t-konorma} $S_M: [0,1]^2 \rightarrow [0,1]$
+    $$S_M(x,y) = max(x,y).$$
+    \item \textbf{Pravděpodobnostní součet} $S_P: [0,1]^2 \rightarrow [0,1]$
+    $$S_P(x,y) = x+y-x.y.$$
+    \item \textbf{Łukasiewiczova t-konorma} $S_L: [0,1]^2 \rightarrow [0,1]$
+    $$S_L(x,y) = min(x+y,1).$$
+    \item \textbf{Drastický součet} $S_D: [0,1]^2 \rightarrow [0,1]$
+    $$S_D:(x)=\begin{cases} max(x,y), & \mbox{pokud  }  min(x,y) = 0,\\ 
+    1, &  jinak.  \end{cases}$$
+\end{enumerate}
 \end{example}
 
-\subsection{Pseudoinverzn\'i funkce} Info o tom, ze konstrukcie t-noriem sa daju aj bez pouzitia bijekcii, ale treba zovseobecnenie pseudoinverzu-takze definicia pre neklesajuce, pre nerastuce a priklady+obrazky, zhrnutie napr. o skladanie f a $f^{(-1)}$ veta o tom, ako sa daju t-normy pomocou ps. inv. fcii konstruovat-aditivne a multipl. generovanie, pripadne nejake dalsie zname. Deadline 25.9.
-\subsection{Fuzzy disjunkce} Podobne ako pri konjunkciach-deadline 2.10
-\subsection{Triangul\'arn\'i konormy} Podobne ako pri t-normach-deadline 2.10
-\subsection{Fuzzy implikace} Podobne ako pri konjunkciach-tu ale treba uviest hned rozne pristupy, rozne konstrukcie, vratane tych, ktore potom v dalsej kapitole budete studovat. Deadline 9.10.
+\begin{graph} Maximová t-konorma $S_M$, Pravděpodobnostní součet $S_P$, Łukasiewiczova t-konorma $S_L$, Drastický součet $S_D$.\\
 
-{\color{red} Toto som sem dala, lebo nieco z toho vyuzijete v uvodoch konjunkcie a disjunkcie: která se používá k vyhodnocení spojení dvou fuzzy množin. Výsledná fuzzy množina se určuje pomocí tzv. t-norem obsahuje hodnoty, které jsou minimum z odpovídajících hodnot ve vstupních množinách. Fuzzy konjunkce odpovídá binární logické konjunkci, ale výsledek je fuzzy množina s hodnotami mezi 0 a 1. Další logická fuzzy spojka se nazývá \textbf{Fuzzy disjunkce (OR)}. Výsledná fuzzy množina se vyhodnocuje pomocí tzv. t-konorem a obsahuje hodnoty, které jsou maximum z odpovídajících hodnot ve vstupních množinách. Stejně jako fuzzy konjunkce, odpovídá binární logické disjunkci, ale výsledek je také fuzzy množina. V neposlední řadě bych chtěla zmínit \textbf{Fuzzy negaci (NOT)}. Fuzzy negace se používá k invertování fuzzy množiny. Liší se ale od binární logické negace tím, že neinvertuje všechny hodnoty na opačné, ale mírně upravuje pravdivostní hodnoty vstupní fuzzy množiny.
+   \begin{tikzpicture}
+        \begin{axis}[
+            width=7cm,  % Nastavte požadovanou šířku grafu
+            height=7cm, % Nastavte požadovanou výšku grafu
+            xlabel=$x$,
+            ylabel=$y$,
+            zlabel=$z$, % Popisek osy z
+            domain=0:1, % Rozsah hodnot x
+            y domain=0:1, % Rozsah hodnot y
+            colormap/viridis, % Barevná mapa (nastavitelná)
+            view={10}{30}, % Náhled na graf (úhel pohledu)
+            legend style={at={(0.5,-0.2)}, anchor=north}
+        ]
+        
+         \addplot3 [surf, shader=interp, mesh] {max(x,y)};
+         \legend{$S_M$}
+        \end{axis}
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=7cm,  % Nastavte požadovanou šířku grafu
+            height=7cm, % Nastavte požadovanou výšku grafu
+            xlabel=$x$,
+            ylabel=$y$,
+            zlabel=$z$, % Popisek osy z
+            domain=0:1, % Rozsah hodnot x
+            y domain=0:1, % Rozsah hodnot y
+            colormap/viridis, % Barevná mapa (nastavitelná)
+            view={10}{30}, % Náhled na graf (úhel pohledu)
+            legend style={at={(0.5,-0.2)}, anchor=north}
+        ]
+        
+     \addplot3 [surf, shader=interp, mesh] {x+y-x*y};
+     \legend{$S_P$}
+        \end{axis}
+    \end{tikzpicture}\\
+    \\
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=7cm,  % Nastavte požadovanou šířku grafu
+            height=7cm, % Nastavte požadovanou výšku grafu
+            xlabel=$x$,
+            ylabel=$y$,
+            zlabel=$z$, % Popisek osy z
+            domain=0:1, % Rozsah hodnot x
+            y domain=0:1, % Rozsah hodnot y
+            colormap/viridis, % Barevná mapa (nastavitelná)
+            view={10}{30}, % Náhled na graf (úhel pohledu)
+            legend style={at={(0.5,-0.2)}, anchor=north}
+        ]
+        
+     \addplot3 [surf, shader=interp, mesh] {min(x+y,1)};
+     \legend{$S_L$}
+        \end{axis}
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=7cm,  % Nastavte požadovanou šířku grafu
+            height=7cm, % Nastavte požadovanou výšku grafu
+            xlabel=$x$,
+            ylabel=$y$,
+            zlabel=$z$, % Popisek osy z
+            domain=0:1, % Rozsah hodnot x
+            y domain=0:1, % Rozsah hodnot y
+            colormap/viridis, % Barevná mapa (nastavitelná)
+            view={10}{30}, % Náhled na graf (úhel pohledu)
+            legend style={at={(0.5,-0.2)}, anchor=north}
+        ]
+        
+     \addplot3 [surf, shader=interp, mesh] {
+                ifthenelse(min(x, y) == 0, max(x, y), 1)
+                };
+        \legend{$S_D$}
+        \end{axis}
+    \end{tikzpicture}
+\end{graph}
+
+\subsection{Fuzzy implikace} {\color{red}Podobne ako pri konjunkciach-tu ale treba uviest hned rozne pristupy, rozne konstrukcie, vratane tych, ktore potom v dalsej kapitole budete studovat. Deadline 9.10.
+\\}
+
+Fuzzy implikace patří mezi nejd\r uležitější fuzzy pojmy a díky takovým spojením výrok\r u je možné mnohem jednodušeji popsat lidské vyjadřování matematicky. Implikace se v obecném jazyce vyjadřuje mnoha zp\r usoby, netypičtěji pak slovním spojením \textit{když-tak}.
+\begin{definition}
+    Zobrazení $I: [0,1]^2 \rightarrow [0,1] $ se nazývá implikátor, pokud
+    \begin{itemize}
+        \item $I$ je nerostoucí ve svojí první souřadnici,
+        \item $I$ je neklesající ve svojí druhé souřadnici,
+        \item $I(1,0) = 0, I(0,0) =  I(0,1) = I(1,1) = 1.$
+    \end{itemize}
+\end{definition}
+
+Modelace fuzzy implikace je ale o něco složitější, než modelace dříve zmíněných logických spojek. Fuzzy konjunkce se modelují pomocí t-norem, disjunkce pomocí t-konorem a negace pomocí fuzzy negátor\r u. Tyto spojky pak mohou být využity pro modelaci fuzzy implikace. Zřejmě jsou následující logické formule tautologicky ekvivalentní: $$ p\implies q, \mbox{   } \neg p \vee q, \mbox{   } \neg p\vee (p\wedge q) .$$ Lze tedy spojit informace o modelaci logických spojek a jejich vzájemných ekvivalentních \' upravách pro tvorbu fuzzy implikátoru: $$I(x,y)=S(N(x),y)\text{ neboli S-implikátory},$$
+$$I(x,y)=S(N(x),T(x,y)) \text{ neboli Q-implikátory}.$$
+
+\begin{example}
+\cite{hlinena}
+Pro základní t-konormy zmíněné v kapitole \ref{sec: Triangulární konormy} a standardní negátor $N_S$ existují následující implikátory:\\
+    \vbox{$$ I_{S_M}(x,y)=\max(1-x,y),$$ }
+\vbox{$$ I_{S_P}(x,y)=1-x+x.y,$$}
+ \vbox{$$ I_{S_L}(x,y)=\min(1-x+y,1),$$}
+ $$ I_{S_D}(x,y)=\begin{cases} 1-x,
+&\mbox {pokud y=0,} \\y, &\mbox {pokud x=1}, \\
+1, &\mbox {jinak.} \end{cases} $$
+\end{example}
+
+Pro představu jsou níže představeny grafy implikátorů $I_{S_M}, I_{S_P}, I_{S_L}$ a $I_{S_D}.$
+\begin{graph} Uk\' azka implik\' ator\r u.\\
+\\
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=7cm,  % Nastavte požadovanou šířku grafu
+            height=7cm, % Nastavte požadovanou výšku grafu
+            xlabel=$x$,
+            ylabel=$y$,
+            zlabel=$z$, % Popisek osy z
+            domain=0:1, % Rozsah hodnot x
+            y domain=0:1, % Rozsah hodnot y
+            colormap/viridis, % Barevná mapa (nastavitelná)
+            view={10}{30}, % Náhled na graf (úhel pohledu)
+            legend style={at={(0.5,-0.2)}, anchor=north}
+        ]
+        
+     \addplot3 [surf, shader=interp, mesh] {max(1-x,y)};
+        \legend{$I_{S_M}$}
+        \end{axis}
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=7cm,  % Nastavte požadovanou šířku grafu
+            height=7cm, % Nastavte požadovanou výšku grafu
+            xlabel=$x$,
+            ylabel=$y$,
+            zlabel=$z$, % Popisek osy z
+            domain=0:1, % Rozsah hodnot x
+            y domain=0:1, % Rozsah hodnot y
+            colormap/viridis, % Barevná mapa (nastavitelná)
+            view={10}{30}, % Náhled na graf (úhel pohledu)
+            legend style={at={(0.5,-0.2)}, anchor=north}
+        ]
+        
+     \addplot3 [surf, shader=interp, mesh] {1-x+x*y};
+        \legend{$I_{S_P}$}
+        \end{axis}
+    \end{tikzpicture}
+    
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=7cm,  % Nastavte požadovanou šířku grafu
+            height=7cm, % Nastavte požadovanou výšku grafu
+            xlabel=$x$,
+            ylabel=$y$,
+            zlabel=$z$, % Popisek osy z
+            domain=0:1, % Rozsah hodnot x
+            y domain=0:1, % Rozsah hodnot y
+            colormap/viridis, % Barevná mapa (nastavitelná)
+            view={10}{30}, % Náhled na graf (úhel pohledu)
+            legend style={at={(0.5,-0.2)}, anchor=north}
+        ]
+        
+     \addplot3 [surf, shader=interp, mesh] {min(1-x+y,1)};
+        \legend{$I_{S_L}$}
+        \end{axis}
+    \end{tikzpicture}
+\begin{tikzpicture}
+        \begin{axis}[
+            width=7cm,  % Nastavte požadovanou šířku grafu
+            height=7cm, % Nastavte požadovanou výšku grafu
+            xlabel=$x$,
+            ylabel=$y$,
+            zlabel=$z$, % Popisek osy z
+            domain=0:1, % Rozsah hodnot x
+            y domain=0:1, % Rozsah hodnot y
+            colormap/viridis, % Barevná mapa (nastavitelná)
+            view={10}{30}, % Náhled na graf (úhel pohledu)
+            legend style={at={(0.5,-0.2)}, anchor=north}
+        ]
+        
+     \addplot3 [surf, shader=interp, mesh] {ifthenelse(y==0,1-x,ifthenelse(x==1,y,1))};
+        \legend{$I_{S_D}$}
+        \end{axis}
+    \end{tikzpicture}
+
+\end{graph}
+
+Mezi nejznámější Q-implikátor patří tzv. Zadeh\r uv implikátor, který staví na $T_M, S_M, N_S$ a má předpis $$I_Z(x,y) = max(1-x, min(x,y)).$$ Po použití $T_L, S_L, N_S$ bude výsledkem klasický S-implikátor založený na $S_M.$
+Mezi nejpoužívanější rozšíření klasické implikace na interval $[0,1]$ je \textit{reziduální operátor} $R_T$ pro danou zleva-spojitou t-normu T: $$ R_T(x,y)=\sup(z \in [0,1]; T(x,z) \leq y).$$
+
+\begin{example}
+    \cite{hlinena}\\
+     $$ R_{T_M}(x,y)=\begin{cases} 1, &\mbox {ak $x\leq y$,} \\y, &\mbox{jinak,} \end{cases} $$
+    (Göddelov implik\' ator)
+     $$ R_{T_P}(x,y)=\min \left (\frac yx,1 \right ),$$
+    (Goguenov implikátor)
+     $$ R_{T_L}(x,y)=\min(1-x+y,1).$$
+    (\L{}ukasiewiczov implikátor)\\
+\end{example}
+
+\begin{definition}
+\cite{hlinena}
+Implik\'ator $I:[0,1]^2 \rightarrow [0,1]$ spl\v nuje:
+\begin{enumerate}
+\item[(NP)] levý princip neutrality, pokud
+$$I(1,y)=y; ~~~~y \in [0,1],$$
+\item[(EP)] princip z\'aměny, pokud
+$$I(x,I(y,z))=I(y,I(x,z)) \mbox{  pro ka\v zd\'e   } x,y,z \in [0,1],$$
+\item[(IP)] princip identity, pokud
+$$I(x,x) = 1; ~~~ x \in [0,1], $$
+\item[(OP)] vlastnost uspořádání
+$$x \leq y \iff I(x,y) =1; ~~~ x,y \in [0,1],$$
+\item[(CP)] kontrapozitivitu vzhledem na dan\'y neg\'ator $N$, pokud
+$$ I(x,y)=I(N(y),N(x)); ~~~ x,y \in [0,1].$$
+ {\item[(LI)] z\'akon přenosu  vzhledem na  t-normu $T$, pokud
+$$I(T(x, y), z) = I(x, I(y, z)); ~~~ x,y,z \in  [0, 1].$$
+\item[(WLI)]  slab\'y z\'akon přenosu vzhledem na komutativní a
+rostoucí funkci $F:
+[0,1]^2 \to [0, 1]$, pokud
+$$I(F(x, y), z) = I(x, I(y, z)); ~~~  x,y,z \in  [0, 1].$$}
+\end{enumerate}
+\end{definition}
+
+\subsection{Konstrukce fuzzy implikátor\r u}
+Z předchozích kapitol vyplývá, že jsou konjunktory často modelovány pomocí r\r uzných t-norem. 
+
+\begin{definition}
+    Nech\v t je $\varphi:[0,1] \rightarrow [0,1]$  rostoucí
+    bijekce a množina všech takových bijekcí Nech\v t je {\em B.} Nech\v t je funkce
+    $I:[0,1]^2\rightarrow [0,1]$ 
+    implikátor.
+    Pak je funkce
+    $$I_\varphi(x,y)=\varphi^{-1}(I(\varphi (x), \varphi (y)))$$
+    $\varphi-${\em transformací implikátoru} $I.$ Implikátor se nazývá
+    {\em totálně invariantní,} pokud pro libovolnou funkci $\varphi \in B$ platí $I_\varphi=I.$\\
+\end{definition}
+
+\begin{sentence}(Baczy\v nski, Drewniak)
+    Nech\v t $\varphi \in B$, potom pro libovolný implikátor $I: [0,1]^2 \rightarrow [0,1]$ je $\varphi$-transformace $I_\varphi$ také implikátor.
+\end{sentence}
+
+Generování implikátor\r u lze rozdělit do tří tříd. Yager popsal první dvě třídy, tedy f-generované a g-generované implikátory. Za popsání  h-generovaných implikátor\r u, tedy poslední třídy, si připisuje zásluhy Balasubramaniam Jayram. Následně jsou všechny třídy představeny.
+
+\begin{sentence}(Yager) 
+Pokud je $f: [0,1] \to [0,\infty]$ klesající a spojitá funkce,
+přičemž $f(1) = 0,$ potom je funkce $I: [0,1]^2 \to [0,1],$ dána předpisem
+$$I(x,y) = f^{-1}(x \cdot f(y)), \mbox {   } x, y \in [0,1],$$
+fuzzy implikátor (pričemž $0 \cdot \infty = 0$). \\
+\end{sentence}
+
+\begin{example}
+    \cite{hlinena}
+    Konstrukce f-generovaných implikátor\r u m\r uže vypadat následovně.
+    Pokud by byl použit aditivní generátor součinové t-normy $T_P,$ tedy 
+    pokud $f(x) = - \log x,$ výsledkem bude Yager\r uv implikátor:
+    $$I_{YG}(x,y)= \begin{cases} 1,
+    &\mbox {pokud $x=0$ a $y=0,$} \\
+    y^x, &\mbox {jinak.}
+    \end{cases}$$
+\end{example}
+\begin{remark}
+    V předchozím příkladu se nejednalo o S-implikátor ani o R-implikátor. To však neplatí v každém případě f-generovaných implikátor\r u.
+\end{remark}
 
 
-\textbf{Vlastnosti idempotence a involutivity} \\
-        Pokud má opakovaná aplikace stejných hodnot vždy tentýž výsledek (idempotence) a při dvojí aplikaci se návratová hodnota rovná hodnotě vstupní (involuce), fuzzy negace je tedy idempotentní a involutivní. 
-\textbf{Dualita} \\
-        Fuzzy negace jsou navrženy tak, aby vytvářely dualitu s fuzzy operací konjunkce. To znamená, že pokud fuzzy operace konjunkce znamená „velmi pravda“, pak by fuzzy negace měly znamenat „velmi nepravda“. }
+\begin{sentence}(Yager) 
+Pokud je $g: [0,1] \to [0,\infty]$ klesající a spojitá funkce,
+přičemž $g(1) = 0,$ potom je funkce $I: [0,1]^2 \to [0,1],$ dána předpisem
+$$I(x,y) = g^{(-1)}\left (\frac 1x \cdot g(y)\right ), \mbox {   } x, y \in [0,1]$$
+fuzzy implikátor (pričemž $\frac{1}{0} = \infty, 0 \cdot \infty = 0$). \\
+\end{sentence}
+\begin{example}
+    \cite{hlinena}
+    Pokud by byl použit aditivní generátor pravděpodobnostního součtu $S_P,$ tedy 
+    pokud $g(x) = - \log (1- x),$ dostaneme následující fuzzy implikátor:
+    $$I_{YG}(x,y)= \begin{cases} 1,
+    &\mbox {pokud $x=0$ a $y=0,$} \\
+    1-(1-y)^x, &\mbox {jinak.}
+        \end{cases}$$
+\end{example}
+\begin{remark}
+    Opět se v předchozím příkladu se nejednalo o S-implikátor ani o R-implikátor. To však také neplatí v každém případě g-generovaných implikátor\r u.
+\end{remark}
+
+\begin{sentence}(Balasubramaniam) 
+Pokud je $h: [0,1] \to [0,\infty]$ klesající a spojitá funkce,
+přičemž $h(1) = 0,$ potom je funkce $I: [0,1]^2 \to [0,1],$ dána předpisem
+$$I(x,y) = h^{(-1)}(x \cdot h(y)), \mbox {   } x, y \in [0,1]$$
+fuzzy implikátor. \\
+\end{sentence}
+\begin{example}
+    Pokud by byl jako  $h-$generátor funkce $h_n(x) = 1- \frac {x^n}{n}, n
+    \in N,$ výsledkem budou následující fuzzy implikátory:
+    $$I_n(x,y) = \min \left ( (n - n \cdot x + x \cdot y^n)^{\frac 1n}, 1\right
+    ),$$
+    kter\'e jsou $S-$implikátory.
+\end{example}
+\begin{remark}
+    Pro h-negátory platí, že $I_{h_1} = I_{h_2}$ právě když $h_1 = h_2.$
+\end{remark}
+
+Všechny třídy generátor\r u jsou, stejně jako v případě spojitých aditivních generátor\r u, jednoznačně dané s proměnlivou kladnou konstantou.
+
+Jednotlivé třídy fuzzy implikátor\r u jse označují následovně:
+\begin{itemize}
+\item ${\cal I}_{F, \infty}- f-$generované implikátory s $f(0) = \infty,$ 
+\item ${\cal I}_{F, \kappa}- f-$generované implikátory s $f(0) < \infty,$ 
+\item ${\cal I}_{F} = {\cal I}_{F, \infty} \cup{\cal I}_{F, \kappa}, $
+\item ${\cal I}_{G, \infty} - g-$generované implikátory s $g(1) = \infty,$ 
+\item ${\cal I}_{G, \kappa} - g-$generované implikátory s $g(1) < \infty,$ 
+\item ${\cal I}_{G}={\cal I}_{G, \infty} \cup{\cal I}_{G, \kappa},$ 
+\item ${\cal I}_{H, O} - h-$generované implikátory s $h(1) = 0,$ 
+\item ${\cal I}_{H, E} - h-$generované implikátory s $g(1) >0,$ 
+\item ${\cal I}_{H}= {\cal I}_{H, O} \cup {\cal I}_{H, E}.$ 
+\end{itemize} 
+
+
+
+\begin{table}[ht!]
+    \caption{Vztahy mezi jedlotlivými třídami implikátor\r u\cite{hlinena}}
+    \centering 
+    \begin{tabular}{|c|c|c|}
+    \hline
+     $\cup$ & $S-$implikátory & $R-$implikátory\\
+    \hline
+    ${\cal I}_{F, \infty} = {\cal I}_{G, \infty}$   & $ \emptyset$ & $\emptyset$ \\
+    \hline
+    ${\cal I}_{F, \kappa} = {\cal I}_{H, O}$   &  ${\cal I}_{F, \kappa}$ &
+    $\emptyset$ \\
+    \hline
+    ${\cal I}_{G, \kappa} = {\cal I}_{H, O}$   &  $\emptyset$ &
+    $R_{T_L,}$ \\
+    \hline
+    ${\cal I}_{H, E}$  &${\cal I}_{H, E}$ &  $\emptyset$\\
+    \hline
+    \end{tabular}
+\end{table}
+
+\begin{example}
+    Nech\v t jsou $f_1, f_2, f_3:[0,1] \rightarrow [0,
+\infty]$ funkce dan\'e předpisy:
+\begin{itemize}
+\item $f_1(x)=\begin{cases} 1-x,  &\mbox{pokud $x \leq 0.5$},\\
+0.5-0.5x,   &\text{jinak}, \end{cases}$
+\item $f_2(x)= \frac{1}{x} -1,$
+\item $f_3(x)= -\ln(x).$
+\end{itemize}
+
+Je d\r uležité zmínit, že jsou všechny tři funkce klesající. Pro $f_1^{(-1)}, f_2^{(-1)},
+f_3^{(-1)}$ pak platí:
+\begin{itemize}
+\item $f_1^{(-1)}(x)=\begin{cases}  1-2x,       &\mbox{pokud $x \leq 0.25$},\\
+0.5,                  &\mbox{pokud $0.25<x \leq 0.5$},\\
+1-x,                  &\text{jinak,} \end{cases} $
+\item $f_2^{(-1)}(x)=\min \left \{ \frac{1}{1+x},1 \right \},$
+\item $f_3^{(-1)}(x)=\min \{ e^{-x},1 \}.$
+\end{itemize}
+Pro  funkce $f_1, f_2, f_3$ potom lze dostat nasledující implik\'atory:
+\begin{itemize}
+\item $I_{f_1}(x,y)=\begin{cases}  1,      &\mbox{pokud $x \leq y$}, \\
+1-2x+2y,       &\mbox{pokud $x \leq 0.5, y<0.5, x-y \leq 0.25, x > y$}, \\
+0.5,       &\mbox{pokud $x \leq 0.5, y<0.5, x-y>0.25$}, \\
+0.5 ,      &\mbox{pokud $x>0.5, y<0.5, x \leq 2y$}, \\
+0.5+y-0.5x,       &\mbox{pokud $x>0.5, y<0.5, x>2y$}, \\
+1-x+y,       &\mbox{pokud $x>0.5, y \geq 0.5,$} \end{cases}$
+\item $I_{f_2}(x,y)= \begin{cases} 1,      &\mbox{pokud $x \leq y$}, \\
+  \frac{1}{\frac{1}{y} - \frac{1}{x} + 1},     &\text{jinak}, \end{cases} $
+\item $I_{f_3}(x,y)= \begin{cases} 1,    &\mbox{pokud $x \leq y$}, \\
+  \frac{y}{x},   & \mbox{jinak.} \end{cases}$
+\end{itemize}
+\end{example}
+
+Dalším typem generovaných implikátor\r u jsou $I^g$ implikátory. Narozdíl od $I_f$ implikátor\r u jsou ale generovány rostoucími funkcemi.
+
+\begin{sentence}(Smutn\'a)\\
+    Nech\v t je  $g:[0,1]\rightarrow [0,\infty]$ rostoucí funkce takov\'a, \v ze $g(0)=0$. 
+    Potom funkce $I^g(x,y):[0,1]^2 \rightarrow [0,1]$ dan\'a předpisem
+    \begin{equation}\label{g}
+    I^g(x,y)=g^{(-1)}(g(1-x)+g(y)),
+    \end{equation}
+    je fuzzy implik\'ator.\\
+\end{sentence}
+
+\begin{example}
+\cite{hlinena}
+    Nech\v t jsou $g_1, g_2:[0,1] \rightarrow [0,\infty]$ 
+    dan\'e předpisy:
+    \begin{itemize}
+    \item $g_1(x)=\begin{cases}  x,    &\mbox{pokud $x \leq 0.5$}, \\
+    0.5+0.5x,      &\text{jinak,} \end{cases}$
+    \item $g_2(x)=-\ln(1-x).$
+    \end{itemize}
+    Obě dvě funkce $g_1$ a $g_2$ josu rostoucí.
+    Pro jejich pseudo-inverzn\'i funkce  $g_1^{(-1)}$ a $g_2^{(-1)}$ plat\'i:
+    \begin{itemize}
+    \item $g_1^{(-1)}(x)=\begin{cases} x, &\mbox{pokud $x \leq 0,5$}, \\
+    0,5,   &\mbox{pokud $0,5 < x \leq 0,75$}, \\
+    2x-1,   &\mbox{pokud $0,75 < x \leq 1$}, \\
+    1,   &\mbox{pokud $1 < x$}, \end{cases}$
+    \item $g_2^{(-1)}(x)=1-e^{-x} ~ \mbox{pro $x \in [0, \infty]$}.$
+    \end{itemize}
+    Potom se pro funkce $g_1$ a $g_2$ modelují nasleduj\'icí implik\'atory:
+    \begin{itemize}
+    \item $I^{g_1}(x,y)=\begin{cases}  1-x+y,      &\mbox{pokud $x \geq 0.5, y \leq 0.5, x-y \geq 0.5$}, \\
+    0.5,      &\mbox{pokud $x \geq 0.5, y \leq 0.5, 0.25 \leq x-y < 0.5$}, \\
+    1-2x+2y,      &\mbox{pokud $x \geq 0.5, y \leq 0.5, x-y < 0.25$}, \\
+    \min(1-x+2y,1),       &\mbox{pokud $x < 0.5, y \leq 0.5$}, \\
+    \min(2-2x+y,1),       &\mbox{pokud $x \geq 0.5, y>0.5$}, \\
+    1,       &\mbox{pokud $x < 0.5, y > 0.5,$} \end{cases}$
+    \item $I^{g_2}(x,y)=1-e^{\ln(x(1-y))}=1-x+xy.$
+    \end{itemize}
+\end{example}
+
+\begin{sentence}
+\cite{hlinena}
+    Nech\v t je $c$ kladn\'a konstanta a $g:[0,1] \to [0,\infty]$
+    rostoucí  funkce. Potom implik\'atory $I^g$ a $I^{c \cdot g}$,
+    které jsou zalo\v zen\'e na  funkcích $g$ a $c \cdot g$, jsou
+    identick\'e.
+\end{sentence}
