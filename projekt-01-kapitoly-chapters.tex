@@ -1038,10 +1038,9 @@ Mezi základní triangulární konormy se obdobně (ale komplementárně) jako u
     \end{tikzpicture}
 \end{graph}
 
-\subsection{Fuzzy implikace} {\color{red}Podobne ako pri konjunkciach-tu ale treba uviest hned rozne pristupy, rozne konstrukcie, vratane tych, ktore potom v dalsej kapitole budete studovat. Deadline 9.10.
-\\}
+\subsection{Fuzzy implikace} 
 
-Fuzzy implikace patří mezi nejd\r uležitější fuzzy pojmy a díky takovým spojením výrok\r u je možné mnohem jednodušeji popsat lidské vyjadřování matematicky. Implikace se v obecném jazyce vyjadřuje mnoha zp\r usoby, netypičtěji pak slovním spojením \textit{když-tak}.
+Fuzzy implikace patří mezi nejd\r uležitější fuzzy pojmy a díky takovým spojením výrok\r u je možné mnohem jednodušeji popsat lidské vyjadřování matematicky. Implikace se v obecném jazyce vyjadřuje mnoha zp\r usoby, nejtypičtěji pak slovním spojením \textit{když-tak}. Fuzzy implikace je, podobn\v e jako p\v redchoz\'i logick\'e spojky, monot\'onn\'im roz\v s\'i\v ren\'im klasick\'e implikace.
 \begin{definition}
     Zobrazení $I: [0,1]^2 \rightarrow [0,1] $ se nazývá implikátor, pokud
     \begin{itemize}
@@ -1051,12 +1050,12 @@ Fuzzy implikace patří mezi nejd\r uležitější fuzzy pojmy a díky takovým 
     \end{itemize}
 \end{definition}
 
-Modelace fuzzy implikace je ale o něco složitější, než modelace dříve zmíněných logických spojek. Fuzzy konjunkce se modelují pomocí t-norem, disjunkce pomocí t-konorem a negace pomocí fuzzy negátor\r u. Tyto spojky pak mohou být využity pro modelaci fuzzy implikace. Zřejmě jsou následující logické formule tautologicky ekvivalentní: $$ p\implies q, \mbox{   } \neg p \vee q, \mbox{   } \neg p\vee (p\wedge q) .$$ Lze tedy spojit informace o modelaci logických spojek a jejich vzájemných ekvivalentních \' upravách pro tvorbu fuzzy implikátoru: $$I(x,y)=S(N(x),y)\text{ neboli S-implikátory},$$
+Modelov\'an\'i fuzzy implikace je ale o něco složitější, než modelov\'an\'i dříve zmíněných logických spojek. Fuzzy konjunkce se modelují pomocí t-norem, disjunkce pomocí t-konorem a negace pomocí fuzzy negátor\r u. Tyto spojky pak mohou být využity pro modelaci fuzzy implikace. Zřejmě jsou následující logické formule tautologicky ekvivalentní: $$ p\implies q, \mbox{   } \neg p \vee q, \mbox{   } \neg p\vee (p\wedge q) .$$ Lze tedy spojit informace o modelov\'an\'i logických spojek a jejich vzájemných ekvivalentních \' upravách pro tvorbu fuzzy implikátoru: $$I(x,y)=S(N(x),y)\text{ neboli S-implikátory},$$
 $$I(x,y)=S(N(x),T(x,y)) \text{ neboli Q-implikátory}.$$
 
-\begin{example}
+\begin{example} {\color{red} Musite napisat, ze sa jedna o SN implikatory}
 \cite{hlinena}
-Pro základní t-konormy zmíněné v kapitole \ref{sec: Triangulární konormy} a standardní negátor $N_S$ existují následující implikátory:\\
+Pro základní t-konormy zmíněné v kapitole \ref{sec: Triangulární konormy} a standardní negátor $N_S$ existují následující implikátory, které se také nazývají SN implikátory:\\
     \vbox{$$ I_{S_M}(x,y)=\max(1-x,y),$$ }
 \vbox{$$ I_{S_P}(x,y)=1-x+x.y,$$}
  \vbox{$$ I_{S_L}(x,y)=\min(1-x+y,1),$$}
@@ -1147,7 +1146,7 @@ Pro představu jsou níže představeny grafy implikátorů $I_{S_M}, I_{S_P}, I
 Mezi nejznámější Q-implikátor patří tzv. Zadeh\r uv implikátor, který staví na $T_M, S_M, N_S$ a má předpis $$I_Z(x,y) = max(1-x, min(x,y)).$$ Po použití $T_L, S_L, N_S$ bude výsledkem klasický S-implikátor založený na $S_M.$
 Mezi nejpoužívanější rozšíření klasické implikace na interval $[0,1]$ je \textit{reziduální operátor} $R_T$ pro danou zleva-spojitou t-normu T: $$ R_T(x,y)=\sup(z \in [0,1]; T(x,z) \leq y).$$
 
-\begin{example}
+\begin{example} {\color{red} tu tiez treba napisat, ze ake su to implikatory a z coho vznikli-strucne-1-2 vety.}
     \cite{hlinena}\\
      $$ R_{T_M}(x,y)=\begin{cases} 1, &\mbox {ak $x\leq y$,} \\y, &\mbox{jinak,} \end{cases} $$
     (Göddelov implik\' ator)
@@ -1156,7 +1155,7 @@ Mezi nejpoužívanější rozšíření klasické implikace na interval $[0,1]$ 
      $$ R_{T_L}(x,y)=\min(1-x+y,1).$$
     (\L{}ukasiewiczov implikátor)\\
 \end{example}
-
+{\color{red} Nejaka veta, ze si vypiseme zoznam vlastnosti-tieto vlastnosti splna klasicka implikacia, ale nie vsetky fuzzy implikacie ich splnaju, cize zase mame moznost nejako ich roztriedit podla vlastnosti. Tak 2-3 vety.}
 \begin{definition}
 \cite{hlinena}
 Implik\'ator $I:[0,1]^2 \rightarrow [0,1]$ spl\v nuje:
@@ -1181,6 +1180,7 @@ $$I(F(x, y), z) = I(x, I(y, z)); ~~~  x,y,z \in  [0, 1].$$}
 \end{definition}
 
 \subsection{Konstrukce fuzzy implikátor\r u}
+{\color{red} toto cele treba ucesat, aby bolo jasne, co chcete vlastne povedat, mal by tam byt nejaky uvod, potom zoznam znamych konstrukcii a ku kazdej mozete hodit priklad-skuste to prerobit, ja to cez vikend potom dorazim}
 Z předchozích kapitol vyplývá, že jsou konjunktory často modelovány pomocí r\r uzných t-norem. 
 
 \begin{definition}
