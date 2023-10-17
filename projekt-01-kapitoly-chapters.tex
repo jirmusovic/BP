@@ -13,7 +13,7 @@
 \newtheorem{graph}{Obr\' azek}
 \newtheorem{sentence}{Věta}
 \newtheorem{tabul}{Tabulka}
-\newcommand{\comment}[1]{}
+%\newcommand{\comment}[1]{}
 
 \chapter{Úvod}
 
@@ -22,8 +22,6 @@
                 \color{black} Zatímco bivalenční logika pracuje s binárními hodnotami "pravda" a "nepravda", fuzzy logika umožňuje pracovat s hodnotami, které se pohybují mezi těmito extrémy.
 
 
-\chapter{Abstrakt}
-\label{abstrakt}
 
 
 
@@ -31,9 +29,9 @@
 \chapter {Fuzzy mno\v ziny a fuzzy logika}
 \section{Fuzzy mno\v ziny} 
 
-\comment{
-V klasické i fuzzy logice se často setkáváme se základními pojmy množina a prvek množiny. Množina se obecně vysvětluje jako souhrn, soubor nebo skupina objektů. Tyto objekty pak nazýváme prvky dané množiny. Nejvíce charakteristická vlastnost množin je, že je jednoznačně určena svými prvky, ale ignoruje jejich pořadí a další jejich struktury. Množina, která neobsahuje žádné prvky, se nazývá prázdná množina.
-}
+%\comment{
+%V klasické i fuzzy logice se často setkáváme se základními pojmy množina a prvek množiny. Množina se obecně %vysvětluje jako souhrn, soubor nebo skupina objektů. Tyto objekty pak nazýváme prvky dané množiny. Nejvíce %charakteristická vlastnost množin je, že je jednoznačně určena svými prvky, ale ignoruje jejich pořadí a %další jejich struktury. Množina, která neobsahuje žádné prvky, se nazývá prázdná množina.
+%}
 
 V běžném životě se často setkáváme s nepřesnými pojmy, jako jsou např. \clqq málo\crqq, \clqq hodně\crqq \space či třeba \clqq trochu\crqq \space. Jak ale takovou vágnost vyjádřit v matematice? Pokud člověk vyjádří výrok, že je \clqq celkem mladý\crqq, znamená to, že je mladý nebo ne? K zápisu a práci s takovými výroky se pak ve fuzzy logice využívají fuzzy množiny a operace s nimi.
 
@@ -353,7 +351,7 @@ Pro hodnoty $0$ a $1$ se fuzzy negace shoduje s klasickou negac\'i.
     \begin{definition}
     \cite{Kolesarova}
         Kdy\v z $N: [0,1] \to [0,1]$ je klesající a spojitá fuzzy negace, \v r\'ik\'ame, \v ze $N$ je striktní negace.
-        Fuzzy negace, která je involutivní, tedy negace, pro kterou plat\'i $N(N(x)) = x $ pro každé $ x \in [0,1]$, se nazývá silná fuzzy negace.
+        Striktn\'i fuzzy negace, kter\'a je involutivní, tedy, pro kterou plat\'i $N(N(x)) = x $ pro každé $ x \in [0,1]$, se nazývá silná fuzzy negace.
     \end{definition}
 
     \begin{example}
@@ -389,7 +387,7 @@ Takže negace $N_S$ a $N_2$ jsou involutivní a tím pádem tak\'e siln\'e negac
             		\addplot[samples = 500,
                         	smooth,
                         	very thick,
-                        	blue,] {sqrt{1-x^2}};
+                        	blue,] {(1-x^2)^0.5};
                     \addplot[smooth,
                             	thin,
                             	red,
@@ -1051,11 +1049,12 @@ Fuzzy implikace patří mezi nejd\r uležitější fuzzy pojmy a díky takovým 
 \end{definition}
 
 Modelov\'an\'i fuzzy implikace je ale o něco složitější, než modelov\'an\'i dříve zmíněných logických spojek. Fuzzy konjunkce se modelují pomocí t-norem, disjunkce pomocí t-konorem a negace pomocí fuzzy negátor\r u. Tyto spojky pak mohou být využity pro modelaci fuzzy implikace. Zřejmě jsou následující logické formule tautologicky ekvivalentní: $$ p\implies q, \mbox{   } \neg p \vee q, \mbox{   } \neg p\vee (p\wedge q) .$$ Lze tedy spojit informace o modelov\'an\'i logických spojek a jejich vzájemných ekvivalentních \' upravách pro tvorbu fuzzy implikátoru: $$I(x,y)=S(N(x),y)\text{ neboli S-implikátory},$$
-$$I(x,y)=S(N(x),T(x,y)) \text{ neboli Q-implikátory}.$$
+$$I(x,y)=S(N(x),T(x,y)) \text{ neboli Q-implikátory}.$$\\
+Pokud je $N$ silná fuzzy negace, pak se $I$ nazývá silná fuzzy implikace nebo také S-implikace. Mimo to pokud je $I (S,N)-$implikace generována t-konormou $S$ a negátorem $N$, označuje se indexem $I_{S,N}.$ 
 
-\begin{example} {\color{red} Musite napisat, ze sa jedna o SN implikatory}
+\begin{example}
 \cite{hlinena}
-Pro základní t-konormy zmíněné v kapitole \ref{sec: Triangulární konormy} a standardní negátor $N_S$ existují následující implikátory, které se také nazývají SN implikátory:\\
+Pro základní t-konormy zmíněné v kapitole \ref{sec: Triangulární konormy} a standardní negátor $N_S$ existují následující implikátory, které patří do skupiny $(S,N)-$implikátor\r u:\\
     \vbox{$$ I_{S_M}(x,y)=\max(1-x,y),$$ }
 \vbox{$$ I_{S_P}(x,y)=1-x+x.y,$$}
  \vbox{$$ I_{S_L}(x,y)=\min(1-x+y,1),$$}
@@ -1146,7 +1145,8 @@ Pro představu jsou níže představeny grafy implikátorů $I_{S_M}, I_{S_P}, I
 Mezi nejznámější Q-implikátor patří tzv. Zadeh\r uv implikátor, který staví na $T_M, S_M, N_S$ a má předpis $$I_Z(x,y) = max(1-x, min(x,y)).$$ Po použití $T_L, S_L, N_S$ bude výsledkem klasický S-implikátor založený na $S_M.$
 Mezi nejpoužívanější rozšíření klasické implikace na interval $[0,1]$ je \textit{reziduální operátor} $R_T$ pro danou zleva-spojitou t-normu T: $$ R_T(x,y)=\sup(z \in [0,1]; T(x,z) \leq y).$$
 
-\begin{example} {\color{red} tu tiez treba napisat, ze ake su to implikatory a z coho vznikli-strucne-1-2 vety.}
+Ve vícehodnotové logice na rozdíl od bivalentní logiky nemusí platit tvrzení, že jsou si implikátory $I_T$ a $R_T$ rovny. Následující příklad je toho d\r ukazem.
+\begin{example} Pro zleva spojité t-normy $T_M, T_P$ a $T_L$ pak mohou vzniknout následující reziduální implikátory:
     \cite{hlinena}\\
      $$ R_{T_M}(x,y)=\begin{cases} 1, &\mbox {ak $x\leq y$,} \\y, &\mbox{jinak,} \end{cases} $$
     (Göddelov implik\' ator)
@@ -1155,10 +1155,9 @@ Mezi nejpoužívanější rozšíření klasické implikace na interval $[0,1]$ 
      $$ R_{T_L}(x,y)=\min(1-x+y,1).$$
     (\L{}ukasiewiczov implikátor)\\
 \end{example}
-{\color{red} Nejaka veta, ze si vypiseme zoznam vlastnosti-tieto vlastnosti splna klasicka implikacia, ale nie vsetky fuzzy implikacie ich splnaju, cize zase mame moznost nejako ich roztriedit podla vlastnosti. Tak 2-3 vety.}
 \begin{definition}
 \cite{hlinena}
-Implik\'ator $I:[0,1]^2 \rightarrow [0,1]$ spl\v nuje:
+Klasický implik\'ator $I:[0,1]^2 \rightarrow [0,1]$ spl\v nuje:
 \begin{enumerate}
 \item[(NP)] levý princip neutrality, pokud
 $$I(1,y)=y; ~~~~y \in [0,1],$$
@@ -1178,10 +1177,10 @@ rostoucí funkci $F:
 $$I(F(x, y), z) = I(x, I(y, z)); ~~~  x,y,z \in  [0, 1].$$}
 \end{enumerate}
 \end{definition}
-
+Ne všechny fuzzy implikátory ale spl\v nují všechny výše uvedené vlastnosti. Např. S-implikátory spl\v nují pouze $(NP)$ a $(EP)$, reziduální implikátor zase spl\v nuje pouze $(NP)$ a $(OP).$ Na základě takových vlastností lze implikátory rozdělit do skupin (např. (S,N)-implikátory, R-implikátory nebo Q-impkilátory), se kterými pak lze dále pracovat.
 \subsection{Konstrukce fuzzy implikátor\r u}
-{\color{red} toto cele treba ucesat, aby bolo jasne, co chcete vlastne povedat, mal by tam byt nejaky uvod, potom zoznam znamych konstrukcii a ku kazdej mozete hodit priklad-skuste to prerobit, ja to cez vikend potom dorazim}
-Z předchozích kapitol vyplývá, že jsou konjunktory často modelovány pomocí r\r uzných t-norem. 
+
+Většina konstruktor\r u je ve fuzzy logice modelována pomocí t-norem. Konstrukce nových t-norem, tedy nových konjunktor\r u, je naznačena v předchozích kapitolách. Při konstruování implikátor\r u lze použít podobný postup.
 
 \begin{definition}
     Nech\v t je $\varphi:[0,1] \rightarrow [0,1]$  rostoucí
@@ -1377,3 +1376,6 @@ Dalším typem generovaných implikátor\r u jsou $I^g$ implikátory. Narozdíl 
     které jsou zalo\v zen\'e na  funkcích $g$ a $c \cdot g$, jsou
     identick\'e.
 \end{sentence}
+\noindent \textbf{Bibliografická citace}\\
+\textsc{Doe}, J. Jak citovat: Citace článku.
+In: \textsc{Smith}, P., ed. \textit{Sborník konference o tvorbě prací: Formální náležitosti} [online]. 1. vyd., verze 1.0. Přeložil Jan NOVÁK. Brno: Fakulta informačních technologií VUT v Brně, únor 2020, sv. 4, č. 24, kap. 5, s. 8–21, revidováno 12. 2. 2020 [cit. 2020-02-12]. Návody k tvorbě prací, č. 2. ISSN 1234-5678. Toto je zcela vymyšlená citace. Dostupné z: \url{https://merlin.fit.vutbr.cz}
