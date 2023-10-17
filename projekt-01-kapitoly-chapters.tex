@@ -67,9 +67,9 @@ Nech\v t je např. vypsáno výběrové řízení modelingové agentury s požad
         \hspace*{2cm}
             \begin{axis}[
                 xlabel=$x$, % Popisek osy x
-                ylabel=$\mu_V(x)$, % Popisek osy y
+                ylabel=$y$, % Popisek osy y
                 axis lines=middle, % Zobrazení os
-                ymin=0, ymax=1,2, % Rozsah osy y
+                ymin=0, ymax=1.2, % Rozsah osy y
                 xmin=0, xmax=250, % Rozsah osy x
                 xtick={0, 160, 180}, % Označení na ose x
                 ytick={ 0, 0.8, 1}, % Označení na ose y
@@ -100,7 +100,7 @@ Pokud bychom chtěli modelovat funkci příslušnosti odlišného fuzzy výroku,
 \begin{graph} Grafické znázornění funkcí příslušnosti výroku P \clqq asi 3\crqq.\\
 
 
-    \resizebox{150pt}{!}{%zde se meni velikost grafu
+    \resizebox{5.27cm}{!}{%zde se meni velikost grafu
                 \begin{tikzpicture}
                 \hspace*{-2cm}
                 	\begin{axis}[
@@ -124,7 +124,7 @@ Pokud bychom chtěli modelovat funkci příslušnosti odlišného fuzzy výroku,
                 	\end{axis}
                 \end{tikzpicture}
             }
-            \resizebox{150pt}{!}{%zde se meni velikost grafu
+    \resizebox{5.27cm}{!}{%zde se meni velikost grafu
                 \begin{tikzpicture}
                 \hspace*{-2cm}
                 	\begin{axis}[
@@ -147,7 +147,7 @@ Pokud bychom chtěli modelovat funkci příslušnosti odlišného fuzzy výroku,
                 	\end{axis}
                 \end{tikzpicture}
             }
-            \resizebox{150pt}{!}{%zde se meni velikost grafu
+    \resizebox{5.27cm}{!}{%zde se meni velikost grafu
                 \begin{tikzpicture}
                 \hspace*{-2cm}
                 	\begin{axis}[
@@ -349,7 +349,7 @@ Pro hodnoty $0$ a $1$ se fuzzy negace shoduje s klasickou negac\'i.
    N\v ekter\'e fuzzy negace maj\'i dal\v s\'i zaj\'imav\'e vlastnosti:
 
     \begin{definition}
-    \cite{Kolesarova}
+    \cite{Kolo}
         Kdy\v z $N: [0,1] \to [0,1]$ je klesající a spojitá fuzzy negace, \v r\'ik\'ame, \v ze $N$ je striktní negace.
         Striktn\'i fuzzy negace, kter\'a je involutivní, tedy, pro kterou plat\'i $N(N(x)) = x $ pro každé $ x \in [0,1]$, se nazývá silná fuzzy negace.
     \end{definition}
@@ -387,7 +387,8 @@ Takže negace $N_S$ a $N_2$ jsou involutivní a tím pádem tak\'e siln\'e negac
             		\addplot[samples = 500,
                         	smooth,
                         	very thick,
-                        	blue,] {(1-x^2)^0.5};
+                        	blue,
+                                domain=0:1,] {(1-x^2)^0.5};
                     \addplot[smooth,
                             	thin,
                             	red,
@@ -1376,6 +1377,3 @@ Dalším typem generovaných implikátor\r u jsou $I^g$ implikátory. Narozdíl 
     které jsou zalo\v zen\'e na  funkcích $g$ a $c \cdot g$, jsou
     identick\'e.
 \end{sentence}
-\noindent \textbf{Bibliografická citace}\\
-\textsc{Doe}, J. Jak citovat: Citace článku.
-In: \textsc{Smith}, P., ed. \textit{Sborník konference o tvorbě prací: Formální náležitosti} [online]. 1. vyd., verze 1.0. Přeložil Jan NOVÁK. Brno: Fakulta informačních technologií VUT v Brně, únor 2020, sv. 4, č. 24, kap. 5, s. 8–21, revidováno 12. 2. 2020 [cit. 2020-02-12]. Návody k tvorbě prací, č. 2. ISSN 1234-5678. Toto je zcela vymyšlená citace. Dostupné z: \url{https://merlin.fit.vutbr.cz}
