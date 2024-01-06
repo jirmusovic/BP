@@ -17,9 +17,9 @@
 
 \chapter{Úvod}
 %\comment{
-\color{blue} Pár vět, které pak chci zakomponovat do \'uvodu nějak:
-                \\ 
-                \color{black} Zatímco bivalentní logika pracuje s binárními hodnotami "pravda" a "nepravda", fuzzy logika umožňuje pracovat s hodnotami, které se pohybují mezi těmito extrémy.
+%\color{blue} Pár vět, které pak chci zakomponovat do \'uvodu nějak:
+%                \\ 
+%                \color{black} Zatímco bivalentní logika pracuje s binárními hodnotami "pravda" a %"nepravda", fuzzy logika umožňuje pracovat s hodnotami, které se pohybují mezi těmito extrémy.
 
 %}
 
@@ -44,7 +44,7 @@ Nech\v t je např. vypsáno výběrové řízení modelingové agentury s požad
     Takový problém je zp\r usoben tím, že byla výška modelována jako vlastnost, kterou m\r uže mít člověk pouze v nulové míře nebo na 100\%. Za určitě vysokého člověka byl považován někdo se 180 centimetry, 175 centimetr\r u vysoký člověk byl podle stejného přístupu určitě malý. Přičemž 175 centimetr\r u vysoký člověk je běžně považován do určité míry za vysokého. Přesně z toho d\r uvodu se zavedl pojem \textit{fuzzy množina}, která náleží tzv. \textit{univerzu}, které vyjadřuje množinu všech možných hodnot, kterých může množina nabývat. V případě modelingové agentury  pak \textit{univerzum} $X \in [0,\infty[$ což vyjadřuje množinu všech možných výšek lidí. Množina všech možných zájemc\r u je pak vyjádřitelná jako podmnožina $V$ univerza $X.$\\
     \begin{definition}
     \cite{navara}
-        Fuzzy podmnožina univerza X (stručně fuzzy množina) je objekt A, který popisuje (zobecněná) charakteristická funkce, která se nazývá funkce příslušnosti $\mu: X \rightarrow [0,1]$. Obor pravdivostních hodnot: $R(V) = \{\alpha \in [0,1]: (\exists x \in X : \mu_V(x) = \alpha)\} = \mu_V(X).$
+        Fuzzy podmnožina univerza X (stručně fuzzy množina) je objekt A, který popisuje (zobecněná) charakteristická funkce, která se nazývá funkce příslušnosti $\mu: X \rightarrow [0,1]$. Obor pravdivostních hodnot: $R(A) = \{\alpha \in [0,1]: (\exists x \in X : \mu_A(x) = \alpha)\} = \mu_V(X).$
     \end{definition}
     
     Fuzzy množina nebo také neostrá množina je pak množina prvků takových, jejichž afiliace je k této množině odstupňovaná. Fuzzy množina staví na stejných pravidlech, jako klasická množina, s tím rozdílem, že příslušnost nemusí nabývat jen hodnot 0 a 1, ale jakoukoliv hodnotu z intervalu [0,1]. 
@@ -437,11 +437,8 @@ Jak již bylo zmíněno, fuzzy konjunkce mohou být modelov\' any pomocí triang
         \item \textbf{Okrajová podmínka:} $T(x, 1) = x$.
     \end{enumerate}
 \end{definition}
-\begin{remark}
-    Funkce je t-norma v případě, že spl\v nuje alespo\v n 3 ze 4 axiom\r u popsaných výše.
-\end{remark}
 
-\begin{example} Na několika příkladech jsou uvedeny funkce, které vždy spl\v nují 3 ze 4 na sob\v e nez\' avisl\' ych axiom\r u.\\ 
+\begin{example} Na několika příkladech jsou uvedeny funkce, které vždy spl\v nují 3 ze 4  axiom\r u, což ukazuje, že jsou na sobě axiomy nez\' avislé, a tedy funkce není t-normou, pokud nespl\v nuje všechny čtyři axiomy..\\ 
     Funkce $F_1 : [0, 1]^2 \rightarrow [0, 1]$ daná přepisem\\
     $$F_1(x,y) = x,$$
     spl\v nuje axiomy 2., 3., 4., ale nespl\v nuje axiom 1.\\
@@ -644,8 +641,9 @@ Mezi nejznámější konstrukce t-norem patří:
         $T.$
 
 \end{itemize}
+
 Pro představu je d\r uležité uvést příklad $\varphi$-transformace t-norem. 
-Za předpokladu, že je $\varphi : [0,1] \rightarrow [0,1]$ rostoucí bijekce, $T: [0,1]^2 \rightarrow [0,1]$ je t-norma a $T_{\varphi}$ je také t-norma, platí pak tvrzení $\varphi(T_{\varphi}(x, y)) = T(\varphi(x),\varphi(y))$. To znamená, že $\varphi$-transformace minimové t-normy $T_M$ je rovna $T_M$, což následující příklad \ref{sec: fi-transform} ukazuje.
+Za předpokladu, že je $\varphi : [0,1] \rightarrow [0,1]$ rostoucí bijekce, $T: [0,1]^2 \rightarrow [0,1]$ je t-norma a $T_{\varphi}$ je také t-norma, platí pak tvrzení $T_\varphi (x,y)=\varphi ^{-1}(T(\varphi(x),\varphi(y)))=T(x,y)$. To znamená, že $\varphi$-transformace minimové t-normy $T_M$ je rovna $T_M$, což následující příklad \ref{sec: fi-transform} ukazuje.
 \begin{example}
 \label{sec: fi-transform}
     Nech\v t je tedy $\varphi : [0,1] \rightarrow [0,1]$ rostoucí bijekce a $T_M: [0,1]^2 \rightarrow [0,1]$ nech\v t je minimová t-norma. $$\varphi = x^2$$  $$T_M(x,y) = min(x,y).$$
@@ -699,117 +697,10 @@ Za předpokladu, že je $\varphi : [0,1] \rightarrow [0,1]$ rostoucí bijekce, $
                 \end{tikzpicture}
                 }\\
 
-Pak tedy lze říci, že platí: $$pokud \: x \leq y,\: pak \: \varphi(x) \leq \varphi(x),$$ $$(T_M)_\varphi = \varphi ^{(-1)}(T(\varphi(x), \varphi(y))),$$ $$(T_M)_\varphi = T_M. $$
+Pak tedy lze říci, že platí: $$pokud \: x \leq y,\: pak \: \varphi(x) \leq \varphi(x),$$ $$(T_M)_\varphi (x,y)= \varphi ^{-1}(T_M(\varphi(x), \varphi(y)))=\varphi ^{-1}\varphi(x)=x,$$ $$(T_M)_\varphi(x,y) = T_M(x,y). $$
+
 \end{example}
 
-Pokud by ale $\varphi$ nebyla rostoucí bijekce, ale třeba například jakákoliv jiná neklesající funkce, pr\r uběh $\varphi$-transformace minimové t-normy by vypadal diametrálně odlišně.
-
-\begin{example}
-\label{sub: fi}
-    Nech\v t je tedy $\varphi : [0,1] \rightarrow [0,1]$ neklesající funkce a $T_M: [0,1]^2 \rightarrow [0,1]$ nech\v t je minimová t-norma. 
-    $(T_M)_\varphi : [0,1]^2 \rightarrow [0,1]$ je pak definov\' ana jako: $$(T_M)_\varphi (x,y)= \begin{cases} min(x,y), & \mbox {pokud } max(x,y) = 1,
-    \\ \varphi_{(-1)}[T_M(\varphi(x), \varphi(y))], & \mbox {jinak.}
-    \end{cases}$$
-
-    Pokud $$\varphi(x) = \begin{cases} x, & \mbox {pokud } x \in [0,\frac{1}{3}],
-    \\ \frac{1}{3}, & \mbox {pokud } x \in [\frac{1}{3}, \frac{2}{3}],\\
-    2x - 1, & \mbox {pokud } x \in [\frac{2}{3}, 1],
-    \end{cases}$$
-
-    potom $$(T_M)_{\varphi(x)} = \begin{cases} \frac{1}{3}, & \mbox {pokud } (x, y) \in [\frac{1}{3},\frac{2}{3}]^2 \cup [\frac{1}{3}, \frac{2}{3}] \times [\frac{2}{3}, 1] \cup [\frac{2}{3}, 1] \times [\frac{1}{3}, \frac{2}{3}],\\
-    T_M, & \mbox {jinak.}
-    \end{cases}$$
-
-    \begin{tikzpicture}
-        \begin{axis}[
-            width=7cm,  
-            height=7cm, 
-            xlabel=$x$,
-            ylabel=$y$,
-            domain=0:1,
-            colormap/viridis,
-            view={0}{90}, 
-            legend entries={$\varphi$},
-            legend style={at={(0.5,-0.2)}, anchor=north}
-        ]
-        
-        \addplot[domain=0:0.333, ultra thick, samples=100, blue] {x};
-        \addplot[domain=0.333:0.666, ultra thick, samples=100, blue] {1/3};
-        \addplot[domain=0.666:1, ultra thick, samples=100, blue] {2*x-1};
-        \end{axis}
-    \end{tikzpicture}
-    \begin{tikzpicture}
-        \begin{axis}[
-            width=7cm,  
-            height=7cm, 
-            xlabel=$x$,
-            ylabel=$y$,
-            domain=0:1,
-            colormap/viridis,
-            view={0}{90}, 
-            legend entries={$\varphi^{-1}$},
-            legend style={at={(0.5,-0.2)}, anchor=north}
-        ]
-        
-        \addplot[domain=0:0.333, ultra thick, samples=100, red] {x};
-        \addplot[domain=0.333:1, ultra thick, samples=100, red] {x/2+1/2};
-        \addplot[only marks, mark=*, mark size=3pt, mark options={fill=white}] coordinates {(1/3, 2/3)};
-        \addplot[only marks, mark=*, mark size=3pt, mark options={fill=white}] coordinates {(1/3, 1/3)};
-        \end{axis}
-    \end{tikzpicture}
-    
-\end{example}
-
-$(T_M)_\varphi$ je tedy v konkr\' etn\' ich p\v ripadech t-norma. Jak lze ale jednodu\v se zjistit, ve kter\' ych p\v r\' ipadech t-norma je \v ci nen\' i? V p\v riklad\v e \ref{sub: fi} je nazna\v cen graf funkce $$\varphi(x) = \begin{cases} x, & \mbox {pokud } x \in [0,\frac{1}{3}],
-    \\ \frac{1}{3}, & \mbox {pokud } x \in [\frac{1}{3}, \frac{2}{3}],\\
-    2x - 1, & \mbox {pokud } x \in [\frac{2}{3}, 1],
-    \end{cases}$$ a graf jej\' i inverzn\' i funkce. Pokud by se tento graf rozd\v elil na sekce, kter\' e je pot\v reba samostatn\v e zkoumat - v tomto konkr\' etn\' im p\v r\' ipad\v e na t\v retiny - lze pak jednodu\v se vyjádřit, kter\' a \v cast grafu bude po $ \varphi - transformaci$ t-normou a  kter\' a bude naopak nab\' yvat jin\' ych hodnot.
-    
-\begin{graph}Vizu\' aln\' i rozd\v elen\'i grafu $\varphi$-transformace minimov\' e t-normy\\
-
-\pgfplotsset{every axis/.append style={
-                    axis x line=middle,
-                    axis y line=middle,
-                    axis line style={<->},
-                    xlabel={$x$},
-                    ylabel={$y$},
-                    line width=1pt,},
-                    % line style
-                    cmhplot/.style={color=blue,mark=none},
-                    soldot/.style={color=blue,only marks,mark=*},
-                    holdot/.style={color=blue,fill=white,only marks,mark=*},
-                    % framed
-                    framed/.style={axis background/.style ={draw=gray}},
-                    }
-
-% arrows
-\tikzset{>=stealth}
-
-\begin{tikzpicture} 
-    \begin{axis}[
-            framed,
-            xmin=0,xmax=1,
-            ymin=0,ymax=1,
-            grid=major,
-            xtick={0,0.2,0.4,0.6,0.8,1},
-            ytick={0,0.2,0.4,0.6,0.8,1},
-        ]
-    \addplot[very thick, cmhplot,domain=0:1]{1/3};
-    \addplot[very thick, cmhplot,domain=0:1]{2/3};
-    \addplot+[const plot, blue]
-      coordinates
-        {(1/3, 0) (1/3, 1)};
-    \addplot+[const plot, blue]
-      coordinates
-        {(2/3, 0) (2/3, 1)};
-    %domyslet, jak do grafiku psat
-        
-    \end{axis}
-    
-\end{tikzpicture}
-\end{graph}
-{\color{blue} obrazek nakreslim hned, jak budu mit graficky tablet (25.12), aby to nejak vypadalo}
-Z obrázku je pak zřejmé, že tvoří $\varphi$-transformace jistý patern, který je možný pozorovat. Jednoduše řečeno, pokud je $\varphi$-transformace t-normy taktéž t-norma, graficky vytvořená \clqq L-ka\crqq \space musejí střídat své hodnoty, v tomto případě konkrétně: t-norma | konstanta | t-norma, atd.
 
 \subsection{Konstrukce spojitých archimedovských triangulárních norem}
 
@@ -827,7 +718,7 @@ Ověřit archimedovskou vlastnost lze následovným zp\r usobem:
     Pokud je t-norma spojitá zprava, pak je archimedovská právě, když pro každé $x \in ]0,1[$ platí $T(x,x) < x.$
 \end{sentence}
 
-    Archimedovskou spojitost t-norem lze také definovat pomocí diagonální nerovnosti $$T(x,x) < x, \mbox{ pro } x \in ]0,1[.$$
+    Archimedovskou spojitost t-norem lze pro zprava spojit\'e t-normy také definovat pomocí diagonální nerovnosti $$T(x,x) < x, \mbox{ pro } x \in ]0,1[.$$
 
     Nejd\r uležitější algebraickou vlastností funkcí je monot\' onnost. U t-norem se pak rozlišuje několik r\r uzných typ\r u monot\' onnosti:
     \begin{definition}
@@ -842,8 +733,6 @@ Ověřit archimedovskou vlastnost lze následovným zp\r usobem:
             monot\' onní}, pokud platí:
             $$ \text{pokud} \hskip 3mm  x < x'\hskip 3mm \text{a} \hskip 3mm y<y',
             \hskip 3mm  \text{tak} \hskip 3mm   T(x,y)<T(x',y').$$
-            \item  T-norma $T$ je {\em striktní}, pokud je
-            spojitá a striktně monot\' onní.
             \end{itemize}
     \end{definition}
 
@@ -865,8 +754,12 @@ Ověřit archimedovskou vlastnost lze následovným zp\r usobem:
         T-norma $T$ je {\em nilpotentní}, pokud je spojitá a každé $x
         \in ]0,1[$ je jejím nilpotentním prvkem.
     \end{definition}    
-
-    T-notma $T$ je striktní právě tehdy, když pro každý její aditivní generátor platí $f(0) = +\infty$. Nilpotentní je v momentě, když pro každý její aditivní generátor platí $f(0) < +\infty$. Vztah nilpotentních a striktních t-norem, které jsou archimedovské a spojité, lze pak vyjádřit následovně:
+    \begin{definition}
+    \cite{KMP}
+        T-norma $T$ je {\em striktní}, pokud je
+            spojitá a striktně monot\' onní.
+    \end{definition} 
+    Triangul\'arn\'i norma $T$ je striktní právě tehdy, když pro každý její aditivní generátor platí $f(0) = +\infty$. Nilpotentní je v momentě, když pro každý její aditivní generátor platí $f(0) < +\infty$. Vztah nilpotentních a striktních t-norem, které jsou archimedovské a spojité, lze pak vyjádřit následovně:
     \begin{sentence}\cite{KMP}
         Nech\' t je T spojitá archimedovská t-norma. Potom jsou následující tvrzení ekvivalentní:
         \begin{itemize}
@@ -877,7 +770,7 @@ Ověřit archimedovskou vlastnost lze následovným zp\r usobem:
         \end{itemize}
     \end{sentence}
     Mezi nejtypičtější příklady nilpotentních t-norem patří Łukasiewiczova t-norma a všechny nilpotentní t-normy jsou s ní izomorfní.
-    Výše je tedy objasněno generování triangulárích norem spojitých funkcí, tedy funkcí, ke kterým existují funkce inverzní, a to pomocí aditivního nebo multiplikativního generátoru. V případě nespojitých funkcí je ale potřeba postupovat odlišně, a to výhradně pomocí pseudoinverzních funkcí.
+    Výše je tedy objasněno generování triangulárích norem spojitých funkcí, tedy funkcí, ke kterým existují funkce inverzní, a to pomocí aditivního nebo multiplikativního generátoru. V případě nespojitých funkcí je ale potřeba postupovat odlišně, a to nap\v r\'iklad pomocí pseudoinverzních funkcí.
 
 %Spojité archimedovské t-normy se tedy mohou konstruovat pomocí bijekce. Pro konstrukci nespojitých t-norem, které nemají inverzní funkci na celém intervalu, není použití bijekce vhodné. Místo bijekce se pak využívá zevšeobecnění funkce inverzní, t.j. že se k danému zobrazení $f: A \rightarrow B$ přiřazuje prvk\r um z množiny B prvky množiny A, tedy obraz\r um zobrazení $f$ jejich vzory.%
 
@@ -887,7 +780,7 @@ Jak je tedy možné konstruovat nespojité t-normy? Například funkce $t: [0,1]
     \\ 0, & \mbox {pokud} x = 1,
     \end{cases}$$
     
-    je aditivním generátorem drastického součinu (Ling), což zřejmě znamená, že generátory nespojitých t-norem nemusejí bý nutně bijekce. Z toho d\r uvodu je potřeba zevšeobecnění inverzní funkce.
+    je aditivním generátorem drastického součinu (Ling), což zřejmě znamená, že generátory nespojitých t-norem nemusejí být nutně bijekce. Z toho d\r uvodu je potřeba zevšeobecnění inverzní funkce.
 \begin{example}
 \cite{KMP}
     Nech\v t je  $f_1:[0,1] \rightarrow [0,1]$  dána předpisem:
@@ -941,13 +834,6 @@ Jak je tedy možné konstruovat nespojité t-normy? Například funkce $t: [0,1]
 \end{graph}
 
 
-\begin{example}
-    \cite{Kolo}
-    \label{sec: pseudoinv}
-    Nech\v t je dána funkce $f:[0,1]\rightarrow [0,\infty]$, která je klesající, spojitá a $f(1) = 0.$ Obor hodnot této funkce je interval $[0,f(0)]$, přičemž $f(0) \in \textbf{R}$ nebo $f(0) = \infty$, pokud je funkce $f$ shora neohraničená, t.j. pokud $\lim_{x \to 0^+}f(x) = \infty$. Protože $f$ je klesající, existuje k ní inverzní funkce $f^{(-1)}: [0,f(0)] \rightarrow [0,1].$ Po rozšíření funkce na celý interval $[0,\infty]$ tak, že se všem čísl\r um z intervalu $[f(0),\infty]$ přiřadí hodnota 0, vznikne funkce $$f^{-1}: [0,\infty] \rightarrow [0,1],$$
-    $$f^{(-1)}(u) = f^{(-1)}(min(u,f(0))),$$
-    která se nazývá \textbf{pseudo-inverz} k funkci $f.$\\
-\end{example}
 
     Pro neklesající a nerostoucí funkce je definice pseudoinverzu dána rozdílně.
 \begin{definition}
@@ -961,7 +847,7 @@ Jak je tedy možné konstruovat nespojité t-normy? Například funkce $t: [0,1]
     definována pseudoinverzní funkce $f^{(-1)}$ k dané funkci f.
 \end{definition}
 
-Generátory nespojitých t-norem tedy zřejmě nemusí být bijekce. Na následujícím příkladu je obdobně, jako v Příkladu \ref{sec: pseudoinv} ukázka zevšeobecnění inverzní funkce. 
+Generátory nespojitých t-norem tedy zřejmě nemusí být bijekce. Následující příklad je ukázka zevšeobecnění inverzní funkce. {\color{red} a v tomto priklade strucne a jasne napiste, ako sa to konstruuje.}
 \begin{example}
 \label{sec: funkce}
 \cite{hlinena}
@@ -971,10 +857,10 @@ Generátory nespojitých t-norem tedy zřejmě nemusí být bijekce. Na následu
     \\ \frac 14, & \mbox {pokud $x \in ]\frac 12,\frac 34],$}
     \\ 3.x-2, & \mbox {pokud $x \in ]\frac 34,1]$.}
     \end{cases}$$
-    Funkce $f_2$ není injekce, což znamená, že k ní neexistuje inverzní funkce. Na intervale $[0,\frac 12]$ je funkce $f_2$ spojitá a injektivní, proto na daném oboru hodnot $[f(0),f(\frac 12)]$ je
+    Funkce $f_2$ není injekce, což znamená, že k ní neexistuje inverzní funkce. Na intervalu $[0,\frac 12]$ je funkce $f_2$ spojitá a injektivní, proto na daném oboru hodnot $[f(0),f(\frac 12)]$ je
     funkce $f_2^{(-1)}$ totožná s~inverzní funkcí
     $f_{2/[f(0),f(\frac 12)]}^{-1}.$
-    Potom pro monot\'oní rozšíření inverzní funkce plat\'i
+    Potom pro monot\'onní rozšíření inverzní funkce plat\'i
     $$f_2^{(-1)}(x)= \begin{cases} 2x, & \mbox {pokud $x \in [0,\frac 14],$}
     \\ \frac x3 + \frac 23, & \mbox {pokud $x \in ]\frac 14,1].$}
     \end{cases}$$
@@ -1112,6 +998,109 @@ Pseudoinverzní funkce tedy lze použít i k definici aditivního a multiplikati
     přitom t-norma $T$ je dána předpisem:
     $$T(x,y)=l^{(-1)}(l(x).l(y)).$$
 \end{definition}
+
+
+Lze dále tvořit již dříve zmíněné $\varphi$-transformace s tím, že $\varphi$ není rostoucí bijekce, ale třeba například jakákoliv jiná neklesající funkce, pr\r uběh $\varphi$-transformace minimové t-normy pak vypadá diametrálně odlišně.
+\begin{definition}
+    Nech\v t je $\varphi : [0,1] \rightarrow [0,1]$ neklesající funkce a $T_M: [0,1]^2 \rightarrow [0,1]$ nech\v t je minimová t-norma. 
+    $(T_M)_\varphi : [0,1]^2 \rightarrow [0,1]$ je dána p\v redpisem $$(T_M)_\varphi (x,y)= \begin{cases} min(x,y), & \mbox {pokud } max(x,y) = 1,
+    \\ \varphi_{(-1)}[T_M(\varphi(x), \varphi(y))], & \mbox {jinak.}
+    \end{cases}$$
+\end{definition}
+\begin{example}
+\label{sub: fi}
+    
+    Pokud $$\varphi(x) = \begin{cases} x, & \mbox {pokud } x \in [0,\frac{1}{3}],
+    \\ \frac{1}{3}, & \mbox {pokud } x \in [\frac{1}{3}, \frac{2}{3}],\\
+    2x - 1, & \mbox {pokud } x \in [\frac{2}{3}, 1],
+    \end{cases}$$
+
+    potom $$(T_M)_{\varphi(x)} = \begin{cases} \frac{1}{3}, & \mbox {pokud } (x, y) \in [\frac{1}{3},\frac{2}{3}]^2 \cup [\frac{1}{3}, \frac{2}{3}] \times [\frac{2}{3}, 1] \cup [\frac{2}{3}, 1] \times [\frac{1}{3}, \frac{2}{3}],\\
+    T_M, & \mbox {jinak.}
+    \end{cases}$$
+
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=7cm,  
+            height=7cm, 
+            xlabel=$x$,
+            ylabel=$y$,
+            domain=0:1,
+            colormap/viridis,
+            view={0}{90}, 
+            legend entries={$\varphi$},
+            legend style={at={(0.5,-0.2)}, anchor=north}
+        ]
+        
+        \addplot[domain=0:0.333, ultra thick, samples=100, blue] {x};
+        \addplot[domain=0.333:0.666, ultra thick, samples=100, blue] {1/3};
+        \addplot[domain=0.666:1, ultra thick, samples=100, blue] {2*x-1};
+        \end{axis}
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=7cm,  
+            height=7cm, 
+            xlabel=$x$,
+            ylabel=$y$,
+            domain=0:1,
+            colormap/viridis,
+            view={0}{90}, 
+            legend entries={$\varphi^{-1}$},
+            legend style={at={(0.5,-0.2)}, anchor=north}
+        ]
+        
+        \addplot[domain=0:0.333, ultra thick, samples=100, red] {x};
+        \addplot[domain=0.333:1, ultra thick, samples=100, red] {x/2+1/2};
+        \addplot[only marks, mark=*, mark size=3pt, mark options={fill=white}] coordinates {(1/3, 2/3)};
+        \addplot[only marks, mark=*, mark size=3pt, mark options={fill=red}] coordinates {(1/3, 1/3)};
+        \end{axis}
+    \end{tikzpicture}  
+\end{example}
+
+ V p\v riklad\v e \ref{sub: fi} je nazna\v cen graf funkce $$\varphi(x) = \begin{cases} x, & \mbox {pokud } x \in [0,\frac{1}{3}],
+    \\ \frac{1}{3}, & \mbox {pokud } x \in [\frac{1}{3}, \frac{2}{3}],\\
+    2x - 1, & \mbox {pokud } x \in [\frac{2}{3}, 1],
+    \end{cases}$$ a graf jej\' i inverzn\' i funkce. Pokud by se tento graf rozd\v elil na sekce, kter\' e je pot\v reba samostatn\v e zkoumat - v tomto konkr\' etn\' im p\v r\' ipad\v e na t\v retiny - lze pak jednodu\v se vyjádřit, kter\' a \v cast grafu bude po $ \varphi - $transformaci t-normou a  kter\' a bude naopak nab\' yvat jin\' ych hodnot.
+    
+\begin{graph}Vizu\' aln\' i rozd\v elen\'i grafu $\varphi$-transformace minimov\' e t-normy\\
+
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,
+                    axis y line=middle,
+                    axis line style={<->},
+                    xlabel={$x$},
+                    ylabel={$y$},
+                    line width=1pt,},
+                    % line style
+                    cmhplot/.style={color=blue,mark=none},
+                    soldot/.style={color=blue,only marks,mark=*},
+                    holdot/.style={color=blue,fill=white,only marks,mark=*},
+                    % framed
+                    framed/.style={axis background/.style ={draw=gray}},
+                    }
+
+% arrows
+\tikzset{>=stealth}
+\centering
+\includegraphics[scale=0.8]{template-fig/phi-tnorm.png}
+\end{graph}
+\begin{sentence}
+\cite{smutna}
+ Nech\v t je $\varphi:[0,1]\rightarrow [0,1]$
+neklesající funkce spojitá na otevřeném intervale $]0,1[$.
+Nech\v t je $\{[a_i,b_i]\}_{i\in I}$ množina podinterval\r u
+intervalu $[0,1]$ taková, že $\varphi(x)=c_i$ pro $x\in
+[a_i,b_i]$ (přičemž na intervalu $[0,1]\backslash \bigcup \limits_{i \in I}
+[a_i,b_i]$ je funkce $\varphi$
+rostoucí).
+Pak je operátor $(T_M)_{\varphi}$  t-norma daná předpisem
+$$ (T_M)_{\varphi}(x,y) = \begin{cases} \varphi^{(-1)}(c_i)=a_i, &\mbox {pokud
+$(x,y)\in [a_i,1[\times[a_i,b_i]$ nebo}
+\\ & (x,y)\in [a_i,b_i]\times[b_i,1[,
+\\ T_M(x,y), &\mbox {jinak.}
+\end{cases} $$
+\end{sentence}
 
 \subsection{Fuzzy disjunkce} 
 Fuzzy disjunkce vyjadřuje stejně jako fuzzy konjunkce míru spojení dvou či více prvk\r u. Výsledek fuzzy disjunkce je hodnota $x \in [0,1].$ 
@@ -1263,7 +1252,37 @@ Fuzzy implikace patří mezi nejd\r uležitější fuzzy pojmy a díky takovým 
 Modelov\'an\'i fuzzy implikace je ale o něco složitější, než modelov\'an\'i dříve zmíněných logických spojek. Tyto spojky ale mohou být využity pro modelaci fuzzy implikace. Zřejmě jsou následující logické formule tautologicky ekvivalentní: $$ p\implies q, \mbox{   } \neg p \vee q, \mbox{   } \neg p\vee (p\wedge q) .$$ Lze tedy spojit informace o modelov\'an\'i logických spojek a jejich vzájemných ekvivalentních \' upravách pro tvorbu fuzzy implikátoru. Konstrukce konjunkce lze vyjádřit t-normou, diskunkce t-konormou a negace klasickým negátorem. Vznikne pak výraz:$$I(x,y)=S(N(x),y)\text{ neboli (S,N)-implikátory},$$
 $$I(x,y)=S(N(x),T(x,y)) \text{ neboli Q-implikátory}.$$\\
 
+Dále lze rozlišovat r\r uzné vlastnosti implikátor\r u a dělit je do skupin na základě těchto vlastností.
+\begin{definition}
+\cite{Springer}
+Říká se, že fuzzy implik\'ator $I:[0,1]^2 \rightarrow [0,1]$ spl\v nuje:
+\begin{enumerate}
+\item[(NP)] levý princip neutrality, pokud
+$$I(1,y)=y; ~~~~y \in [0,1],$$
+\item[(EP)] princip z\'aměny, pokud
+$$I(x,I(y,z))=I(y,I(x,z)) \mbox{  pro ka\v zd\'e   } x,y,z \in [0,1],$$
+\item[(IP)] princip identity, pokud
+$$I(x,x) = 1; ~~~ x \in [0,1], $$
+\item[(OP)] vlastnost uspořádání
+$$x \leq y \iff I(x,y) =1; ~~~ x,y \in [0,1],$$
+\item[(CP)] kontrapozitivitu vzhledem na dan\'y neg\'ator $N$, pokud
+$$ I(x,y)=I(N(y),N(x)); ~~~ x,y \in [0,1].$$
+ {\item[(LI)] z\'akon přenosu  vzhledem na  t-normu $T$, pokud
+$$I(T(x, y), z) = I(x, I(y, z)); ~~~ x,y,z \in  [0, 1].$$
+\item[(WLI)]  slab\'y z\'akon přenosu vzhledem na komutativní a
+rostoucí funkci $F:
+[0,1]^2 \to [0, 1]$, pokud
+$$I(F(x, y), z) = I(x, I(y, z)); ~~~  x,y,z \in  [0, 1].$$}
+\end{enumerate}
+\end{definition}
+Ne všechny fuzzy implikátory ale spl\v nují všechny výše uvedené vlastnosti. Např. S-implikátory spl\v nují pouze $(NP)$ a $(EP)$, reziduální implikátor zase spl\v nuje pouze $(NP)$ a $(OP).$
+
 Následující kapitoly se budou nejprve zabývat (S,N)-implikátory a dále budou zmíněny i Q-implikátory a R-implikátory. 
+
+\begin{definition}
+    \cite{Springer}
+    Funkce $I: [0,1]^2 \rightarrow [0,1]$ se nazývá (S,N)-implikace, pokud existuje t-konorma S a fuzzy negace N taková, že $$I(x,y) = S(N(x)y), x \in [0,1].$$
+\end{definition}
 
 \begin{example}
 \cite{Springer}
@@ -1360,116 +1379,42 @@ Na tomto obrázku je možné pozorovat nápadnou podobnost s grafy t-konorem. Fu
 (S,N)-implikátory se tedy tvoří pomocí triangulárních konorem. Lze pak také zkoumat pr\r uběh těchto implikací, pokud je $\varphi : [0,1] \rightarrow [0,1]$ neklesající funkce a nech\v t je $(S_M)_\varphi $ $ \varphi-transformace$ maximové t-konormy, obdobně jako v příkladě \ref{sec: fi-transform}. Obecně platí, že $(S_M)_\varphi = \varphi^{(-1)} (S(\varphi(x), \varphi(y))).$ Zřejmě platí, že pokud je $\varphi : [0,1] \rightarrow [0,1]$ rostoucí bijekce, $I_\varphi = I$ a tento implikátor se nazývá totálně invariantní.
 \begin{example}
 \label{ex: fi-transform conorm}
-    Nech\v t
+    Nech\v t je
     $$\varphi(x) = \begin{cases} x, & \mbox {pokud } x \in [0,\frac{1}{3}],
     \\ \frac{1}{3}, & \mbox {pokud } x \in [\frac{1}{3}, \frac{2}{3}],\\
     2x - 1, & \mbox {pokud } x \in [\frac{2}{3}, 1],
     \end{cases}$$
-    pak lze zkoumat pr\r uběh stejně jako v příkladě \ref{sec: fi-transform}.
- Pokud by se tento graf rozd\v elil na sekce, kter\' e je pot\v reba samostatn\v e zkoumat - v tomto konkr\' etn\' im p\v r\' ipad\v e na t\v retiny - lze pak jednodu\v se vyjárřit, kter\' a \v cast grafu bude po $ \varphi - transformaci$ t-konormou a  kter\' a bude naopak nab\' yvat jin\' ych hodnot.
+    pak lze zkoumat pr\r uběh její $\varphi-transformace$ stejně jako v příkladě \ref{sec: fi-transform}.
+    Platí tedy $$(S_M)_\varphi(x,y) = \begin{cases} \frac{1}{3}, & \mbox {pokud } (x,y) \in [0,\frac{1}{3}[\times[\frac{1}{3},\frac{2}{3}] \cup [\frac{1}{3},\frac{2}{3}]\times[0,\frac{1}{3}[ \cup [\frac{1}{3},\frac{2}{3}]^2,
+    \\ S_M, & \mbox {jinak. }
+    \end{cases}$$
     \begin{graph}Vizu\' aln\' i rozd\v elen\'i grafu $\varphi$-transformace maximové t-konormy\\
     \label{graph: max-conorm}
 
-\pgfplotsset{every axis/.append style={
-                    axis x line=middle,
-                    axis y line=middle,
-                    axis line style={<->},
-                    xlabel={$x$},
-                    ylabel={$y$},
-                    line width=1pt,},
-                    % line style
-                    cmhplot/.style={color=blue,mark=none},
-                    soldot/.style={color=blue,only marks,mark=*},
-                    holdot/.style={color=blue,fill=white,only marks,mark=*},
-                    % framed
-                    framed/.style={axis background/.style ={draw=gray}},
-                    }
-
-% arrows
-\tikzset{>=stealth}
-
-\begin{tikzpicture} 
-    \begin{axis}[
-            framed,
-            xmin=0,xmax=1,
-            ymin=0,ymax=1,
-            grid=major,
-            xtick={0,0.2,0.4,0.6,0.8,1},
-            ytick={0,0.2,0.4,0.6,0.8,1},
-        ]
-    \addplot[very thick, cmhplot,domain=0:1]{1/3};
-    \addplot[very thick, cmhplot,domain=0:1]{2/3};
-    \addplot+[const plot, blue]
-      coordinates
-        {(1/3, 0) (1/3, 1)};
-    \addplot+[const plot, blue]
-      coordinates
-        {(2/3, 0) (2/3, 1)};
-    %domyslet, jak do grafiku psat
-        
-    \end{axis}
-    
-\end{tikzpicture}
+\centering
+\includegraphics[scale=0.8]{template-fig/phi-t-conorm.png}
 \end{graph}
 \end{example}
     
 
-{\color{blue} obrazek nakreslim hned, jak budu mit graficky tablet (25.12), aby to nejak vypadalo}\\
 
 Z $\varphi-transformace$ maximových t-konorem lze konstruovat (S,N)-implikátory.
 \begin{example}
     Nech\v t je $(S_M)_\varphi $ $ \varphi-$transformací maximové t-konormy z příkladu \ref{ex: fi-transform conorm} a N(x) je klasický Zadeh\r uv negátor. Pak bude konstruovaná (S,N)-implikace vypadat následovně: $$I_{S_{M_\varphi}} = S_\varphi(1-x, y).$$
     Pak po rozdělení grafu na jednotlivé oddíly podle chování funkce (obdobně jako na obrázku \ref{graph: max-conorm}) lze jednotlivě zkoumat pr\r uběh implikace tak, že se pro každý oddíl určí definiční obor a obor hodnot. Pr\r uběh funkce (a vlastně i interval na kterém se funkce pohybuje) se po dosazení do předpisu požadované implikace změní oproti p\r uvodní funkci. Konečný pr\r uběh $I_{S_{M_\varphi}}$ za užití klasického negátoru pak bude vypadat následovně.
-    \begin{graph}{\color{blue}opět bude dokresleno - obrácená L-ka max/1/3/max}\\
-
-\pgfplotsset{every axis/.append style={
-                    axis x line=middle,
-                    axis y line=middle,
-                    axis line style={<->},
-                    xlabel={$x$},
-                    ylabel={$y$},
-                    line width=1pt,},
-                    % line style
-                    cmhplot/.style={color=blue,mark=none},
-                    soldot/.style={color=blue,only marks,mark=*},
-                    holdot/.style={color=blue,fill=white,only marks,mark=*},
-                    % framed
-                    framed/.style={axis background/.style ={draw=gray}},
-                    }
-
-% arrows
-\tikzset{>=stealth}
-
-\begin{tikzpicture} 
-    \begin{axis}[
-            framed,
-            xmin=0,xmax=1,
-            ymin=0,ymax=1,
-            grid=major,
-            xtick={0,0.2,0.4,0.6,0.8,1},
-            ytick={0,0.2,0.4,0.6,0.8,1},
-        ]
-    \addplot[very thick, cmhplot,domain=0:1]{1/3};
-    \addplot[very thick, cmhplot,domain=0:1]{2/3};
-    \addplot+[const plot, blue]
-      coordinates
-        {(1/3, 0) (1/3, 1)};
-    \addplot+[const plot, blue]
-      coordinates
-        {(2/3, 0) (2/3, 1)};
-    %domyslet, jak do grafiku psat
-        
-    \end{axis}
-    
-\end{tikzpicture}
-\end{graph}
+    {\color{red} Skuste si pozriet ten moj clanok o transformacii t-noriem a ten popis vzniku tohto implikatora skuste napisat menej vagne a viac matematicky a skuste vzhladom k vseobecne zadanej funkci phi, napisat ako bude vyzerat implikator, ktory dostanete z transformovanej konormy. A teda zrejme toto je pripad, ak $N(x)=1-x$, takze by to chcelo aspon jeden dalsi negator.}
+    \begin{graph} Vizu\' aln\' i rozd\v elen\'i grafu $\varphi$-transformace (S,N)-implikace tvořené maximovou t-konormou\\
+        \centering
+        \includegraphics[scale=0.8]{template-fig/phi-impli.png}
+    \end{graph}
 
 \end{example}
 
-
-{\color{blue} dopsat o q-implikatorech uvod (91)}
-
-
+Dále je nutné popsat již dříve zmíněné Q-implikátory.
+\begin{definition}
+    \cite{Springer}
+    Funkce $I: [0,1]^2 \rightarrow [0,1]$ se nazývá Q-implikace, pokud existuje t-norma T, t-konorma S a fuzzy negace N taková, že $$I(x,y) = S(N(x),T(x,y)), x \in [0,1].$$
+\end{definition}
 Mezi nejznámější Q-implikátor patří tzv. Zadeh\r uv implikátor, který staví na minimové t-normě $T_M,$ minimové t-konormě $S_M$ a Zadehově negaci $N_S$. Jeho předpis by pak vypadal následovně $$I_Z(x,y) = max(1-x, min(x,y)).$$ Podobně pak lze tvořit i další implikátory, které budou stavět na předchozích negátorech, t-normách a t-konormách. Implikátor $I_P$ je tvořen součinovou t-normou $T_P,$ pravděpodobnostním součtem $S_P,$ negací $N_S$ a má předpis $$I_P(x,y) = 1-x+x^2y.$$  Po použití Łukasiewiczovy t-normy $T_L,$ Łukasiewiczovy t-konormy $S_L,$ a negátoru $N_S$ bude výsledkem klasický S-implikátor s předpisem $$I_L(x,y) = max(1-x, y).$$ V neposlední řadě stojí za zmínku implikátor $I_D,$ který sestává z drastického součinu $T_D,$ drastického součtu $S_D,$ negátoru $N_S$ a vypadá následovně $$I_D(x,y) = \begin{cases}  y, & \mbox{pokud } x = 1,\\
                 1 - x, &  jinak.  \end{cases}$$\\ 
 Podobným zp\r usobem je samozřejmě možné tvořit nekonečné množství implikací s r\r uznými předpisy, které se budou měnit na základě kombinací t-norem, t-konorem a negátor\r u. Pro lepší pochopení spojitostí jsou níže vykresleny grafy uvedených implikací.
@@ -1622,86 +1567,23 @@ Ve vícehodnotové logice na rozdíl od bivalentní logiky nemusí platit tvrzen
         \end{axis}
     \end{tikzpicture}
 \end{graph}
-Je zřejmé, že R-implikátor $R_{T_L}$ a (S,N)-implikátor $I_{S_L}$ jsou totožné. Tuto funkci ve své práci zmi\v nuje Łukasiewicz, a proto je po něm také pojmenována.\\
-{\color{blue}udelat transformaci pomoci T M fi a menit negatory + pridat jeste jeden R-implikator}
+
+
 
 Konstrukce R-implikátor\r u pomocí $\varphi-$transformace minimové t-normy pak bude vypadat obdobně jako konstrukce (S,N)-implikací pomocí $\varphi-$ transformace maximové t-konormy.
 \begin{example}
     R-implikace generovaná z minimové t-notmy $T_M$ má předpis $$ R_{T_M}(x,y)=\begin{cases} 1, &\mbox {pokud $x\leq y$,} \\y, &\mbox{jinak,} \end{cases}. $$
     Po provedení $\varphi-$transformace této t-normy v případě, že je $\varphi : [0,1] \rightarrow [0,1]$ neklesající funkce, se pr\r uběh této R-implikace výrazně změní. Na následujícím obrázku je znázorněn její pr\r uběh.
     
-    \begin{graph}Lka ted budou jakoby o 90 stupnu obracena \\
-
-\pgfplotsset{every axis/.append style={
-                    axis x line=middle,
-                    axis y line=middle,
-                    axis line style={<->},
-                    xlabel={$x$},
-                    ylabel={$y$},
-                    line width=1pt,},
-                    % line style
-                    cmhplot/.style={color=blue,mark=none},
-                    soldot/.style={color=blue,only marks,mark=*},
-                    holdot/.style={color=blue,fill=white,only marks,mark=*},
-                    % framed
-                    framed/.style={axis background/.style ={draw=gray}},
-                    }
-
-% arrows
-\tikzset{>=stealth}
-
-\begin{tikzpicture} 
-    \begin{axis}[
-            framed,
-            xmin=0,xmax=1,
-            ymin=0,ymax=1,
-            grid=major,
-            xtick={0,0.2,0.4,0.6,0.8,1},
-            ytick={0,0.2,0.4,0.6,0.8,1},
-        ]
-    \addplot[very thick, cmhplot,domain=0:1]{1/3};
-    \addplot[very thick, cmhplot,domain=0:1]{2/3};
-    \addplot+[const plot, blue]
-      coordinates
-        {(1/3, 0) (1/3, 1)};
-    \addplot+[const plot, blue]
-      coordinates
-        {(2/3, 0) (2/3, 1)};
-    %domyslet, jak do grafiku psat
-        
-    \end{axis}
-    
-\end{tikzpicture}
-\end{graph}
+    \begin{graph}Vizu\' aln\' i rozd\v elen\'i grafu $\varphi$-transformace R-implikace za využití maximové t-konormy.\\ \\
+        \centering
+        \includegraphics[scale=0.8]{template-fig/phi-Rimpli.png}
+    \end{graph}
 
 \end{example}
 
 
-Dále lze rozlišovat r\r uzné vlastnosti implikátor\r u a dělit je do skupin na základě těchto vlastností.
 
-\begin{definition}
-\cite{Springer}
-Říká se, že fuzzy implik\'ator $I:[0,1]^2 \rightarrow [0,1]$ spl\v nuje:
-\begin{enumerate}
-\item[(NP)] levý princip neutrality, pokud
-$$I(1,y)=y; ~~~~y \in [0,1],$$
-\item[(EP)] princip z\'aměny, pokud
-$$I(x,I(y,z))=I(y,I(x,z)) \mbox{  pro ka\v zd\'e   } x,y,z \in [0,1],$$
-\item[(IP)] princip identity, pokud
-$$I(x,x) = 1; ~~~ x \in [0,1], $$
-\item[(OP)] vlastnost uspořádání
-$$x \leq y \iff I(x,y) =1; ~~~ x,y \in [0,1],$$
-\item[(CP)] kontrapozitivitu vzhledem na dan\'y neg\'ator $N$, pokud
-$$ I(x,y)=I(N(y),N(x)); ~~~ x,y \in [0,1].$$
- {\item[(LI)] z\'akon přenosu  vzhledem na  t-normu $T$, pokud
-$$I(T(x, y), z) = I(x, I(y, z)); ~~~ x,y,z \in  [0, 1].$$
-\item[(WLI)]  slab\'y z\'akon přenosu vzhledem na komutativní a
-rostoucí funkci $F:
-[0,1]^2 \to [0, 1]$, pokud
-$$I(F(x, y), z) = I(x, I(y, z)); ~~~  x,y,z \in  [0, 1].$$}
-\end{enumerate}
-\end{definition}
-Ne všechny fuzzy implikátory ale spl\v nují všechny výše uvedené vlastnosti. Např. S-implikátory spl\v nují pouze $(NP)$ a $(EP)$, reziduální implikátor zase spl\v nuje pouze $(NP)$ a $(OP).$
 \subsection{Konstrukce fuzzy implikátor\r u}
 
 Většina implikátor\r u je ve fuzzy logice modelována pomocí t-norem. Konstrukce nových t-norem, tedy nových konjunktor\r u, je naznačena v předchozích kapitolách. Při konstruování implikátor\r u lze použít podobný postup.
