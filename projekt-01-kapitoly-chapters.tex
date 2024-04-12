@@ -43,7 +43,7 @@ Nech\v t je např. vypsáno výběrové řízení modelingové agentury s požad
 
     čímž by došlo k paradoxu, že člověk který má 179,9 centimetr\r u je považován za nízkého a člověk se 180 centimetry za vysokého.
 
-    Takový problém je zp\r usoben tím, že byla výška modelována jako vlastnost, kterou m\r uže mít člověk pouze v nulové míře nebo na 100 \%. Za určitě vysokého člověka byl považován někdo se 180 centimetry, 175 centimetr\r u vysoký člověk byl podle stejného přístupu určitě n\'izk\'y. Přičemž 175 centimetr\r u vysoký člověk je běžně považován do určité míry za vysokého. Přesně z toho d\r uvodu se zavedl pojem \textit{fuzzy množina}, která náleží tzv. \textit{univerzu}, které vyjadřuje množinu všech možných hodnot, kterých může množina nabývat. 
+    Takový problém je zp\r usoben tím, že byla výška modelována jako vlastnost, kterou m\r uže mít člověk pouze v nulové míře nebo na 100 \%. Za určitě vysokého člověka byl považován někdo se 180 centimetry, 175 centimetr\r u vysoký člověk byl podle stejného přístupu určitě n\'izk\'y. Přičemž 175 centimetr\r u vysoký člověk je běžně považován do určité míry za vysokého. Přesně z toho d\r uvodu se zavedl pojem \textit{fuzzy množina}, která je podmno\v zinou tzv. \textit{univerza}, které p\v redstavuje základní prostor. 
     
     \begin{definition}
     \cite{navara}
@@ -54,7 +54,7 @@ Nech\v t je např. vypsáno výběrové řízení modelingové agentury s požad
    
     Funkce příslušnosti umož\v nuje vyjádřit částečnou příslušnost k množinám na intervalu [0,1], tedy jak moc lze označit pojem za \clqq pravdu\crqq \space či \clqq nepravdu\crqq. Díky čemuž se pak dají matematicky vyjádřit vágní pojmy jako \clqq docela dost\crqq, \clqq málo\crqq \space nebo \clqq mnoho\crqq \space apod.
 
-     Pokud by se v předchozím zmíněném výběru modelingové agentury označila výška 180 centimetr\r u stupněm vlastnosti \clqq vysoký\crqq \space 1, pak je možné přiřadit výšce 175 cemtimetr\r u například stupe\v n 0,85. Když je každému prvku $x$ ze základního prostoru výšky [0, $250$[ centimetr\r u přiřazeno číslo z intervalu [0,1], které vyjadřuje míru, ve které je člověk mající výšku $x$ vysoký, lze pak získat funkci, která kompletně charakterizuje pojem vysoký člověk: $\mu_V: X \to [0,1]$, kde $X = [0, 250[$ vyjadřuje základní prostor, neboli univerzum. Takovou funkcí je např. funkce $\mu_V:  [0, \infty[ \rightarrow [0,1]$, 
+     Pokud by se v předchozím zmíněném výběru modelingové agentury označila výška 180 centimetr\r u stupněm vlastnosti \clqq vysoký\crqq \space 1, pak je možné přiřadit výšce 175 cemtimetr\r u například stupe\v n 0,85. Když je každému prvku $x$ ze základního prostoru výšky [0, $250$[ centimetr\r u přiřazeno číslo z intervalu [0,1], které vyjadřuje míru, ve které je člověk mající výšku $x$ vysoký, lze pak získat funkci, která kompletně charakterizuje pojem vysoký člověk: $\mu_V: X \to [0,1]$, kde $X = [0, 250[$ vyjadřuje základní prostor, neboli univerzum. Takovou funkcí je např. funkce $\mu_V:  [0, 250[ \rightarrow [0,1]$, 
 
     $$\mu_V(x)=\begin{cases} 1, & \mbox{pokud }  180\leq x \leq 250,\\ 
     \frac{x}{20} - 8, & \mbox{pokud } 160 \leq x < 180,\\
@@ -144,7 +144,7 @@ Pro hodnoty $0$ a $1$ se fuzzy negace shoduje s klasickou negac\'i.
 
     \begin{definition}
     \cite{Kolo}
-        Kdy\v z je $N: [0,1] \to [0,1]$ klesající a spojitá fuzzy negace, \v uvádí se, \v ze $N$ je striktní negace.
+        Kdy\v z je $N: [0,1] \to [0,1]$ klesající a spojitá fuzzy negace, nazývá se striktní negace.
         Striktn\'i fuzzy negace, kter\'a je involutivní, tedy, pro kterou plat\'i $N(N(x)) = x $ pro každé $ x \in [0,1]$, se nazývá silná fuzzy negace.
     \end{definition}
 
@@ -183,7 +183,7 @@ Základní vlastnosti fuzzy konjunkcí jsou:
     \item \textbf{Kontinuita hodnot:}\\
     Fuzzy konjunkce nepracuje jenom s  ostrými hodnotami „pravda“ a „nepravda“, ale na stupni neurčitosti či specifickým číselném zápisu, který reflektuje stupeň pravdivosti.
     \item \textbf{Monotonie:}\\
-    Fuzzy konjunkce je monotonní operace, což znamená, že s rostoucími vstupními hodnotami rostou i výsledky jejich konjunkce.
+    Fuzzy konjunkce je monot\'onní operace, což znamená, že s rostoucími vstupními hodnotami rostou i výsledky jejich konjunkce.
 \end{enumerate}
 \begin{definition}
     \cite{KMP}
@@ -201,7 +201,7 @@ Základní vlastnosti fuzzy konjunkcí jsou:
 Jak již bylo zmíněno, fuzzy konjunkce mohou být modelov\' any pomocí triangulárních norem, zjednodušeně t-norem. 
 \begin{definition}
 \cite{KMP}
-    Triangulární norma je binární operace na jednotkovém intervale [0,1], t.j. funkce $T: [0,1]^2 \rightarrow [0,1]$ taková, že pro každé $x, y, z \in [0,1]$ jsou splněné následující axiomy:
+    Triangulární norma je binární operace na jednotkovém intervalu [0,1], t.j. funkce $T: [0,1]^2 \rightarrow [0,1]$ taková, že pro každé $x, y, z \in [0,1]$ jsou splněné následující axiomy:
     \begin{enumerate}
         \item \textbf{Komutativnost:} $T(x,y) = T(y,x)$,
         \item \textbf{Asociativita:} $T(x, T(y, z)) = T(T(x, y), z)$,
@@ -210,7 +210,7 @@ Jak již bylo zmíněno, fuzzy konjunkce mohou být modelov\' any pomocí triang
     \end{enumerate}
 \end{definition}
 
-\begin{example} N\'asleduj\'ic\'i funkce vždy spl\v nují 3 ze 4  axiom\r u, což ukazuje, že jsou na sobě axiomy nez\' avislé, a tedy funkce není t-normou, pokud nespl\v nuje všechny čtyři axiomy..\\ 
+\begin{example} N\'asleduj\'ic\'i funkce vždy spl\v nují 3 ze 4  axiom\r u, což ukazuje, že jsou na sobě axiomy nez\' avislé, a tedy funkce není t-normou, pokud nespl\v nuje všechny čtyři axiomy.\\ 
     Funkce $F_1 : [0, 1]^2 \to [0, 1]$ daná přepisem
     $$F_1(x,y) = x,$$
     spl\v nuje axiomy 2., 3., 4., ale nespl\v nuje axiom 1.
@@ -265,7 +265,7 @@ Mezi základní triangulární normy se řadí minimová, součinová, Łukasiew
     \begin{itemize}
         \item Pokud pro t-normy $T_1$ a $T_2$ je
         pro každý bod $(x,y) \in [0,1]^2$ splněná nerovnost\\
-        $T_1(x,y)\leq ~T_2(x,y),$ znamená to, že $T_1$ je slabší než $T_2$,
+        $T_1(x,y)\leq ~T_2(x,y),$ hovo\v ríme, že $T_1$ je slabší než $T_2$,
         nebo $T_2$ je silnější než $T_1$ a píšeme $T_1\leq T_2$.
         \item  Pokud pro t-normy $T_1$ a $T_2$ platí, že $T_1 \leq T_2$ a
         $T_1 \ne T_2,$ t.j. pokud $T_1 \leq T_2$, ale $T_1(x_0,y_0) <
@@ -305,7 +305,8 @@ Existuje nekone\v cn\v e mnoho t-norem, dokonce pak i cel\'e t\v r\'idy parametr
 Každou \' usečku délky $b$ lze pokrýt nějakým počtem \' useček délky $a > 0.$ Tato věta lze vyjádřit i jinak: pro dvě libovolná kladná a reálná čísla $a,b$ existuje přirozené číslo $n$ takové, že $a*n>b,$ což je archimedovská vlastnost reálné osy vzhledem ke sčítání. Velmi podobně je definována i archimedovská vlastnost pro násobení. Pro t-normy je pak archimedovská vlastnost definována následovně:
 \begin{definition}
 \cite{KMP}
-    T-norma je archimedovská, pokud pro všechny body $(x,y) \in ]0,1[^2$ existuje $n \in N$ takové, že $$x_T^{(n)} < y.$$
+    T-norma je archimedovská, pokud pro všechny body $(x,y) \in ]0,1[^2$ existuje $n \in N$ takové, že $$x_T^{(n)} < y,$$
+    p\v ri\v cem\v z $x^{(n)}_T=$
 \end{definition}
 Ověřit archimedovskou vlastnost lze následovným zp\r usobem:
 \begin{sentence} \cite{KMP}
@@ -316,7 +317,7 @@ Ověřit archimedovskou vlastnost lze následovným zp\r usobem:
     Pokud je t-norma spojitá zprava, pak je archimedovská právě, když pro každé $x \in ]0,1[$ platí $T(x,x) < x.$
 \end{sentence}
 
-    Archimedovskou vlastnost t-norem lze pro zprava spojit\'e t-normy také definovat pomocí diagonální nerovnosti $$T(x,x) < x, \mbox{ pro } x \in ]0,1[.$$
+    Díky p\v redchozí v\v et\v e lze  archimedovskou vlastnost t-norem pro zprava spojit\'e t-normy také definovat pomocí diagonální nerovnosti $$T(x,x) < x, \mbox{ pro } x \in ]0,1[.$$
 
     Nejd\r uležitější algebraickou vlastností funkcí je monot\' onnost. U t-norem se pak rozlišuje několik r\r uzných typ\r u monot\' onnosti:
     \begin{definition}
@@ -413,7 +414,7 @@ V t\'eto pr\'aci se v\v enuji tak\'e konstrukc\'im t-norem. Triangul\'arn\'i nor
 \end{itemize}
 
 \begin{remark}
-    Triangul\'arn\'i norma $T$ je striktní právě tehdy, když pro každý její aditivní generátor platí $f(0) = +\infty$. Nilpotentní je v momentě, když pro každý její aditivní generátor platí $f(0) < +\infty$.
+    Triangul\'arn\'i norma $T$ je striktní právě tehdy, když pro její aditivní generátor platí $f(0) = +\infty$. Nilpotentní je v momentě, když pro  její aditivní generátor platí $f(0) < +\infty$.
 \end{remark}
 \subsection{Pseudoinverzn\'i funkce}
 
@@ -542,7 +543,7 @@ Na Obrázku \ref{sec: inverz} lze zřejmě pozorovat následující situaci: $$f
 
 
 \subsection{Fuzzy disjunkce} 
-Fuzzy disjunkce vyjadřuje stejně jako fuzzy konjunkce míru spojení dvou či více prvk\r u. Výsledek fuzzy disjunkce je hodnota $x \in [0,1].$ 
+Fuzzy disjunkce vyjadřuje, stejně jako fuzzy konjunkce, míru spojení dvou či více prvk\r u. Výsledek fuzzy disjunkce je hodnota $x \in [0,1].$ 
 Základní vlastnosti fuzzy disjunkcí jsou:
 \begin{enumerate}
     \item \textbf{Soudržnost:}\\
@@ -579,7 +580,7 @@ Triangulární konormy (zkráceně t-konormy) a t-normy jsou du\'aln\'i funkce:
 
 \begin{sentence}
     \cite{Springer}
-    Pokud je $T$ t-norma, tak její duální t-konorma $S: [0,1]^2 \rightarrow [0,1]$ je dána předpisem $$S(x,y) = 1 - T(1-x, 1-y).$$
+    Pokud je $T:[0,1]^2\to [0,1]$ t-norma, tak její duální t-konorma $S: [0,1]^2 \rightarrow [0,1]$ je dána předpisem $$S(x,y) = 1 - T(1-x, 1-y).$$
 \end{sentence}
 
 
@@ -603,7 +604,7 @@ Mezi základní triangulární konormy se obdobně (ale komplementárně) jako u
 
    \begin{figure}[H]
                 \hspace{-1cm}
-                \includegraphics[scale=0.7]{template-fig/konormy.pdf}
+                \includegraphics[scale=0.5]{template-fig/konormy.pdf}
                 \centering
             \end{figure}
 
@@ -624,7 +625,7 @@ Fuzzy implikace patří mezi nejd\r uležitější fuzzy pojmy a díky takovým 
     \end{itemize}
 \end{definition}
 
-Modelov\'an\'i fuzzy implikace je ale o něco složitější, než modelov\'an\'i dříve zmíněných logických spojek. Tyto spojky ale mohou být využity pro konstrukci fuzzy implikace. Zřejmě jsou následující logické formule tautologicky ekvivalentní: $$ p\implies q, \mbox{   } \neg p \vee q, \mbox{   } \neg p\vee (p\wedge q) .$$ Lze tedy spojit informace o modelov\'an\'i logických spojek a jejich vzájemných ekvivalentních \' upravách pro tvorbu fuzzy implikátoru. Konstrukce konjunkce lze vyjádřit t-normou, diskunkce t-konormou a negace standardn\'im negátorem. Vzniknou pak n\'asleduj\'ic\'i p\v redpisy:
+Modelov\'an\'i fuzzy implikace je ale o něco složitější, než modelov\'an\'i dříve zmíněných logických spojek. Tyto spojky ale mohou být využity pro konstrukci fuzzy implikace. Zřejmě jsou následující logické formule tautologicky ekvivalentní: $$ p\implies q, \mbox{   } \neg p \vee q, \mbox{   } \neg p\vee (p\wedge q) .$$ Lze tedy spojit informace o modelov\'an\'i p\v redchozích logických spojek a jejich vzájemných ekvivalentních \' upravách pro tvorbu fuzzy implikátoru. Konstrukce konjunkce lze vyjádřit t-normou, diskunkce t-konormou a negace standardn\'im negátorem. Vzniknou pak n\'asleduj\'ic\'i p\v redpisy:
 $$I(x,y)=S(N(x),y)\text{ neboli (S,N)-implikátory},$$
 $$I(x,y)=S(N(x),T(x,y)) \text{ neboli Q-implikátory}.$$
 
@@ -660,7 +661,7 @@ Pro představu jsou níže představeny grafy implikátorů $I_{S_M}, I_{S_P}, I
             \end{figure}
 
 \end{graph}
-Na tomto obrázku je možné pozorovat nápadnou podobnost s grafy t-konorem. Funkce se zdají být otočeny o 90 ° doleva, což jen dokazuje použití klasick\' eho negátoru ku základním t-konormám. 
+Na tomto obrázku je možné pozorovat nápadnou podobnost s grafy t-konorem. Funkce jsou otočeny o 90 ° doleva, což jen dokazuje použití klasick\' eho negátoru ku základním t-konormám. 
 
 
 Dále je nutné popsat již dříve zmíněné Q-implikátory.
@@ -668,22 +669,22 @@ Dále je nutné popsat již dříve zmíněné Q-implikátory.
     \cite{Springer}
     Funkce $I: [0,1]^2 \rightarrow [0,1]$ se nazývá Q-implikace, pokud existuje t-norma T, t-konorma S a fuzzy negace N taková, že $$I(x,y) = S(N(x),T(x,y)), x \in [0,1].$$
 \end{definition}
-Mezi nejznámější Q-implikátor patří tzv. Zadeh\r uv implikátor, který staví na minimové t-normě $T_M,$ maximové t-konormě $S_M$ a Zadehově negaci $N_S$. Jeho předpis by pak vypadal následovně $$I_Z(x,y) = max(1-x, min(x,y)).$$ Podobně pak lze tvořit i další implikátory, které budou stavět na předchozích negátorech, t-normách a t-konormách. Implikátor $I_P$ je tvořen součinovou t-normou $T_P,$ pravděpodobnostním součtem $S_P,$ negací $N_S$ a má předpis $$I_P(x,y) = 1-x+x^2y.$$  Po použití Łukasiewiczovy t-normy $T_L,$ Łukasiewiczovy t-konormy $S_L,$ a negátoru $N_S$ bude výsledkem klasický S-implikátor s předpisem $$I_L(x,y) = max(1-x, y).$$ V neposlední řadě stojí za zmínku implikátor $I_D,$ který sestává z drastického součinu $T_D,$ drastického součtu $S_D,$ negátoru $N_S$ a vypadá následovně $$I_D(x,y) = \begin{cases}  y, & \mbox{pokud } x = 1,\\
+Mezi nejznámější Q-implikátor patří tzv. Zadeh\r uv implikátor, který staví na minimové t-normě $T_M,$ maximové t-konormě $S_M$ a Zadehově negaci $N_S$. Jeho předpis pak vypadá následovně $$I_Z(x,y) = max(1-x, min(x,y)).$$ Podobně pak lze tvořit i další implikátory, které budou stavět na předchozích negátorech, t-normách a t-konormách. Implikátor $I_P$ je tvořen součinovou t-normou $T_P,$ pravděpodobnostním součtem $S_P,$ negací $N_S$ a má předpis $$I_P(x,y) = 1-x+x^2y.$$  Po použití Łukasiewiczovy t-normy $T_L,$ Łukasiewiczovy t-konormy $S_L,$ a negátoru $N_S$ bude výsledkem klasický S-implikátor s předpisem $$I_L(x,y) = max(1-x, y).$$ V neposlední řadě stojí za zmínku implikátor $I_D,$ který sestává z drastického součinu $T_D,$ drastického součtu $S_D,$ negátoru $N_S$ a vypadá následovně $$I_D(x,y) = \begin{cases}  y, & \mbox{pokud } x = 1,\\
                 1 - x, &  jinak.  \end{cases}$$\\ 
-Podobným zp\r usobem je samozřejmě možné tvořit nekonečné množství implikací s r\r uznými předpisy, které se budou měnit na základě kombinací t-norem, t-konorem a negátor\r u. Pro lepší pochopení spojitostí jsou níže vykresleny grafy uvedených implikací.
+Podobným zp\r usobem je samozřejmě možné tvořit nekonečné množství implikací s r\r uznými předpisy, které se budou měnit na základě kombinací t-norem, t-konorem a negátor\r u. Pro lepší pochopení jsou níže vykresleny grafy uvedených implikací.
 \begin{graph}Implikátory $I_Z, I_P, I_L, I_D.$
 \begin{figure}[H]
                 \hspace{-1cm}
-                \includegraphics[scale=0.7]{template-fig/impl3.pdf}
+                \includegraphics[scale=0.5]{template-fig/impl3.pdf}
                 \centering
             \end{figure}
     
 \end{graph}
 
-Mezi nejpoužívanější rozšíření klasické implikace na interval $[0,1]$ je \textit{reziduální operátor} $R_T$ pro danou zleva-spojitou t-normu $T$, také označován jako R-implikátor: $$ R_T(x,y)=\sup(z \in [0,1]; T(x,z) \leq y).$$
+Mezi nejpoužívanější rozšíření klasické implikace na interval $[0,1]$ je \textit{reziduální operátor} $R_T$ pro danou zleva-spojitou t-normu $T$, také označován jako $R-$implikátor: $$ R_T(x,y)=\sup(z \in [0,1]; T(x,z) \leq y).$$
 
 V následujícím příkladu jsou rezidu\'aln\'i implik\'atry odvozen\'e ze zn\'am\'ych zleva spojit\'ych t-norem:
-\begin{example} Pro zleva spojité t-normy $T_M, T_P$ a $T_L$ pak mohou vzniknout následující reziduální implikátory:
+\begin{example} Pro zleva spojité t-normy $T_M, T_P$ a $T_L$ pak dostáváme  následující reziduální implikátory:
     \cite{Springer}\\
      $$ R_{T_M}(x,y)=\begin{cases} 1, &\mbox {pokud $x\leq y$,} \\y, &\mbox{jinak,} \end{cases} $$
     (Göddel\r uv implik\' ator)
@@ -732,7 +733,7 @@ $$I(F(x, y), z) = I(x, I(y, z)); ~~~  x,y,z \in  [0, 1].$$}
 \end{definition}
 
 \begin{remark}
-    Bylo dok\'az\'ano, \v ze nap\v r. (S,N)-implikátory spl\v nují pouze $(NP)$ a $(EP)$, reziduální implikátor zase spl\v nuje pouze $(NP)$ a $(OP).$
+    Bylo dok\'az\'ano, \v ze nap\v r. (S,N)-implikátory spl\v nují v\v zdy $(NP)$ a $(EP)$, reziduální implikátor zase spl\v nuje v\v zdy $(NP)$ a $(OP).$
 \end{remark}
 
 \subsection{Konstrukce fuzzy implikátor\r u}
@@ -892,26 +893,35 @@ A na z\'av\v er uvedeme zp\r usob konstrukce, s kter\'ym jsme se potkali p\v ri 
 
 \section{Konstrukce fuzzy logick\'ych spojek}
 
-V další kapitole se věnuji konstrukci fuzzy logických spojek pomocí funkcí jedné proměnné již existujících spojek. Dále tyto poznatky využívám při analýze lidského vyjadřování v běžném jazyce a při konstrukci fuzzy logických spojek na něm založených.
+V této kapitole se věnuji konstrukci fuzzy logických spojek pomocí funkcí jedné proměnné a již existujících spojek. Dále tyto poznatky využívám při analýze lidského vyjadřování v běžném jazyce a při konstrukci fuzzy logických spojek na něm založených.
 
 \subsection{$\varphi-$transformace triangulárních norem a konorem}
 
-V t\'eto \v c\'asti se budeme v\v enovat zobecn\v en\'i $\varphi-$transformaci t-norem, konkr\'etn\v e $\varphi-$transformaci $T_M.$ Zobecn\v nen\'i bude spo\v c\'ivat v tom, \v ze funkce $\varphi$ nebude rostouc\'i bijekce, bude to jenom neklesaj\'ici funkce, proto zde tak\'e vyu\v zijeme zobecn\v en\'i inverzn\'i funkce. 
-\begin{sentence}\cite{KMP}\label{subnorma}{ \color{blue}nebo výrok?}
+Následující část se věnuje zobecn\v en\'i $\varphi-$transformaci t-norem, konkr\'etn\v e $\varphi-$transformaci $T_M.$ Zobecn\v en\'i bude spo\v c\'ivat v tom, \v ze funkce $\varphi$ nebude rostouc\'i bijekce, bude to jenom neklesaj\'ici funkce, proto zde tak\'e vyu\v zijeme zobecn\v en\'i inverzn\'i funkce. 
+\begin{sentence}\cite{KMP}\label{subnorma}
      Nech\v t je $\varphi : [0,1] \rightarrow [0,1]$ neklesající funkce a  spojitá na otev\v ren\'em intervalu
- $]0,1[$ a nech\v t $T: [0,1]^2 \rightarrow [0,1]$ nech\v t je t-norma. Potom funkce
+ $]0,1[$ a nech\v t $T: [0,1]^2 \rightarrow [0,1]$ je t-norma. Potom funkce
     $(T)_\varphi : [0,1]^2 \rightarrow [0,1]$ je dána p\v redpisem $$(T)_\varphi (x,y)= \begin{cases} min(x,y), & \mbox {pokud } max(x,y) = 1,
     \\ \varphi^{(-1)}[T(\varphi(x), \varphi(y))], & \mbox {jinak,}
     \end{cases}$$
     je t-norma.
   \end{sentence}
-Při práci s minimovou t-normou je d\r uležitá následující věta, která obecně shrnuje její obecnou charakteristiku.
+  V této práci se blí\v ze seznámíme s $\varphi-$transformaci $T_M$ a využijeme zobecnění předchozí věty:
+
 \begin{sentence} 
 \cite{hlinena}
-\label{smut} Nech\v t je $\varphi \colon [0,1] \to [0,1]$ neklesající funkce. Pak je operace $(T_M)_\varphi\colon[0,1]^2\to[0,1]$  t-norma pouze v případě, že
+\label{smut} Nech\v t je $\varphi \colon [0,1] \to [0,1]$ neklesající funkce. Pak je funkce $(T_M)_\varphi\colon[0,1]^2\to[0,1]$  t-normou pouze v případě, že
 $$\varphi^{(-1)}\circ\varphi\circ\varphi^{(-1)}\circ\varphi(x)\in \{\varphi^{(-1)}\circ\varphi(x),\varphi^{(-1)}\circ\varphi\circ\varphi^{(-1)}\circ\varphi(1^-)\}$$
 pro každé $x\in[0,1],$ kde $\varphi^{(-1)}\circ\varphi\circ\varphi^{(-1)}\circ\varphi(1^-)=\lim\limits_{x\to 1^-}\varphi^{(-1)}\circ\varphi\circ\varphi^{(-1)}\circ\varphi(1^-).$
 \end{sentence}
+\begin{remark}
+    Nech\v t $\varphi\colon[0,1]\to [0,1]$ je neklesající, zleva spojitá  funkce a nechť $a=\inf\{x \in [0,1]\colon \varphi(x)=1\}.$ Potom operace $(T_M)_\varphi\colon[0,1]^2\to[0,1]$ je t-normou právě když platí $\varphi^{(-1)}\circ\varphi\circ\varphi^{(-1)}\circ\varphi(x)=\varphi^{(-1)}\circ\varphi(x)$ pro každé $x \in [0,a].$ Tato  t-norma je zleva spojitá na intervalu  $]0,1[^2$, ale není zleva spojitá na  intervalu $[0,1]^2.$
+\end{remark}
+
+Uveden\'e podm\'inky znamenaj\'i, \v ze funkce $\varphi$ nem\r u\v ze m\'it dva konstantn\'i \'useky v bezprost\v redn\'i bl\'izkosti. P\v ri poru\v sen\'i t\'eto podm\'inky by v\'ysledn\'a funkce nebyla asociativn\'i.
+\bigskip
+
+
   
   N\'asleduj\'ic\'i p\v r\'iklad objas\v nuje situaci pro $T_M$ a jej\'i $\varphi-$transformaci, kdy\v z $\varphi$ je neklesaj\'ic\'i funkce. 
 \begin{example}
@@ -926,7 +936,7 @@ $$(T_M)_{\varphi(x)} = \begin{cases} \frac{1}{3}, & \mbox {pokud } (x, y) \in [\
     T_M, & \mbox {jinak.}
     \end{cases}$$
 \end{example}
-Pro lep\v s\'i n\'azornost uv\'ad\'im graf  funkce $\varphi$ a jej\'i pseudoinverzn\'i funkce a tak\'e vizu\'aln\'i rozd\v elen\'i grafu $\left(T_M\right)_\varphi.$\\
+Pro lep\v s\'i n\'azornost uv\'ad\'im graf  funkce $\varphi$ a jej\'i pseudoinverzn\'i funkce a tak\'e vizu\'aln\'i rozd\v elen\'i grafu funkce $\left(T_M\right)_\varphi.$\\
 \begin{graph}
     Vizu\' aln\' i zobrazení funkce $\varphi$ a jej\'i pseudoinverzn\'i funkce
 \begin{figure}[H]
@@ -951,12 +961,12 @@ Pro lep\v s\'i n\'azornost uv\'ad\'im graf  funkce $\varphi$ a jej\'i pseudoinve
 %{\pgfmathprintnumber{\result}}; }
     
 %\end{tikzpicture} 
-
+Příklad \ref{sub: fi} nám ilustruje vliv průběhu funkce $\varphi$ na průběh t-normy, která vznikla $\varphi-$transformací. Pro obecnou funkci $\varphi$ a t-normu $T_M$ dostáváme funkci $(T_M)_{\varphi}$, předpis které popisuje následující tvrzení.
 \begin{sentence}
 \cite{smutna}
 \label{t-norm}
  Nech\v t je $\varphi:[0,1]\rightarrow [0,1]$
-neklesající funkce spojitá na otevřeném intervale $]0,1[$.
+neklesající funkce spojitá na otevřeném intervalu $]0,1[$.
 Nech\v t je $\{[a_i,b_i]\}_{i\in I}$ množina podinterval\r u
 intervalu $[0,1]$ taková, že $\varphi(x)=c_i$ pro $x\in
 [a_i,b_i]$ (přičemž na intervalu $[0,1]\backslash \bigcup \limits_{i \in I}
@@ -969,43 +979,25 @@ $(x,y)\in [a_i,1[\times[a_i,b_i]$ nebo}
 \\ T_M(x,y), &\mbox {jinak.}
 \end{cases} $$
 \end{sentence}
-
-V\v etu \ref{subnorma} lze pro minimovou t-normu zesilnit n\'asledovn\v e:
-\begin{sentence}
-    \cite{habilitace}
-Nech\v t $\varphi:[0,1]\rightarrow [0,1]$ je neklesaj\'ic\'i funkce zleva spojitá a
-nech\v t $a=\inf\{x \in [0,1]; \varphi (x)=\varphi (1)\}.$ Potom operace $(T_M)_{\varphi}:[0,1]^2\rightarrow
-[0,1]$ je t-normou práv\v e kdy\v z $\varphi^{(-1)}
-\circ \varphi \circ \varphi^{(-1)} \circ \varphi (x)=\varphi^{(-1)}
-\circ \varphi (x)$ pro každé $x \in [0,a]$.
-\end{sentence}
-\begin{remark}
-Označme $g(x)=\varphi^{(-1)} \circ \varphi (x)$. Podm\'inka
-v p\v redchoz\'i v\v et\v e m\r u\v ze b\'yt nahrazen\'a podm\'inkou $g \circ g(x) \in
-\{g(x),g \circ g(1)\}.$ Nav\'ic, pro obecn\'i neklesaj\'ic\'i funkci $\varphi :[0,1]
-\rightarrow [0,1]$ platí, že $(T_M)_\varphi$ je t-normou pr\'av\v e kdy\v z
- $g \circ g(x) \in \{g(x), g \circ g(1^-)\}, x \in [0,1],$ kde
-$g \circ g(1^-)= \lim\limits_{x\rightarrow 1^-} g \circ g(x).$
-\end{remark}
-
-Uveden\'e podm\'inky znamenaj\'i, \v ze funkce $\varphi$ nem\r u\v ze m\'it dva konstantn\'i \'useky v bezprost\v redn\'i bl\'izkosti. P\v ri poru\v sen\'i t\'eto podm\'inky by v\'ysledn\'a t-norma nebyla asociativn\'i.
-\bigskip
-
-
-Vzhledem k tomu, \v ze ke ka\v zd\'e t-norm\v e v\'ime sestrojit jej\'i du\'aln\'i t-konormu, tak aplikujeme na $\left(T_M\right)_\varphi$ vztah $S(x,y)=1-T(1-x,1-y)$ a pro $\left(S_M\right)_\varphi$ dostaneme
+\begin{example}
+    \label{conormphi}
+    Vzhledem k tomu, \v ze ke ka\v zd\'e t-norm\v e lze sestrojit jej\'i du\'aln\'i t-konormu, tak aplikujeme na $\left(T_M\right)_\varphi$ vztah $S(x,y)=1-T(1-x,1-y)$ a pro $\left(S_M\right)_\varphi$ dostaneme
  $$(S_M)_\varphi(x,y) = \begin{cases} \frac{2}{3}, & \mbox {pokud } (x,y) \in [0,\frac{1}{3}[\times[\frac{1}{3},\frac{2}{3}] \cup [\frac{1}{3},\frac{2}{3}]\times[0,\frac{1}{3}[ \cup [\frac{1}{3},\frac{2}{3}]^2,
     \\ S_M, & \mbox {jinak. }
     \end{cases}$$
     \begin{graph}Vizu\' aln\' i rozd\v elen\'i grafu $\varphi$-transformace maximové t-konormy
     \label{graph: max-conorm}
 
+
 \centering
 \includegraphics[scale=0.8]{template-fig/phi-t-conorm.pdf}
 \end{graph}
 
-Obecn\v e p\v redpis  pro neklesaj\'ic\'i funkci $\varphi$ a maximovou t-konormu popisuje n\'asleduj\'ic\'i v\v eta:
+\end{example}
+Příklad \ref{conormphi} nám ilustruje vliv průběhu funkce $\varphi$ na průběh t-konormy, která vznikla $\varphi-$transformací. Pro obecnou funkci $\varphi$ a t-konormu $S_M$ dostáváme funkci $(S_M)_{\varphi}$, předpis které popisuje následující tvrzení.
+
 \begin{sentence}
-\label{t-conorm}
+    
  Nech\v t je $\varphi:[0,1]\rightarrow [0,1]$
 neklesající funkce spojitá na otevřeném intervalu $]0,1[$.
 Nech\v t je $\{[a_i,b_i]\}_{i\in I}$ množina podinterval\r u
@@ -1020,36 +1012,56 @@ $(x,y)\in [1-b_i,1-a_i[\times[0,1-a_i]$ nebo}
 \\ S_M(x,y), &\mbox {jinak.}
 \end{cases} $$
 \end{sentence}
-    
+
+
+
 \subsection{Konstrukce $(S,N)-$implik\'ator\r u pomoc\'i $\varphi-$transformace t-konorem}
- V následující kapitole se věnuji konstrukcím $(S,N)-$implikací založených na standardní Zadehově negaci a $(S_M)_\varphi$, přičemž $\varphi$ je neklesající zleva spojitá funkce.
+ V této kapitole se věnuji konstrukcím $(S,N)-$implikací založených na standardní Zadehově negaci a $(S_M)_\varphi$, přičemž $\varphi$ je neklesající zleva spojitá funkce.
  
-\begin{example} 
-Nech\v t je $\varphi$ funkce z p\v ríkladu \ref{sub: fi}. Dále lze zkonstruovat $(S,N)-implikaci$ pomocí standardní fuzzy negace N(x) a maximové t-konormy $(S_M)_\varphi$.    
+\begin{example}
+    Nech\v t je $\varphi$ funkce z p\v ríkladu \ref{sub: fi}.  Pomocí standardní fuzzy negace $N_S(x)$ a maximové t-konormy $(S_M)_\varphi$  zkonstruujeme $(S,N)-implikaci$. 
+\end{example}
+   
      \begin{graph} 
-     Vizu\' aln\' i rozd\v elen\'i grafu $\varphi$-transformace (S,N)-implikace tvořené maximovou t-konormou\\
+     Vizu\' aln\' i rozd\v elen\'i grafu $\varphi$-transformace $(S,N)-$implikace tvořené maximovou t-konormou\\
         \centering
         \includegraphics[scale=0.8]{template-fig/phi-impli.pdf}
     \end{graph}
-\end{example}
 
- Konstrukci tohoto $(S,N)-$implikátoru lze tedy popsat následujícím výrokem:
-\begin{sentence}
+
+ Konstrukci tohoto $(S,N)-$implikátoru lze tedy popsat následujícím předpisem:
     Nech\v t je  $\varphi:[0,1]\rightarrow [0,1]$
 funkce z příkladu \ref{sub: fi}.
 Potom je implikace $(S,N)-$ na základě $N_S$ a $(S_M)_{\varphi}$ dána vzorcem
-$$ I_{(S_M)_{\varphi}}(x,y) = \begin{cases} \frac{2}{3}, &\mbox {pokud
-$(x,y)\in [\frac{1}{3},\frac{2}{3}[\times[0,\frac{2}{3}]$ nebo}
+$$ I_{(S_M)_{\varphi}}(x,y) = \begin{cases} \frac{2}{3}, &\mbox {pokud~~}
+(x,y)\in [\frac{1}{3},\frac{2}{3}[\times[0,\frac{2}{3}] \mbox{~~nebo~~}
 \\ & (x,y)\in [\frac{2}{3},1]\times[\frac{1}{3},\frac{2}{3}[,
 \\ \max(1-x,y), &\mbox {jinak.}
 \end{cases} $$
+
+Pro obecnou nekleasjící a zleva spojitou funkci $\varphi$, standardní negátor a maximovou t-konormu dostáváme fuzzy implikátor, kterého obecný předpis je v následujícím tvrzení.
+\begin{sentence}
+       Nechť $\varphi:[0,1]\rightarrow [0,1]$
+je neklesající a zleva spojitá funkce na intervalu $]0,1[$.
+Nechť
+$\{[a_i,b_i]\}_{i\in I}$ je množina podintervalů intevalu $[0,1]$, přičemž $\varphi(x)=c_i$ for $x\in
+[a_i,b_i]$.
+Potom $(S,N)-$implikátor založený na $N_S$ and $(S_M)_{\varphi}$ je dán formulou
+$$ I_{(S_M)_{\varphi}}(x,y) = \begin{cases} 1-\varphi^{(-1)}(c_i)=1-a_i, &\mbox {~~pokud~~}
+(x,y)\in [a_i,b_i[\times[0,b_i] \mbox{~~nebo~~}
+\\ & (x,y)\in [b_i,1]\times[a_i,b_i[,
+\\ \max(1-x,y), &\mbox {jinak.}
+\end{cases} $$
+
 \end{sentence}
 
-
+ Pokud uvažujeme funkci $\varphi$, jež nespl\v nuje podmínku z Věty \ref{smut}, pak $(S_M)_{\varphi}$ nebude asociativní, ale bude stále fuzzy disjunkcí D. Použitím operace $D(N_s(x),y)$ dostaneme implikaci, která bude mít podobné vlastnosti jako $(S,N)-$implikace. Nespl\v nuje ale princip záměny, jelikož se tato vlastnost váže k asociativitě použité t-konormy. Tímto způsobem získáme novou třídu fuzzy implikací.
 
 
 \subsection{Konstrukce $R-$implik\'ator\r u pomoc\'i $\varphi-$transformace t-norem}
-V následující části se věnuji konstrukcím reziduálních implikací založených na minimové t-normě. Výchozí reziduální implikace jsou založeny na zleva spojitých t-normách, přičemž $\varphi-$transformace minimové t-normy, tedy $(T_M)_\varphi$, není zleva spojitá na jednotkovém intervalu $[0,1]^2$. Z $(T_M)_\varphi$ lze pak jednoduše získat zleva spojitý operátor $C_\varphi:[0,1]^2 \to [0,1]$, který není t-norma, ale vyhovuje všem vlastnostem fuzzy konjunkce. Pro neklesající zleva spojitou funkci $\varphi: [0,1] \to [0,1]$ je daný operátor popsán následovně:
+Tato část je věnována konstrukcím reziduálních implikací založených na $\varphi-$transformaci minimové t-normy. 
+
+{\color{red}Výchozí reziduální implikace jsou založeny na zleva spojitých t-normách, přičemž $\varphi-$transformace minimové t-normy, tedy $(T_M)_\varphi$, není zleva spojitá na jednotkovém intervalu $[0,1]^2$. Z $(T_M)_\varphi$ lze pak jednoduše získat zleva spojitý operátor $C_\varphi:[0,1]^2 \to [0,1]$, který není t-norma, ale vyhovuje všem vlastnostem fuzzy konjunkce. Pro neklesající zleva spojitou funkci $\varphi: [0,1] \to [0,1]$ je daný operátor popsán následovně:}
 
 \begin{equation} \label{rez}
     C_{\varphi}(x,y) = \begin{cases} \varphi^{(-1)}(c_i)=a_i, &\mbox {pokud
