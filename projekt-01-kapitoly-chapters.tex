@@ -21,7 +21,7 @@
 %\comment{
 %\color{blue} Pár vět, které pak chci zakomponovat do \'uvodu nějak:
 %                \\ 
-%                \color{black} Zatímco bivalentní logika pracuje s binárními hodnotami "pravda" a %"nepravda", fuzzy logika umožňuje pracovat s hodnotami, které se pohybují mezi těmito extrémy.
+%                \color{black} Zatímco bivalentní logika pracuje s binárními hodnotami \crqq \space pravda\crqq \space a %\crqq \space nepravda\crqq \space , fuzzy logika umožňuje pracovat s hodnotami, které se pohybují mezi těmito extrémy.
 
 %}
 
@@ -37,13 +37,13 @@
 
 V běžném životě se často setkáváme s nepřesnými pojmy, jako jsou např. \clqq málo\crqq, \clqq hodně\crqq \space či třeba \clqq trochu\crqq. Jak ale takovou vágnost vyjádřit v matematice? Pokud člověk prohlásí tvrzení, že je \clqq celkem mladý\crqq, znamená to, že je mladý nebo ne? K zápisu a práci s takovými výroky se pak ve fuzzy logice využívají fuzzy množiny a operace s nimi.
 
-Nech\v t je např. vypsáno výběrové řízení modelingové agentury s požadavkem, že hledají vysoké uchazeče. Taková informace je tedy poněkud vágní, ačkoliv v běžném životě lehce srozumitelná. Pokud by se někdo pokusil definovat pojem \clqq vysoký člověk\crqq \space pomocí ostré množiny, musel by nejprve stanovit hranici, kdy je člověk vysoký, např. 180 centimetr\r u, množina všech vysokých lidí V by měla charakteristickou funkci:
+Nech\v t je např. vypsáno výběrové řízení modelingové agentury s požadavkem, že hledají vysoké uchazeče. Taková informace je tedy poněkud vágní, ačkoliv v běžném životě lehce srozumitelná. Pokud by se někdo pokusil definovat pojem \clqq vysoký člověk\crqq \space pomocí ostré množiny, musel by nejprve stanovit hranici, kdy je člověk vysoký, např. 180 centimetr\r u, množina všech vysokých lidí $V$ by měla charakteristickou funkci:
 
     $$X_V:(x)=\begin{cases} 1, & \mbox{pokud }  x \geq 180,\\    0, & \mbox{pokud } x < 180,  \end{cases}$$
 
     čímž by došlo k paradoxu, že člověk který má 179,9 centimetr\r u je považován za nízkého a člověk se 180 centimetry za vysokého.
 
-    Takový problém je zp\r usoben tím, že byla výška modelována jako vlastnost, kterou m\r uže mít člověk pouze v nulové míře nebo na 100 \%. Za určitě vysokého člověka byl považován někdo se 180 centimetry, 175 centimetr\r u vysoký člověk byl podle stejného přístupu určitě n\'izk\'y. Přičemž 175 centimetr\r u vysoký člověk je běžně považován do určité míry za vysokého. Přesně z toho d\r uvodu se zavedl pojem \textit{fuzzy množina}, která je podmno\v zinou tzv. \textit{univerza}, které p\v redstavuje základní prostor. 
+    Takový problém je zp\r usoben tím, že byla výška modelována jako vlastnost, kterou m\r uže mít člověk pouze v nulové míře nebo na 100 \%. Za určitě vysokého člověka byl považován někdo se 180 centimetry, 175 centimetr\r u vysoký člověk byl podle stejného přístupu určitě n\'izk\'y. Přičemž 175 centimetr\r u vysoký člověk je běžně považován do určité míry za vysokého. Přesně kvůli řešení problémů s vágními pojmy vznikly \textit{fuzzy množiny}, které jsou podmno\v zinami tzv. \textit{univerza}, které p\v redstavuje základní prostor. 
     
     \begin{definition}
     \cite{navara}
@@ -96,7 +96,7 @@ Fuzzy negace představují klíčový koncept v oblasti fuzzy logiky. Tyto negac
 \item \textbf{Soudržnost:}\\
 Pro hodnoty $0$ a $1$ se fuzzy negace shoduje s klasickou negac\'i.
     \item \textbf{Kontinuita hodnot:} \\
-        Fuzzy negace nepracuje jenom s  ostrými hodnotami „pravda“ a „nepravda“, ale na stupni neurčitosti či specifickým číselném zápisu, který reflektuje stupeň nepravdivosti.
+        Fuzzy negace nepracuje jenom s  ostrými hodnotami „pravda“ a „nepravda“, ale na stupni neurčitosti, či specifickým číselném zápisu, který reflektuje stupeň nepravdivosti.
     \item \textbf{Monotonie:} \\
         Fuzzy negace jsou monot\'onn\'im roz\v s\'i\v ren\'im klasick\'e negace, což znamená, že s rostoucími vstupn\'imi hodnotami klesaj\'i hodnoty výstupn\'e.
     
@@ -216,12 +216,12 @@ Jak již bylo zmíněno, fuzzy konjunkce mohou být modelov\' any pomocí triang
     spl\v nuje axiomy 2., 3., 4., ale nespl\v nuje axiom 1.
     
     Funkce $F_2 : [0, 1]^2 \to [0, 1]$ daná přepisem
-    $$F_2(x,y) = x.y.max(x,y),$$
+    $$F_2(x,y) = x.y.\max(x,y),$$
     spl\v nuje axiomy 1., 3., 4., ale nespl\v nuje axiom 2.
 
     Funkce $F_3 : [0, 1]^2 \to [0, 1]$ daná přepisem
     $$ F_3(x,y)=\begin{cases} 0.5, & \mbox{pokud }(x, y) \in ]0,1[^2, \\
-         min(x,y), & \mbox{jinak,}\end{cases} $$
+         \min(x,y), & \mbox{jinak,}\end{cases} $$
     spl\v nuje axiomy 1., 2., 4., ale nespl\v nuje axiom 3.
     
     Funkce $F_4 : [0, 1]^2 \to [0, 1]$ daná přepisem
@@ -235,13 +235,13 @@ Mezi základní triangulární normy se řadí minimová, součinová, Łukasiew
 \cite{KMP}
     \begin{enumerate}
     \item \textbf{Minimová t-norma} $T_M: [0,1]^2 \rightarrow [0,1]$
-    $$T_M(x,y) = min(x,y).$$
+    $$T_M(x,y) = \min(x,y).$$
     \item \textbf{Součinová t-norma} $T_P: [0,1]^2 \rightarrow [0,1]$
     $$T_P(x,y) = x.y.$$
     \item \textbf{Łukasiewiczova t-norma} $T_L: [0,1]^2 \rightarrow [0,1]$
-    $$T_L(x,y) = max(x+y-1,0).$$
+    $$T_L(x,y) = \max(x+y-1,0).$$
     \item \textbf{Drastický součin} $T_D: [0,1]^2 \rightarrow [0,1]$
-    $$T_D:(x)=\begin{cases} min(x,y), & \mbox{pokud }  max(x,y) = 1,\\ 
+    $$T_D:(x)=\begin{cases} \min(x,y), & \mbox{pokud }  \max(x,y) = 1,\\ 
     0, &  jinak.  \end{cases}$$\\
 \end{enumerate}
 \end{example}
@@ -280,33 +280,35 @@ Existuje nekone\v cn\v e mnoho t-norem, dokonce pak i cel\'e t\v r\'idy parametr
     $$T_p^F:(x,y)=\begin{cases} T_M(x,y), & \mbox{pokud }  p = 0,\\ 
                                 T_P(x,y), & \mbox{pokud } p = 1,\\
                                 T_L(x,y), & \mbox{pokud } p = +\infty,\\
-                                log_p(1+\frac{(p^x-1)(p^y-1)}{p-1}), & \mbox{pokud } jinak, 
+                                \log_p(1+\frac{(p^x-1)(p^y-1)}{p-1}), & \mbox{pokud } jinak, 
                                 \end{cases}$$
     \item \textbf{Schwarz-Skalarovy t-normy:}
     $$T_p^{SS}:(x,y)=\begin{cases} T_M(x,y), & \mbox{pokud }  p = -\infty,\\ 
                                 (x^p+y^p-1)^\frac{1}{p}, & \mbox{pokud }  -\infty < p < 0,\\ 
                                 T_P(x.y), & \mbox{pokud } p = 0,\\
                                 T_D(x,y), & \mbox{pokud } p = +\infty,\\
-                                (max(0, x^p+y^p-1))^\frac{1}{p}, & \mbox{pokud } 0 < p < +\infty, \end{cases}$$
+                                (\max(0, x^p+y^p-1))^\frac{1}{p}, & \mbox{pokud } 0 < p < +\infty, \end{cases}$$
     \item \textbf{Yagerovy t-normy:}
     $$T_p^Y:(x,y)=\begin{cases}  T_D(x,y), & \mbox{pokud } p = 0,\\
-                                max(0,1-((1-x)^p+(1-y)^p)^\frac{1}{p} , & \mbox{pokud } 0 < p < +\infty,\\
+                                \max(0,1-((1-x)^p+(1-y)^p)^\frac{1}{p} , & \mbox{pokud } 0 < p < +\infty,\\
                                 T_M(x,y), & \mbox{pokud } p = +\infty,
                                 \end{cases}$$
     \item \textbf{Sugeno-Weberovy t-normy:}
     $$T_p^{SW}:(x,y)=\begin{cases}  T_D(x,y), & \mbox{pokud } p = -1,\\
-                                    max(0,\frac{x+y-1+pxy}{1+p}) , & \mbox{pokud } -1 < p < +\infty,\\
+                                    \max(0,\frac{x+y-1+pxy}{1+p}) , & \mbox{pokud } -1 < p < +\infty,\\
                                     T_P(x,y), & \mbox{pokud } p = +\infty.
                                     \end{cases}$$
 \end{itemize}
 
 \subsection{Algebraick\'e vlastnosti t-norem}
 
-Každou \' usečku délky $b$ lze pokrýt nějakým počtem \' useček délky $a > 0.$ Tato věta lze vyjádřit i jinak: pro dvě libovolná kladná a reálná čísla $a,b$ existuje přirozené číslo $n$ takové, že $a*n>b,$ což je archimedovská vlastnost reálné osy vzhledem ke sčítání. Velmi podobně je definována i archimedovská vlastnost pro násobení. Pro t-normy je pak archimedovská vlastnost definována následovně:
+Každou \' usečku délky $b$ lze pokrýt nějakým počtem \' useček délky $a > 0.$ Tato věta lze vyjádřit i jinak: pro dvě libovolná kladná a reálná čísla $a,b$ existuje přirozené číslo $n$ takové, že $a\cdot n>b,$ což je archimedovská vlastnost reálné osy vzhledem ke sčítání. Velmi podobně je definována i archimedovská vlastnost pro násobení. Pro t-normy je pak archimedovská vlastnost definována následovně:
 \begin{definition}
 \cite{KMP}
     T-norma je archimedovská, pokud pro všechny body $(x,y) \in ]0,1[^2$ existuje $n \in N$ takové, že $$x_T^{(n)} < y,$$
-    p\v ri\v cem\v z $x^{(n)}_T=$
+    p\v ri\v cem\v z $x^{(n)}_T=\begin{cases} x, &\mbox {pokud $n=1,$} \\ {T(x,x_T^{(n-1)})},
+&\mbox {pokud $n>1.$}\end{cases}$
+
 \end{definition}
 Ověřit archimedovskou vlastnost lze následovným zp\r usobem:
 \begin{sentence} \cite{KMP}
@@ -565,9 +567,9 @@ Nej\v cast\v eji pou\v z\'iv\'any funkce pro modelov\'an\'i fuzzy disjunkce jsou
 \subsection{Triangul\'arn\'i konormy} 
 \label{sec: Triangulární konormy}
 
-Triangulární konormy (zkráceně t-konormy) jsou, podobn\v e jako a t-normy, re\'aln\'e funkce dvou prom\v enn\'ych:
+Triangulární konormy (zkráceně t-konormy) jsou, podobn\v e jako  t-normy, re\'aln\'e funkce dvou prom\v enn\'ych:
 \begin{definition}
-    T-konorma je binární operace na intervalu $[0,1],$ t.j. funkce $S: [0,1]^2 \rightarrow [0,1]$ taková, že pro každé $x, y, z \in [0,1]$ jsou splněny následující axiomy:
+    Triangulární konorma je binární operace na intervalu $[0,1],$ t.j. funkce $S: [0,1]^2 \rightarrow [0,1]$ taková, že pro každé $x, y, z \in [0,1]$ jsou splněny následující axiomy:
     \begin{enumerate}
         \item \textbf{Komutativnost: } $S(x,y) = S(y,x),$
         \item \textbf{Asociativita: } $S(x,S(y,z)) = S(S(x,y),z)$,
@@ -589,13 +591,13 @@ Mezi základní triangulární konormy se obdobně (ale komplementárně) jako u
 \cite{Springer}
     \begin{enumerate}
     \item \textbf{Maximová t-konorma} $S_M: [0,1]^2 \rightarrow [0,1]$
-    $$S_M(x,y) = max(x,y).$$
+    $$S_M(x,y) = \max(x,y).$$
     \item \textbf{Pravděpodobnostní součet} $S_P: [0,1]^2 \rightarrow [0,1]$
     $$S_P(x,y) = x+y-x.y.$$
     \item \textbf{Łukasiewiczova t-konorma} $S_L: [0,1]^2 \rightarrow [0,1]$
-    $$S_L(x,y) = min(x+y,1).$$
+    $$S_L(x,y) = \min(x+y,1).$$
     \item \textbf{Drastický součet} $S_D: [0,1]^2 \rightarrow [0,1]$
-    $$S_D:(x)=\begin{cases} max(x,y), & \mbox{pokud  }  min(x,y) = 0,\\ 
+    $$S_D:(x)=\begin{cases} \max(x,y), & \mbox{pokud  }  \min(x,y) = 0,\\ 
     1, &  jinak.  \end{cases}$$
 \end{enumerate}
 \end{example}
@@ -631,7 +633,7 @@ $$I(x,y)=S(N(x),T(x,y)) \text{ neboli Q-implikátory}.$$
 
 \begin{definition}
     \cite{Springer}
-    Funkce $I: [0,1]^2 \rightarrow [0,1]$ se nazývá (S,N)-implikace, pokud existuje t-konorma S a fuzzy negace N taková, že $$I(x,y) = S(N(x)y), x \in [0,1].$$
+    Funkce $I: [0,1]^2 \rightarrow [0,1]$ se nazývá (S,N)-implikace, pokud existuje t-konorma S a fuzzy negace N taková, že $$I(x,y) = S(N(x),y), x \in [0,1].$$
 \end{definition}
 
 \begin{example}
@@ -669,7 +671,7 @@ Dále je nutné popsat již dříve zmíněné Q-implikátory.
     \cite{Springer}
     Funkce $I: [0,1]^2 \rightarrow [0,1]$ se nazývá Q-implikace, pokud existuje t-norma T, t-konorma S a fuzzy negace N taková, že $$I(x,y) = S(N(x),T(x,y)), x \in [0,1].$$
 \end{definition}
-Mezi nejznámější Q-implikátor patří tzv. Zadeh\r uv implikátor, který staví na minimové t-normě $T_M,$ maximové t-konormě $S_M$ a Zadehově negaci $N_S$. Jeho předpis pak vypadá následovně $$I_Z(x,y) = max(1-x, min(x,y)).$$ Podobně pak lze tvořit i další implikátory, které budou stavět na předchozích negátorech, t-normách a t-konormách. Implikátor $I_P$ je tvořen součinovou t-normou $T_P,$ pravděpodobnostním součtem $S_P,$ negací $N_S$ a má předpis $$I_P(x,y) = 1-x+x^2y.$$  Po použití Łukasiewiczovy t-normy $T_L,$ Łukasiewiczovy t-konormy $S_L,$ a negátoru $N_S$ bude výsledkem klasický S-implikátor s předpisem $$I_L(x,y) = max(1-x, y).$$ V neposlední řadě stojí za zmínku implikátor $I_D,$ který sestává z drastického součinu $T_D,$ drastického součtu $S_D,$ negátoru $N_S$ a vypadá následovně $$I_D(x,y) = \begin{cases}  y, & \mbox{pokud } x = 1,\\
+Mezi nejznámější Q-implikátor patří tzv. Zadeh\r uv implikátor, který staví na minimové t-normě $T_M,$ maximové t-konormě $S_M$ a Zadehově negaci $N_S$. Jeho předpis pak vypadá následovně $$I_Z(x,y) = \max(1-x, \min(x,y)).$$ Podobně pak lze tvořit i další implikátory, které jsou založeny standardním negátoru a předchozích t-normách a t-konormách. Implikátor $I_P$ je tvořen součinovou t-normou $T_P,$ pravděpodobnostním součtem $S_P,$ negací $N_S$ a má předpis $$I_P(x,y) = 1-x+x^2y.$$  Po použití Łukasiewiczovy t-normy $T_L,$ Łukasiewiczovy t-konormy $S_L,$ a negátoru $N_S$ bude výsledkem klasický S-implikátor s předpisem $$I_L(x,y) = \max(1-x, y).$$ V neposlední řadě stojí za zmínku implikátor $I_D,$ který sestává z drastického součinu $T_D,$ drastického součtu $S_D,$ negátoru $N_S$ a vypadá následovně $$I_D(x,y) = \begin{cases}  y, & \mbox{pokud } x = 1,\\
                 1 - x, &  jinak.  \end{cases}$$\\ 
 Podobným zp\r usobem je samozřejmě možné tvořit nekonečné množství implikací s r\r uznými předpisy, které se budou měnit na základě kombinací t-norem, t-konorem a negátor\r u. Pro lepší pochopení jsou níže vykresleny grafy uvedených implikací.
 \begin{graph}Implikátory $I_Z, I_P, I_L, I_D.$
@@ -722,9 +724,9 @@ $$I(x,x) = 1; ~~~ x \in [0,1], $$
 \item[(OP)] vlastnost uspořádání
 $$x \leq y \iff I(x,y) =1; ~~~ x,y \in [0,1],$$
 \item[(CP)] kontrapozitivitu vzhledem na dan\'y neg\'ator $N$, pokud
-$$ I(x,y)=I(N(y),N(x)); ~~~ x,y \in [0,1].$$
+$$ I(x,y)=I(N(y),N(x)); ~~~ x,y \in [0,1],$$
  {\item[(LI)] z\'akon přenosu  vzhledem na  t-normu $T$, pokud
-$$I(T(x, y), z) = I(x, I(y, z)); ~~~ x,y,z \in  [0, 1].$$
+$$I(T(x, y), z) = I(x, I(y, z)); ~~~ x,y,z \in  [0, 1],$$
 \item[(WLI)]  slab\'y z\'akon přenosu vzhledem na komutativní a
 rostoucí funkci $F:
 [0,1]^2 \to [0, 1]$, pokud
@@ -780,7 +782,7 @@ fuzzy implikátor (pričemž $\frac{1}{0} = \infty, 0 \cdot \infty = 0$). \\
         \end{cases}$$
 \end{example}
 \begin{remark}
-    Opět se v předchozím příkladu se nejednalo o $(S,N)-$implikátor ani o R-implikátor. To však také neplatí v každém případě g-generovaných implikátor\r u.
+    Opět se v předchozím příkladu nejednalo o $(S,N)-$implikátor ani o R-implikátor. To však také neplatí v každém případě g-generovaných implikátor\r u.
 \end{remark}
 
 \begin{sentence}\cite{Springer} 
@@ -875,7 +877,8 @@ Dalším typem generovaných implikátor\r u jsou $I^g$ implikátory. Narozdíl 
     které jsou zalo\v zen\'e na  funkcích $g$ a $c \cdot g$, jsou
     identick\'e.
 \end{sentence}
-A na z\'av\v er uvedeme zp\r usob konstrukce, s kter\'ym jsme se potkali p\v ri konstrukci t-norem a kter\'emu se budeme v da\v s\'ich kapitol\'ach v\v enovat podrobn\v eji.
+A na z\'av\v er uvedeme zp\r usob konstrukce, s kter\'ym jsme se potkali p\v ri konstrukci t-norem.
+
 \begin{sentence}\cite{Springer}
     Nech\v t $\varphi \in B$, potom pro libovolný implikátor $I: [0,1]^2 \rightarrow [0,1]$ je $\varphi$-transformace $I_\varphi$ také implikátor.
 \end{sentence}
@@ -893,7 +896,7 @@ A na z\'av\v er uvedeme zp\r usob konstrukce, s kter\'ym jsme se potkali p\v ri 
 
 \section{Konstrukce fuzzy logick\'ych spojek}
 
-V této kapitole se věnuji konstrukci fuzzy logických spojek pomocí funkcí jedné proměnné a již existujících spojek. Dále tyto poznatky využívám při analýze lidského vyjadřování v běžném jazyce a při konstrukci fuzzy logických spojek na něm založených.
+V této kapitole se věnuji konstrukci fuzzy logických spojek pomocí funkcí jedné proměnné a již existujících spojek. Dále tyto poznatky budou využity při analýze lidského vyjadřování v běžném jazyce a při konstrukci fuzzy logických spojek na něm založených.
 
 \subsection{$\varphi-$transformace triangulárních norem a konorem}
 
@@ -901,7 +904,7 @@ Následující část se věnuje zobecn\v en\'i $\varphi-$transformaci t-norem, 
 \begin{sentence}\cite{KMP}\label{subnorma}
      Nech\v t je $\varphi : [0,1] \rightarrow [0,1]$ neklesající funkce a  spojitá na otev\v ren\'em intervalu
  $]0,1[$ a nech\v t $T: [0,1]^2 \rightarrow [0,1]$ je t-norma. Potom funkce
-    $(T)_\varphi : [0,1]^2 \rightarrow [0,1]$ je dána p\v redpisem $$(T)_\varphi (x,y)= \begin{cases} min(x,y), & \mbox {pokud } max(x,y) = 1,
+    $(T)_\varphi : [0,1]^2 \rightarrow [0,1]$ je dána p\v redpisem $$(T)_\varphi (x,y)= \begin{cases} \min(x,y), & \mbox {pokud } \max(x,y) = 1,
     \\ \varphi^{(-1)}[T(\varphi(x), \varphi(y))], & \mbox {jinak,}
     \end{cases}$$
     je t-norma.
@@ -915,6 +918,7 @@ $$\varphi^{(-1)}\circ\varphi\circ\varphi^{(-1)}\circ\varphi(x)\in \{\varphi^{(-1
 pro každé $x\in[0,1],$ kde $\varphi^{(-1)}\circ\varphi\circ\varphi^{(-1)}\circ\varphi(1^-)=\lim\limits_{x\to 1^-}\varphi^{(-1)}\circ\varphi\circ\varphi^{(-1)}\circ\varphi(1^-).$
 \end{sentence}
 \begin{remark}
+\cite{mitav}
     Nech\v t $\varphi\colon[0,1]\to [0,1]$ je neklesající, zleva spojitá  funkce a nechť $a=\inf\{x \in [0,1]\colon \varphi(x)=1\}.$ Potom operace $(T_M)_\varphi\colon[0,1]^2\to[0,1]$ je t-normou právě když platí $\varphi^{(-1)}\circ\varphi\circ\varphi^{(-1)}\circ\varphi(x)=\varphi^{(-1)}\circ\varphi(x)$ pro každé $x \in [0,a].$ Tato  t-norma je zleva spojitá na intervalu  $]0,1[^2$, ale není zleva spojitá na  intervalu $[0,1]^2.$
 \end{remark}
 
@@ -963,7 +967,7 @@ Pro lep\v s\'i n\'azornost uv\'ad\'im graf  funkce $\varphi$ a jej\'i pseudoinve
 %\end{tikzpicture} 
 Příklad \ref{sub: fi} nám ilustruje vliv průběhu funkce $\varphi$ na průběh t-normy, která vznikla $\varphi-$transformací. Pro obecnou funkci $\varphi$ a t-normu $T_M$ dostáváme funkci $(T_M)_{\varphi}$, předpis které popisuje následující tvrzení.
 \begin{sentence}
-\cite{smutna}
+\cite{mitav}
 \label{t-norm}
  Nech\v t je $\varphi:[0,1]\rightarrow [0,1]$
 neklesající funkce spojitá na otevřeném intervalu $]0,1[$.
@@ -979,6 +983,16 @@ $(x,y)\in [a_i,1[\times[a_i,b_i]$ nebo}
 \\ T_M(x,y), &\mbox {jinak.}
 \end{cases} $$
 \end{sentence}
+
+Na základě uvedeného předpisu lze pak sestavit obecný graf znázor\v nující pr\r uběh funkce $\varphi^{(-1)}$ a poté na ní založené t-normy. Obrázek uvádím níže.
+\begin{graph}
+    Příklad obecné funkce $\varphi^{(-1)}$ a obecné $\varphi$-transformace minimové t-normy.\\
+    \centering
+        \includegraphics[scale=0.4]{template-fig/basic.pdf}
+        \centering
+        \includegraphics[scale=0.4]{template-fig/t-norma.pdf}
+
+\end{graph}
 \begin{example}
     \label{conormphi}
     Vzhledem k tomu, \v ze ke ka\v zd\'e t-norm\v e lze sestrojit jej\'i du\'aln\'i t-konormu, tak aplikujeme na $\left(T_M\right)_\varphi$ vztah $S(x,y)=1-T(1-x,1-y)$ a pro $\left(S_M\right)_\varphi$ dostaneme
@@ -997,7 +1011,8 @@ $(x,y)\in [a_i,1[\times[a_i,b_i]$ nebo}
 Příklad \ref{conormphi} nám ilustruje vliv průběhu funkce $\varphi$ na průběh t-konormy, která vznikla $\varphi-$transformací. Pro obecnou funkci $\varphi$ a t-konormu $S_M$ dostáváme funkci $(S_M)_{\varphi}$, předpis které popisuje následující tvrzení.
 
 \begin{sentence}
-    
+\cite{mitav}
+    \label{t-conorm}
  Nech\v t je $\varphi:[0,1]\rightarrow [0,1]$
 neklesající funkce spojitá na otevřeném intervalu $]0,1[$.
 Nech\v t je $\{[a_i,b_i]\}_{i\in I}$ množina podinterval\r u
@@ -1013,6 +1028,16 @@ $(x,y)\in [1-b_i,1-a_i[\times[0,1-a_i]$ nebo}
 \end{cases} $$
 \end{sentence}
 
+Na základě uvedeného předpisu lze pak opět sestavit obecný graf znázor\v nující pr\r uběh t-konormy.
+
+\begin{graph}
+    Příklad obecné $\varphi$-transformace minimové t-konormy.
+    \begin{figure}[H]
+                \hspace{-1cm}
+                \includegraphics[scale=0.4]{template-fig/t-konorma.pdf}
+                \centering
+            \end{figure}
+\end{graph}
 
 
 \subsection{Konstrukce $(S,N)-$implik\'ator\r u pomoc\'i $\varphi-$transformace t-konorem}
@@ -1039,29 +1064,40 @@ $$ I_{(S_M)_{\varphi}}(x,y) = \begin{cases} \frac{2}{3}, &\mbox {pokud~~}
 \\ \max(1-x,y), &\mbox {jinak.}
 \end{cases} $$
 
-Pro obecnou nekleasjící a zleva spojitou funkci $\varphi$, standardní negátor a maximovou t-konormu dostáváme fuzzy implikátor, kterého obecný předpis je v následujícím tvrzení.
+Pro obecnou neklesající a zleva spojitou funkci $\varphi$, standardní negátor a maximovou t-konormu dostáváme fuzzy implikátor, kterého obecný předpis je v následujícím tvrzení.
 \begin{sentence}
+\cite{mitav}
+\label{sn-impl}
        Nechť $\varphi:[0,1]\rightarrow [0,1]$
 je neklesající a zleva spojitá funkce na intervalu $]0,1[$.
 Nechť
-$\{[a_i,b_i]\}_{i\in I}$ je množina podintervalů intevalu $[0,1]$, přičemž $\varphi(x)=c_i$ for $x\in
+$\{[a_i,b_i]\}_{i\in I}$ je množina podintervalů intevalu $[0,1]$, přičemž $\varphi(x)=c_i$ pro $x\in
 [a_i,b_i]$.
-Potom $(S,N)-$implikátor založený na $N_S$ and $(S_M)_{\varphi}$ je dán formulou
+Potom $(S,N)-$implikátor založený na $N_S$ a $(S_M)_{\varphi}$ je dán formulí
 $$ I_{(S_M)_{\varphi}}(x,y) = \begin{cases} 1-\varphi^{(-1)}(c_i)=1-a_i, &\mbox {~~pokud~~}
-(x,y)\in [a_i,b_i[\times[0,b_i] \mbox{~~nebo~~}
-\\ & (x,y)\in [b_i,1]\times[a_i,b_i[,
+(x,y)\in [a_i,b_i[\times[0,1-a_i] \mbox{~~nebo~~}
+\\ & (x,y)\in [b_i,1]\times[1-b_i,1-a_i[,
 \\ \max(1-x,y), &\mbox {jinak.}
 \end{cases} $$
 
 \end{sentence}
 
- Pokud uvažujeme funkci $\varphi$, jež nespl\v nuje podmínku z Věty \ref{smut}, pak $(S_M)_{\varphi}$ nebude asociativní, ale bude stále fuzzy disjunkcí D. Použitím operace $D(N_s(x),y)$ dostaneme implikaci, která bude mít podobné vlastnosti jako $(S,N)-$implikace. Nespl\v nuje ale princip záměny, jelikož se tato vlastnost váže k asociativitě použité t-konormy. Tímto způsobem získáme novou třídu fuzzy implikací.
+Obecný průběh takového implikátoru pak lze vyjádřit následujícím grafem:
+\begin{graph}
+    Příklad obecného $(S,N)-$implikátoru $I_{(S_M)_{\varphi}}$.
+            \begin{figure}[H]
+                \hspace{-1cm}
+                \includegraphics[scale=0.5]{template-fig/sn-implphi.PNG}
+                \centering
+            \end{figure}
+\end{graph}
+
+\subsubsection{Nová třída fuzzy implikací}
+Mějme nějakou funkci $\varphi$, jež nebude spl\v novat podmínku z Věty \ref{smut}. Pak $(S_M)_{\varphi}$ nebude asociativní, ale bude stále fuzzy disjunkcí $D.$ Použitím konstrukce $D(N_s(x),y)$ dostaneme implikaci, která bude mít velmi podobné vlastnosti jako klasické $(S,N)-$implikace. Nespl\v nuje však princip záměny, jelikož se tato vlastnost váže k asociativitě použité t-konormy. Tímto způsobem získáme novou třídu fuzzy implikací.
 
 
 \subsection{Konstrukce $R-$implik\'ator\r u pomoc\'i $\varphi-$transformace t-norem}
-Tato část je věnována konstrukcím reziduálních implikací založených na $\varphi-$transformaci minimové t-normy. 
-
-{\color{red}Výchozí reziduální implikace jsou založeny na zleva spojitých t-normách, přičemž $\varphi-$transformace minimové t-normy, tedy $(T_M)_\varphi$, není zleva spojitá na jednotkovém intervalu $[0,1]^2$. Z $(T_M)_\varphi$ lze pak jednoduše získat zleva spojitý operátor $C_\varphi:[0,1]^2 \to [0,1]$, který není t-norma, ale vyhovuje všem vlastnostem fuzzy konjunkce. Pro neklesající zleva spojitou funkci $\varphi: [0,1] \to [0,1]$ je daný operátor popsán následovně:}
+Tato část se věnuje konstrukci reziduálních implikací. Klasické reziduální implikace jsou založeny na zleva spojitých t-normách. Jak již bylo zmíněno, $\varphi-$transformace minimové t-normy, tedy $(T_M)_\varphi$, není zleva spojitá na intervalu $[0,1]^2$. Z $(T_M)_\varphi$ lze ale jednoduše získat zleva spojitý operátor $C_\varphi:[0,1]^2 \to [0,1]$, který není t-normou, ale slp\v nuje všechny vlastnosti fuzzy konjunkce. Pro neklesající zleva spojitou funkci $\varphi: [0,1] \to [0,1]$ je daný operátor popsán následovně:\cite{mitav}
 
 \begin{equation} \label{rez}
     C_{\varphi}(x,y) = \begin{cases} \varphi^{(-1)}(c_i)=a_i, &\mbox {pokud
@@ -1071,110 +1107,66 @@ $(x,y)\in [a_i,1]\times[a_i,b_i]$ nebo}
 \end{cases} 
 \end{equation} 
 
-\begin{example}
-Nech\v t je $\varphi$ funkcí z příkladu \ref{sub: fi} a $C_\varphi$ nech\v t je operátorem daným formulí \ref{rez}. Lze pak zkonstruovat následující reziduální implikaci: $$R_{C_\varphi}(x,y)=\sup\{z \in [0,1]; C_\varphi(x,z) \leq y\}.$$
+
+
+\begin{example} Nech\v t je $\varphi$ funkcí z příkladu \ref{sub: fi} a $C_\varphi$ nech\v t je operátorem daným formulí \ref{rez}. Reziduální implikaci konstruujeme následujícím zp\r usobem: $$R_{C_\varphi}(x,y)=\sup\{z \in [0,1]; C_\varphi(x,z) \leq y\}.$$  
     
-    \begin{graph} Vizu\' aln\' i rozd\v elen\'i grafu $\varphi$-transformace R-implikace tvořené minimovou t-normou\\
+    \begin{graph} Zkonstruovaná reziduální implikace\\
         \centering
         \includegraphics[scale=0.8]{template-fig/RPhi-impl.pdf}
     \end{graph}
 \end{example}
 
-Konstrukci reziduální implikace postavené n popsána následujícím výrokem:
-
-\begin{sentence}
-    {\color{blue} nebo výrok?}
-    Nech\v t je $\varphi:[0,1]\rightarrow [0,1]$
-funkce z příkladu \ref{sub: fi}.
-Pak platí, že operátor $R_{C_{\varphi}}$ je fuzzy implikace a je dán předpisem
-$$ R_{C_{\varphi}}(x,y) = \begin{cases} 1, & \mbox{pokud } x\leq y \mbox{ nebo } (x,y) \in \frac{1}{3},\frac{2}{3}]^2\\
+Konstrukci tohoto reziduálního implikátoru lze popsat následovn\v e:\\
+    Nech\v t  $\varphi:[0,1]\rightarrow [0,1]$ je funkce z příkladu \ref{sub: fi}.
+Pak je reziduální implikace zalo\v zena na $C_\varphi$ dána p\v redpisem
+$$ R_{C_\varphi}(x,y) = \begin{cases} 1, & \mbox{pokud } x\leq y \mbox{ nebo } (x,y) \in [\frac{1}{3},\frac{2}{3}]^2\\
 \frac{2}{3}, &\mbox {pokud }
 (x,y)\in [\frac{2}{3},1[\times[\frac{1}{3},\frac{2}{3}]
 \\ y, &\mbox {jinak.}
 \end{cases} $$
-\end{sentence}
 
-
-\subsection{$\varphi-$transformace fuzzy implik\'ator\r u} 
-{\color{blue}mozna bych tuto cast dala pred transformovane implikace, at prvne vysvetlujeme transform obecne a pak sn a rezidual zvlast? - pokud ano, prehodim to a trochu poupravim, aby to davalo smysl}
-V této části se věnuji obecným konstrukcím fuzzy implikátor\r u pomocí $\varphi$-transformací. Vycházím tedy z klasické Zadehovy negace, $\varphi$-transformace minimové t-normy a maximové t-konormy.
-Nech\v je tedy $\varphi: [0,1] \to [0,1]$ jakákoliv neklesající zleva spojitá funkce na intervalu ]0,1[.
-\begin{graph}
-    Příklad obecné funkce $\varphi^{(-1)}$.\\
-    \centering
-        \includegraphics[scale=0.6]{template-fig/basic.pdf}
-\end{graph}
-Pomocí $\varphi$-transformace minimové t-normy lze pak získat přepis, který je popsán ve větě \ref{t-norm}, pro výslednou transformovanou t-normu, která bude tvořit na základě funkce $\varphi$ střídající se konstantní hodnoty s minimovou t-normou. Aby byla výsledná t-norma asociativní, musejí se takové \' useky střídat, t-norma pak tedy nabývá graficky obdobného tvaru jako je písmeno \clqq L\crqq.
-\begin{graph}
-    Příklad obecné $\varphi$-transformace minimové t-normy.
-    \begin{figure}[H]
-                \hspace{-1cm}
-                \includegraphics[scale=0.6]{template-fig/t-norma.pdf}
-                \centering
-            \end{figure}
-
-\end{graph}
-
-Jelikož jsou t-konormy funkce duální k t-normám, jejich $\varphi$-transformace jsou založeny na stejném principu. Obecný přepis pro transformovanou t-konormu uvádím ve větě \ref{t-conorm}.
-\begin{graph}
-    Příklad obecné $\varphi$-transformace minimové t-konormy.
-    \begin{figure}[H]
-                \hspace{-1cm}
-                \includegraphics[scale=0.6]{template-fig/t-konorma.pdf}
-                \centering
-            \end{figure}
-\end{graph}
-
-Obecně lze pak popsat konstrukci $(S,N)-$implikací pomocí $N(x)$ a $\left(S_M\right)_\varphi$, kde je $\varphi$ libovolná neklesající zleva spojitá funkce, následujícím výrokem:
+Pro obecnou neklesající a zleva spojitou funkci $\varphi$,  dostáváme fuzzy implikátor, kterého obecný předpis je v následujícím tvrzení.
 \begin{sentence}
-{\color{blue} nebo výrok?}
-    Nech\v t je  $\varphi:[0,1]\rightarrow [0,1]$
-neklesající funkce, která je zleva spojitá na intervalu $]0,1[$.
-Nech\v t je $\{[a_i,b_i]\}_{i\in I}$ množinou podintervalů jednotkového intervalu $[0,1]$ takovou, že $\varphi(x)=c_i$ pro $x\in
+\cite{mitav}
+\label{r-impl}
+     Nechť je $\varphi:[0,1]\rightarrow [0,1]$
+neklesající a zleva spojitá funkce na intervalu $]0,1[$.
+Nechť je
+$\{[a_i,b_i]\}_{i\in I}$ množina podintervalů intevalu $[0,1]$, přičemž $\varphi(x)=c_i$ pro $x\in
 [a_i,b_i]$.
-Potom je implikace $(S,N)-$ na základě $N_S$ a $(S_M)_{\varphi}$ dána vzorcem
-$$ I_{(S_M)_{\varphi}}(x,y) = \begin{cases} 1-\varphi^{(-1)}(c_i)=1-a_i, &\mbox {pokud
-$(x,y)\in [a_i,b_i[\times[0,b_i]$ nebo}
-\\ & (x,y)\in [b_i,1]\times[a_i,b_i[,
-\\ \max(N(x),y), &\mbox {jinak.}
-\end{cases} $$
-\end{sentence}
+Potom je operátor $R_{C_\varphi}$ fuzzy implikací dán formulí
 
-\begin{corollary}
-    Jestliže existuje funkce $\varphi$, jež nespl\v nuje podmínku z Věty \ref{smut}, pak nastane situace taková, že operátor $(T_M)_\varphi$ není asociativní, a tedy není triangulární norma. Nicméně je ale stále fuzzy konjunkce. Obdobně lze uvažovat i u jeho duálního operátoru $(S_M)_\varphi$.
-\end{corollary}
-
-\begin{graph}
-    Příklad grafu $\varphi$-transformace (S,N)-implikace tvořené maximovou t-konormou.
-    \begin{figure}[H]
-                \hspace{-1cm}
-                \includegraphics[scale=0.6]{template-fig/implikace.pdf}
-                \centering
-            \end{figure}
-\end{graph}
-
-Reziduální implikace se tvoří o něco složitějším zp\r usobem. Obecně lze tedy popsat konstrukci reziduálních implikací pomocí $\left(T_M\right)_\varphi$, kde je $\varphi$ libovolná neklesající zleva spojitá funkce, následujícím výrokem:
-
-\begin{sentence}
-    {\color{blue} nebo výrok?}
-    Nech\v t je $\varphi:[0,1]\rightarrow [0,1]$
-neklesající funkce, která je zleva spojitá na jednotkovém intervalu $]0,1[$.
-Nech\v t je $\{[a_i,b_i]\}_{i\in I}$ skupina podinterval\r u jednotkového intervalu $[0,1]$ taková, že $\varphi(x)=c_i$ pro $x\in
-[a_i,b_i]$.
-Pak platí, že operátor $R_{C_{\varphi}}$ je fuzzy implikace a je dán předpisem
-$$ R_{C_{\varphi}}(x,y) = \begin{cases} 1, & \mbox{pokud } x\leq y \mbox{ nebo } (x,y) \in [a_i,b_i]^2\\
+$$ R_{C_\varphi}(x,y) = \begin{cases} 1, & \mbox{pokud } x\leq y \mbox{ nebo } (x,y) \in [a_i,b_i]^2\\
 1-\varphi^{(-1)}(c_i)=1-a_i, &\mbox {pokud }
 (x,y)\in [b_i,1[\times[a_i,b_i]
 \\ y, &\mbox {jinak.}
 \end{cases} $$
 \end{sentence}
 
-\begin{corollary}
-    Konstrukcí popsánou výše byla získána nová třída fuzzy implikací. Na rozdíl od reziduálních implikací založených na zleva spojitých t-normách, tato nová třída nespl\v nuje vlastnost uspořádání.
-\end{corollary}
+Obecný průběh takového implikátoru pak lze vyjádřit následujícím grafem:
+\begin{graph}
+    Příklad obecného reziduálního implikátoru $R_{C_\varphi}$.
+    \begin{figure}[H]
+                \hspace{-1cm}
+                \includegraphics[scale=0.4]{template-fig/r-impliphi.pdf}
+                \centering
+            \end{figure}
+\end{graph}
 
 
-\chapter{Experiment modelování fuzzy implikace}
+\subsubsection{Nová třída fuzzy implikací}
+Pomocí výše popsané konstrukci získáváme další novou třídu fuzzy implikací. Na rozdíl od reziduálních implikací založených na zleva spojitých t-normách, tato nová třída nespl\v nuje vlastnost uspořádání.
+
+
+\chapter{Modelování fuzzy logických spojek}
+V následující kapitole je popsán experiment, při kterém jsem se snažila vyhodnotit, jak lidé v běžném vágním jazyce vnímají implikace. Využívám k tomu znalosti popsané výše, především pak znalosti o $\varphi$-transformacích t-norem a t-konorem. V 
+první části zjišťuji, zda-li lidé rozumí implikacím jakožto ekvivalencím nebo nikoliv. V druhé fázi experimentu hledám nejvhodnější fuzzy implikaci, která se nejvíce podobá vytvořené funkci ze získaných empirických dat pomocí dotazníku.
+
+Pro vyhodnocení první části experimentu byl použit programovací jazyk Python, konkrétně pak verze 3.9.13., knihovny \textit{pandas a matplotlib.} 
+
+
+\section{Experiment modelování fuzzy implikace}
 V rámci své bakalářské práce provádím experiment, který využívá znalostí z předchozích kapitol a zaměřuje se na zjištění toho, zda lidé v běžném jazyce chápou implikace obdobně, jako je popisuje fuzzy matematika nebo nikoliv. Snažila jsem se tedy najít implikaci, která bude co nejvíce odpovídat získané funkci ze zpracovaných dat a vlastně celkově zkoumat, zda lidé nerozumí implikacím spíše jako výrok\r um sobě ekvivalentním.
 
 Data, která využívám pro provádění experimentu jsem získala pomocí mnou vytvořené dotazníkové webové aplikaci\footnote{Dotazník je dostupný pod odkazem: \href{https://www.stud.fit.vutbr.cz/~xjirmu00/bp/}{Dotazník}}. Dotazovaní měli za \' ukol přiřadit k předem připraveným výrok\r um nějakou číselnou hodnotu v rozmezí 1-10, přičemž 1 znamenalo, že s výrokem nesouhlasí a 10, že s ním plně souhlasí. Výrok\r u je celkově dvacet, přičemž se dělí na pět skupin po čtyřech výrocích, kde jsou první dva výroky $A$ a $B$ prosté, a další dva jsou tvořené implikací $A \to B$ a $B \to A$.
@@ -1183,26 +1175,107 @@ Respondenty jsem pečlivě vybírala velmi rozmanitě, protože je zřejmé, že
 
 Použité výroky v dotazníku vypadaly následovně:
 \begin{enumerate}
-       \item  "Testy z matematiky bývají zpravidla těžké.", 
-       \item "Výsledky z testu z matematiky jsou obvykle špatné.",
-       \item "Pokud je test z matematiky těžký, mám z něj špatný výsledek.",
-       \item  "Pokud mám z testu z matematiky špatný výsledek, test byl těžký.",
-       \item  "Chodím dříve spát.",
-       \item  "Nebývám příliš unavený.",
-       \item  "Když půjdu brzy spát, budu další den méně unavený.",
-       \item  "Jsem-li méně unavený, šel jsem předchozí noc dříve spát.",
-       \item  "Jízdné je drahé.",
-       \item  "Jízda hromadnou dopravou je pohodlná.",
-       \item  "Jestliže je jízdné drahé, cesta hromadnou dopravou je pak pohodlná.",
-       \item  "Jestliže je cesta hromadnou dopravou pohodlná, jízdné je drahé.",
-       \item  "Jsem poměrně vysoký.",
-       \item  "Nosím větší velikost bot.",
-       \item  "Jsem-li vysoký, nosím pak obvykle větší velikost bot.",
-       \item  "Pokud nosím větší velikost bot, jsem pak obvykle vysoký.",
-       \item  "Jsem starý.",
-       \item  "Mám hodně zkušeností.",
-       \item  "Pokud jsem starý, mám hodně zkušeností.",
-       \item  "Mám-li hodně zkušeností, jsem starý."
+       \item  \clqq Testy z matematiky bývají zpravidla těžké.\crqq  , 
+       \item  \clqq Výsledky z testu z matematiky jsou obvykle špatné.\crqq  ,
+       \item  \clqq Pokud je test z matematiky těžký, mám z něj špatný výsledek.\crqq  ,
+       \item  \clqq Pokud mám z testu z matematiky špatný výsledek, test byl těžký.\crqq  ,
+       \item  \clqq Chodím dříve spát.\crqq  ,
+       \item  \clqq Nebývám příliš unavený.\crqq  ,
+       \item  \clqq Když půjdu brzy spát, budu další den méně unavený.\crqq  ,
+       \item  \clqq Jsem-li méně unavený, šel jsem předchozí noc dříve spát.\crqq  ,
+       \item  \clqq Jízdné je drahé.\crqq  ,
+       \item  \clqq Jízda hromadnou dopravou je pohodlná.\crqq  ,
+       \item  \clqq Jestliže je jízdné drahé, cesta hromadnou dopravou je pak pohodlná.\crqq,
+       \item  \clqq Jestliže je cesta hromadnou dopravou pohodlná, jízdné je drahé.\crqq  ,
+       \item  \clqq Jsem poměrně vysoký.\crqq  ,
+       \item  \clqq Nosím větší velikost bot.\crqq  ,
+       \item  \clqq Jsem-li vysoký, nosím pak obvykle větší velikost bot.\crqq  ,
+       \item  \clqq Pokud nosím větší velikost bot, jsem pak obvykle vysoký.\crqq  ,
+       \item  \clqq Jsem starý.\crqq,
+       \item  \clqq Mám hodně zkušeností.\crqq,
+       \item  \clqq Pokud jsem starý, mám hodně zkušeností.\crqq,
+       \item  \clqq Mám-li hodně zkušeností, jsem starý.\crqq 
 \end{enumerate}
-\section{Vyhodnocení experimentu}
+
+Nakonec bylo získáno 149 vyplněných a odeslaných dotazník\r u od respondent\r u. Dotazník pracuje s celými hodnotami 1-10, které jsem poté pro lepší práci s daty převedla na interval [0,1].
+
+\subsection{Experiment zjiš\v tování, zda lidé chápou implikace jako ekvivalence}
+Implikace i ekvivalence jsou v běžném jazyce lidmi hojně využívány. Problém při využívání těchto logických spojek však nastává při převodu běžného jazyka do matematiky a naopak a v jejich obecném chápání lidmi. Lidské chápání logických spojek, především pak implikace, je velmi rozmanité a matematicky nepřesné. Mějme výrok: \textit{\clqq Pokud venku prší, zmoknu.\crqq } Takový výrok je zřejmě implikací. Obecně je tato věta v běžném jazyce chápána poměrně jednoznačně. V běžném jazyce ale nastává problém takový, že tento výrok m\r uže být chápán jako ekvivalence, protože pokud někdo tvrdí, že zmokl, venku dozajista pršelo. Stává se tedy, že lidé zamě\v nují implikaci za ekvivalenci, protože klasické porozumění implikace přesně neodpovídá její matematické definici.
+
+Jako další příklad bych ráda uvedla výrok: \textit{\clqq Když bude dnes svítit slunce, p\r ujdu do práce.\crqq } Tato věta je kupodivu pravdivá, pokud slunce nesvítí, ale i přesto jde člověk do práce. Také může být pravdivá, i když dotyčný nepůjde do práce – stačí, aby nesvítilo slunce, a podle prvního řádku pravdivostní tabulky bude mít stejně pravdu. Takovými zp\r usoby však není obecně na pravdivost výrok\r u nahlíženo. Pokud by slunce nesvítilo, ale daný člověk by stejně šel do práce, ostatní lidé by na něj spíše nahlíželi jako na lháře, i když podle definice implikace je jeho tvrzení stále pravdivé.\\
+
+
+Z matematiky tedy víme, že tabulka pravdivostních hodnot pro implikace složených z jednoduchých výrok\r u \textit{P} a \textit{Q} vypadá následovně:
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \(P\) & \(Q\) & \(P \Rightarrow Q\) \\ 
+        \hline
+        0 & 0 & 1 \\ 
+        \hline
+        0 & 1 & 1 \\ 
+        \hline
+        1 & 0 & 0 \\ 
+        \hline
+        1 & 1 & 1 \\ 
+        \hline
+    \end{tabular}
+    \caption{Pravdivostní hodnoty implikace (P $\Rightarrow$ Q)}
+\end{table}
+
+Největším problémem při výuce výrokové logiky, konkrétně v chápání implikace, je v lidském chápání prvních dvou řádk\r u. Pokud totiž není daný předpoklad splněný, výrok je pravdivý vždy, ale v běžném jazyce tak vnímaný není. V rámci tohoto experimentu se snažím zjistit, zda lidé chápou implikované výroky stejně jako ekvivalence, a proto logicky usuzují, že nesplnění předpokladu se běžně automaticky bere jako nepravdivý výrok.
+
+Z dat získaných pomocí dotazníku popsaného výše filtruji pomocí Python skriptu hodnoty získaných z výsledku provedením implikace $A \to B$ a poté $B \to A$. Ty následně porovnávám a pokud se výsledné hodnoty liší o jeden, respektive dva stupně osy, respondent nahlíží na výroky jako na ekvivalence. Takový proces jsem použila pro každou skupinu výrok\r u a výsledky na závěr porovnala. Výsledky zobrazuji v koláčových grafech pro zvýšení přehlednosti, kde modrá barva zastává odlišné hodnoty výsledk\r u a oranžová hodnoty stejné (nebo velmi blízké), tedy ekvivalenci. 
+
+\subsubsection{Skupina výrok\r u 1}
+Jako první zkoumám výroky \textit{\clqq Pokud je test z matematiky těžký, mám z něj špatný výsledek,\crqq } \space a \textit{\clqq Pokud mám z testu z matematiky špatný výsledek, test byl těžký.\crqq } \space V tomto konkrétním případě se jednalo o velice těsné výsledky. Naprosto shodné nebo opravdu velmi podobné odpovědi mělo téměř $44 $\space$ \%$ respondent\r u a blízké hodnoty $58.8 $\space$ \%.$
+
+\begin{graph}
+Koláčové grafy reprezentující shodu ve výrocích $A \to B$ a $B \to A$ v první skupině výrok\r u s odchylkou jednoho, respektive dvou díl\r u osy.
+    \begin{figure}[H]
+                \includegraphics[scale=0.5]{template-fig/group0.pdf}
+                \includegraphics[scale=0.5]{template-fig/group00.pdf}
+            \end{figure}
+\end{graph}
+
+\subsubsection{Skupina výrok\r u 2}
+Další skupina výrok\r u sestává z vět \textit{\clqq Když půjdu brzy spát, budu další den méně unavený,\crqq } \space a \textit{\clqq Jsem-li méně unavený, šel jsem předchozí noc dříve spát.\crqq } \space  $50.7$ \space $\%$ respondent\r u vnímá výroky jako ekvivalenci. Většina lidí tedy vnímá vztah mezi \' unavou a spánkem rovnocenně a nezáleží jim na rozdílu vstupních předpoklad\r u, pravděpodoBně z toho d\r uvodu, že obecně je jízda hromadnou dopravou brána jako méně pohodlná varianta přepravy, ale i jako varianta levnější. Proto lidé mohou vnímat výroky jakožto ekvivalenci.
+\begin{graph}
+Koláčové grafy reprezentující shodu ve výrocích $A \to B$ a $B \to A$ ve druhé skupině výrok\r u s odchylkou jednoho, respektive dvou díl\r u osy.
+    \begin{figure}[H]
+                \includegraphics[scale=0.5]{template-fig/group1.pdf}
+                \includegraphics[scale=0.5]{template-fig/group11.pdf}
+            \end{figure}
+\end{graph}
+\subsubsection{Skupina výrok\r u 3}
+Pro výroky \textit{\clqq Jestliže je jízdné drahé, cesta hromadnou dopravou je pak pohodlná,\crqq } \space a \textit{\clqq Jestliže je cesta hromadnou dopravou pohodlná, jízdné je drahé,\crqq } \space m\r užeme pozorovat poměrně velkou převahu ekvivalentních odpovědí. Přes $60 $\space$ \%$ respondent\r u vyhodnotilo výroky rovnocenně a lidé ve většině nespatřovali ve větách implikaci.
+\begin{graph}
+Koláčové grafy reprezentující shodu ve výrocích $A \to B$ a $B \to A$ ve třetí skupině výrok\r u s odchylkou jednoho, respektive dvou díl\r u osy.
+    \begin{figure}[H]
+                \includegraphics[scale=0.5]{template-fig/group2.pdf}
+                \includegraphics[scale=0.5]{template-fig/group22.pdf}
+            \end{figure}
+\end{graph}
+\subsubsection{Skupina výrok\r u 4}
+V této skupině výrok\r u m\r užeme pozorovat odpovědi, které se nejsilněji přibližují k logice ekvivalence. Jedná se o věty \textit{\clqq Jsem-li vysoký, nosím pak obvykle větší velikost bot,\crqq } \space a \textit{\clqq Pokud nosím větší velikost bot, jsem pak obvykle vysoký.\crqq } \space Výsledky s odchylkou 2 stup\v n\r u osy říkají, že $74,3 $\space$ \%$ respondent\r u vnímá výroky z obou stran stejně. Tato skupina výrok\r u je zadána velmi vágně, přičemž pojmy \textit{\clqq vysoký\crqq  a \clqq větší\crqq } jsou velmi nespecifické, a každý člověk je vnímá velmi rozdílně, proto mohou mít výroky v obecné řeči blíže k ekvivalenci.
+\begin{graph}
+Koláčové grafy reprezentující shodu ve výrocích $A \to B$ a $B \to A$ ve čtvrté skupině výrok\r u s odchylkou jednoho, respektive dvou díl\r u osy.
+    \begin{figure}[H]
+                \includegraphics[scale=0.5]{template-fig/group3.pdf}
+                \includegraphics[scale=0.5]{template-fig/group33.pdf}
+            \end{figure}
+\end{graph}
+\subsubsection{Skupina výrok\r u 5}
+Na poslední skupinu výrok\r u bylo nahlíženo jako na výroky nejméně ekvivalentní. Jde o věty \textit{\clqq Pokud jsem starý, mám hodně zkušeností,\crqq }  \space a \textit{\clqq Mám-li hodně zkušeností, jsem starý.\crqq } \space Pouze $41.2 $\space$ \%$ respondent\r u vnímá věty jako sobě rovné. Výroky byly vytvořeny s menší mírou vágnosti a pojem \textit{\clqq starý\crqq } obecně lidé chápou poměrně striktně, na rozdíl od výroku \textit{\clqq hodně zkušeností. \crqq  \space} Z toho d\r uvodu lidé více dávají d\r uraz na předpoklad.
+\begin{graph}
+Koláčové grafy reprezentující shodu ve výrocích $A \to B$ a $B \to A$ v páté skupině výrok\r u s odchylkou jednoho, respektive dvou díl\r u osy.
+    \begin{figure}[H]
+                \includegraphics[scale=0.5]{template-fig/group4.pdf}
+                \includegraphics[scale=0.5]{template-fig/group44.pdf}
+            \end{figure}
+\end{graph}
+
+Celkově tedy z experimentu vyplývá, že lidé nahlížejí na složené výroky pomocí implikace spíše jako na výroky ekvivalentní, což pak zp\r usobuje problémy při výuce výrokové logiky, kdy studenti přirozeně zamě\v nují implikace za ekvivalence, protože je tak lidé v běžném jazyce používají. Lidské vnímání jazyka je ale natolik vágní, že nelze označit všechny implikované výroky v běžné řeči za ekvivalence. V experimentu je ve skupině 5 ukázáno, že méně než polovina respondent\r u vnímala věty ekvivalentně, přičemž onen totožný vzorek lidí z velké části výroky 4 vnímal rovnocenně. Každá skupina výrok\r u je zadána s jinou mírou vágnosti, což se na výsledcích také velmi projevilo.
+
 \chapter{Závěr}
