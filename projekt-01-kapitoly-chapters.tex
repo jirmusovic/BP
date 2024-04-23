@@ -1169,7 +1169,7 @@ Pro vyhodnocení první části experimentu byl použit programovací jazyk Pyth
 \section{Experiment modelování fuzzy implikace}
 V rámci své bakalářské práce provádím experiment, který využívá znalostí z předchozích kapitol a zaměřuje se na zjištění toho, zda lidé v běžném jazyce chápou implikace obdobně, jako je popisuje fuzzy matematika nebo nikoliv. Snažila jsem se tedy najít implikaci, která bude co nejvíce odpovídat získané funkci ze zpracovaných dat a vlastně celkově zkoumat, zda lidé nerozumí implikacím spíše jako výrok\r um sobě ekvivalentním.
 
-Data, která využívám pro provádění experimentu jsem získala pomocí mnou vytvořené dotazníkové webové aplikaci\footnote{Dotazník je dostupný pod odkazem: \href{https://www.stud.fit.vutbr.cz/~xjirmu00/bp/}{Dotazník}}. Dotazovaní měli za \' ukol přiřadit k předem připraveným výrok\r um nějakou číselnou hodnotu v rozmezí 1-10, přičemž 1 znamenalo, že s výrokem nesouhlasí a 10, že s ním plně souhlasí. Výrok\r u je celkově dvacet, přičemž se dělí na pět skupin po čtyřech výrocích, kde jsou první dva výroky $A$ a $B$ prosté, a další dva jsou tvořené implikací $A \to B$ a $B \to A$.
+Data, která využívám pro provádění experimentu jsem získala pomocí mnou vytvořené dotazníkové webové aplikaci\footnote{Dotazník je dostupný pod odkazem: \href{https://www.stud.fit.vutbr.cz/~xjirmu00/bp/}{Dotazník}}. Dotazovaní měli za \' ukol přiřadit k předem připraveným výrok\r um nějakou číselnou hodnotu v rozmezí 0-10, přičemž 0 znamenalo, že s výrokem v\r ubec nesouhlasí a 10, že s ním plně souhlasí. Výrok\r u je celkově dvacet, přičemž se dělí na pět skupin po čtyřech výrocích, kde jsou první dva výroky $A$ a $B$ prosté, a další dva jsou tvořené implikací $A \to B$ a $B \to A$.
 
 Respondenty jsem pečlivě vybírala velmi rozmanitě, protože je zřejmé, že technicky založené osoby vnímají výrokovou logiku více matematicky než-li ostatní lidé. Zvolila jsem tedy rozsáhlou škálu osob a na dotazník odpovídali jak studenti z informatických fakult, tak pracující z r\r uzných obor\r u netýkajících se informačních technologií, ale i d\r uchodci a další.
 
@@ -1197,16 +1197,14 @@ Použité výroky v dotazníku vypadaly následovně:
        \item  \clqq Mám-li hodně zkušeností, jsem starý.\crqq 
 \end{enumerate}
 
-Nakonec bylo získáno 149 vyplněných a odeslaných dotazník\r u od respondent\r u. Dotazník pracuje s celými hodnotami 1-10, které jsem poté pro lepší práci s daty převedla na interval [0,1].
+Nakonec bylo získáno 149 vyplněných a odeslaných dotazník\r u od respondent\r u. Dotazník pracuje s celými hodnotami 0-10, které jsem poté pro lepší práci s daty namapovala na interval [0,1], se kterým pak v následujících částech experimentu pracuji.
 
 \subsection{Experiment zjiš\v tování, zda lidé chápou implikace jako ekvivalence}
-Implikace i ekvivalence jsou v běžném jazyce lidmi hojně využívány. Problém při využívání těchto logických spojek však nastává při převodu běžného jazyka do matematiky a naopak a v jejich obecném chápání lidmi. Lidské chápání logických spojek, především pak implikace, je velmi rozmanité a matematicky nepřesné. Mějme výrok: \textit{\clqq Pokud venku prší, zmoknu.\crqq } Takový výrok je zřejmě implikací. Obecně je tato věta v běžném jazyce chápána poměrně jednoznačně. V běžném jazyce ale nastává problém takový, že tento výrok m\r uže být chápán jako ekvivalence, protože pokud někdo tvrdí, že zmokl, venku dozajista pršelo. Stává se tedy, že lidé zamě\v nují implikaci za ekvivalenci, protože klasické porozumění implikace přesně neodpovídá její matematické definici.
-
-Jako další příklad bych ráda uvedla výrok: \textit{\clqq Když bude dnes svítit slunce, p\r ujdu do práce.\crqq } Tato věta je kupodivu pravdivá, pokud slunce nesvítí, ale i přesto jde člověk do práce. Také může být pravdivá, i když dotyčný nepůjde do práce – stačí, aby nesvítilo slunce, a podle prvního řádku pravdivostní tabulky bude mít stejně pravdu. Takovými zp\r usoby však není obecně na pravdivost výrok\r u nahlíženo. Pokud by slunce nesvítilo, ale daný člověk by stejně šel do práce, ostatní lidé by na něj spíše nahlíželi jako na lháře, i když podle definice implikace je jeho tvrzení stále pravdivé.\\
+Implikace i ekvivalence jsou v běžném jazyce lidmi hojně využívány. Problém při využívání těchto logických spojek však nastává při převodu běžného jazyka do matematiky a naopak a v jejich obecném chápání lidmi. Lidské chápání logických spojek, především pak implikace, je velmi rozmanité a matematicky nepřesné. Mějme výrok: \textit{\clqq Pokud venku prší, zmoknu.\crqq } Takový výrok je zřejmě implikací. V běžném jazyce ale nastává problém takový, že tento výrok m\r uže být chápán jako ekvivalence, protože pokud někdo tvrdí, že zmokl, venku dozajista pršelo. Stává se tedy, že lidé zamě\v nují implikaci za ekvivalenci, protože klasické porozumění implikace přesně neodpovídá její matematické definici.
 
 
 Z matematiky tedy víme, že tabulka pravdivostních hodnot pro implikace složených z jednoduchých výrok\r u \textit{P} a \textit{Q} vypadá následovně:
-\begin{table}[h!]
+\begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|}
         \hline
@@ -1226,13 +1224,13 @@ Z matematiky tedy víme, že tabulka pravdivostních hodnot pro implikace slože
 
 Největším problémem při výuce výrokové logiky, konkrétně v chápání implikace, je v lidském chápání prvních dvou řádk\r u. Pokud totiž není daný předpoklad splněný, výrok je pravdivý vždy, ale v běžném jazyce tak vnímaný není. V rámci tohoto experimentu se snažím zjistit, zda lidé chápou implikované výroky stejně jako ekvivalence, a proto logicky usuzují, že nesplnění předpokladu se běžně automaticky bere jako nepravdivý výrok.
 
-Z dat získaných pomocí dotazníku popsaného výše filtruji pomocí Python skriptu hodnoty získaných z výsledku provedením implikace $A \to B$ a poté $B \to A$. Ty následně porovnávám a pokud se výsledné hodnoty liší o jeden, respektive dva stupně osy, respondent nahlíží na výroky jako na ekvivalence. Takový proces jsem použila pro každou skupinu výrok\r u a výsledky na závěr porovnala. Výsledky zobrazuji v koláčových grafech pro zvýšení přehlednosti, kde modrá barva zastává odlišné hodnoty výsledk\r u a oranžová hodnoty stejné (nebo velmi blízké), tedy ekvivalenci. 
+Z dat získaných pomocí dotazníku popsaného výše filtruji pomocí Python skriptu hodnoty získaných z výsledku provedením implikace $A \to B$ a poté $B \to A$ v každé skupině výrok\r u. Takové hodnoty jsou po převodu diskrétní a na intervalu [0,1]. Hodnoty těchto složených výrok\r u následně porovnávám a pokud se výsledné hodnoty liší o maxim\' aln\v e 0.1, respektive o maxim\' aln\v e 0.2, respondent nahlíží na výroky jako na ekvivalence a nespatřuje tedy ve výroku implikaci. Takový proces jsem použila pro každou skupinu výrok\r u a výsledky na závěr porovnala. Výsledky zobrazuji pomocí koláčových graf\r u pro zvýšení přehlednosti, kde modrá barva zastává odlišné hodnoty výsledk\r u a oranžová hodnoty stejné (nebo velmi blízké), tedy ekvivalenci. Pokud tedy respondent označil výroky $A \to B$ a $B \to A$ stejnou nebo velmi podobnou hodnotou pravdivosti, znamenalo to, že vnímá výroky obdobně, a tedy v grafu spadá do části vybarvené oranžovou barvou a naopak.
 
 \subsubsection{Skupina výrok\r u 1}
 Jako první zkoumám výroky \textit{\clqq Pokud je test z matematiky těžký, mám z něj špatný výsledek,\crqq } \space a \textit{\clqq Pokud mám z testu z matematiky špatný výsledek, test byl těžký.\crqq } \space V tomto konkrétním případě se jednalo o velice těsné výsledky. Naprosto shodné nebo opravdu velmi podobné odpovědi mělo téměř $44 $\space$ \%$ respondent\r u a blízké hodnoty $58.8 $\space$ \%.$
 
 \begin{graph}
-Koláčové grafy reprezentující shodu ve výrocích $A \to B$ a $B \to A$ v první skupině výrok\r u s odchylkou jednoho, respektive dvou díl\r u osy.
+Koláčové grafy reprezentující shodu v první skupině výrok\r u s odchylkou 0.1, respektive 0.2.
     \begin{figure}[H]
                 \includegraphics[scale=0.5]{template-fig/group0.pdf}
                 \includegraphics[scale=0.5]{template-fig/group00.pdf}
@@ -1242,7 +1240,7 @@ Koláčové grafy reprezentující shodu ve výrocích $A \to B$ a $B \to A$ v p
 \subsubsection{Skupina výrok\r u 2}
 Další skupina výrok\r u sestává z vět \textit{\clqq Když půjdu brzy spát, budu další den méně unavený,\crqq } \space a \textit{\clqq Jsem-li méně unavený, šel jsem předchozí noc dříve spát.\crqq } \space  $50.7$ \space $\%$ respondent\r u vnímá výroky jako ekvivalenci. Většina lidí tedy vnímá vztah mezi \' unavou a spánkem rovnocenně a nezáleží jim na rozdílu vstupních předpoklad\r u, pravděpodoBně z toho d\r uvodu, že obecně je jízda hromadnou dopravou brána jako méně pohodlná varianta přepravy, ale i jako varianta levnější. Proto lidé mohou vnímat výroky jakožto ekvivalenci.
 \begin{graph}
-Koláčové grafy reprezentující shodu ve výrocích $A \to B$ a $B \to A$ ve druhé skupině výrok\r u s odchylkou jednoho, respektive dvou díl\r u osy.
+Koláčové grafy reprezentující shodu v druhé skupině výrok\r u s odchylkou 0.1, respektive 0.2.
     \begin{figure}[H]
                 \includegraphics[scale=0.5]{template-fig/group1.pdf}
                 \includegraphics[scale=0.5]{template-fig/group11.pdf}
@@ -1251,7 +1249,7 @@ Koláčové grafy reprezentující shodu ve výrocích $A \to B$ a $B \to A$ ve 
 \subsubsection{Skupina výrok\r u 3}
 Pro výroky \textit{\clqq Jestliže je jízdné drahé, cesta hromadnou dopravou je pak pohodlná,\crqq } \space a \textit{\clqq Jestliže je cesta hromadnou dopravou pohodlná, jízdné je drahé,\crqq } \space m\r užeme pozorovat poměrně velkou převahu ekvivalentních odpovědí. Přes $60 $\space$ \%$ respondent\r u vyhodnotilo výroky rovnocenně a lidé ve většině nespatřovali ve větách implikaci.
 \begin{graph}
-Koláčové grafy reprezentující shodu ve výrocích $A \to B$ a $B \to A$ ve třetí skupině výrok\r u s odchylkou jednoho, respektive dvou díl\r u osy.
+Koláčové grafy reprezentující shodu ve třetí skupině výrok\r u s odchylkou 0.1, respektive 0.2.
     \begin{figure}[H]
                 \includegraphics[scale=0.5]{template-fig/group2.pdf}
                 \includegraphics[scale=0.5]{template-fig/group22.pdf}
@@ -1260,7 +1258,7 @@ Koláčové grafy reprezentující shodu ve výrocích $A \to B$ a $B \to A$ ve 
 \subsubsection{Skupina výrok\r u 4}
 V této skupině výrok\r u m\r užeme pozorovat odpovědi, které se nejsilněji přibližují k logice ekvivalence. Jedná se o věty \textit{\clqq Jsem-li vysoký, nosím pak obvykle větší velikost bot,\crqq } \space a \textit{\clqq Pokud nosím větší velikost bot, jsem pak obvykle vysoký.\crqq } \space Výsledky s odchylkou 2 stup\v n\r u osy říkají, že $74,3 $\space$ \%$ respondent\r u vnímá výroky z obou stran stejně. Tato skupina výrok\r u je zadána velmi vágně, přičemž pojmy \textit{\clqq vysoký\crqq  a \clqq větší\crqq } jsou velmi nespecifické, a každý člověk je vnímá velmi rozdílně, proto mohou mít výroky v obecné řeči blíže k ekvivalenci.
 \begin{graph}
-Koláčové grafy reprezentující shodu ve výrocích $A \to B$ a $B \to A$ ve čtvrté skupině výrok\r u s odchylkou jednoho, respektive dvou díl\r u osy.
+Koláčové grafy reprezentující shodu ve čtvrté skupině výrok\r u s odchylkou 0.1, respektive 0.2.
     \begin{figure}[H]
                 \includegraphics[scale=0.5]{template-fig/group3.pdf}
                 \includegraphics[scale=0.5]{template-fig/group33.pdf}
@@ -1269,7 +1267,7 @@ Koláčové grafy reprezentující shodu ve výrocích $A \to B$ a $B \to A$ ve 
 \subsubsection{Skupina výrok\r u 5}
 Na poslední skupinu výrok\r u bylo nahlíženo jako na výroky nejméně ekvivalentní. Jde o věty \textit{\clqq Pokud jsem starý, mám hodně zkušeností,\crqq }  \space a \textit{\clqq Mám-li hodně zkušeností, jsem starý.\crqq } \space Pouze $41.2 $\space$ \%$ respondent\r u vnímá věty jako sobě rovné. Výroky byly vytvořeny s menší mírou vágnosti a pojem \textit{\clqq starý\crqq } obecně lidé chápou poměrně striktně, na rozdíl od výroku \textit{\clqq hodně zkušeností. \crqq  \space} Z toho d\r uvodu lidé více dávají d\r uraz na předpoklad.
 \begin{graph}
-Koláčové grafy reprezentující shodu ve výrocích $A \to B$ a $B \to A$ v páté skupině výrok\r u s odchylkou jednoho, respektive dvou díl\r u osy.
+Koláčové grafy reprezentující shodu v páté skupině výrok\r u s odchylkou 0.1, respektive 0.2.
     \begin{figure}[H]
                 \includegraphics[scale=0.5]{template-fig/group4.pdf}
                 \includegraphics[scale=0.5]{template-fig/group44.pdf}
