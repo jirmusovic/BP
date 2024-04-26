@@ -663,7 +663,7 @@ Pro představu jsou níže představeny grafy implikátorů $I_{S_M}, I_{S_P}, I
             \end{figure}
 
 \end{graph}
-Na tomto obrázku je možné pozorovat nápadnou podobnost s grafy t-konorem. Funkce jsou otočeny o 90 ° doleva, což jen dokazuje použití klasick\' eho negátoru ku základním t-konormám. 
+Na tomto obrázku je možné pozorovat nápadnou podobnost s grafy t-konorem. Funkce jsou otočeny o 90 ° doleva, což jen ukazuje použití klasick\' eho negátoru ku základním t-konormám. 
 
 
 Dále je nutné popsat již dříve zmíněné Q-implikátory.
@@ -1093,7 +1093,7 @@ Obecný průběh takového implikátoru pak lze vyjádřit následujícím grafe
 \end{graph}
 
 \subsubsection{Nová třída fuzzy implikací}
-Mějme nějakou funkci $\varphi$, jež nebude spl\v novat podmínku z Věty \ref{smut}. Pak $(S_M)_{\varphi}$ nebude asociativní, ale bude stále fuzzy disjunkcí $D.$ Použitím konstrukce $D(N_s(x),y)$ dostaneme implikaci, která bude mít velmi podobné vlastnosti jako klasické $(S,N)-$implikace. Nespl\v nuje však princip záměny, jelikož se tato vlastnost váže k asociativitě použité t-konormy. Tímto způsobem získáme novou třídu fuzzy implikací.
+Mějme nějakou funkci $\varphi$, jež nebude spl\v novat podmínku z Věty \ref{smut}. Pak $(S_M)_{\varphi}$ nebude asociativní, ale bude stále fuzzy disjunkcí $D.$ Použitím konstrukce $D(N_s(x),y)$ dostaneme implikaci, která bude mít velmi podobné vlastnosti jako klasické $(S,N)-$implikace. Nespl\v nuje však princip záměny, jelikož se tato vlastnost váže k asociativitě použité t-konormy. Tímto způsobem získáme novou třídu fuzzy implikací. Tuto konstrukci můžeme zobecnit a to tak, že standardní negátor nahradíme libovolným negátorem a další možnost zobecnění nám poskytne použití $\varphi-$tranformace nějaké jiné t-normy.
 
 
 \subsection{Konstrukce $R-$implik\'ator\r u pomoc\'i $\varphi-$transformace t-norem}
@@ -1156,18 +1156,45 @@ Obecný průběh takového implikátoru pak lze vyjádřit následujícím grafe
 
 
 \subsubsection{Nová třída fuzzy implikací}
-Pomocí výše popsané konstrukci získáváme další novou třídu fuzzy implikací. Na rozdíl od reziduálních implikací založených na zleva spojitých t-normách, tato nová třída nespl\v nuje vlastnost uspořádání.
+Pomocí výše popsané konstrukce získáváme další novou třídu fuzzy implikací. Na rozdíl od reziduálních implikací založených na zleva spojitých t-normách, tato nová třída nespl\v nuje vlastnost uspořádání. Také tuto konstrukci můžeme zobecnit a to použitím $\varphi-$transformace nějaké jiné t-normy.
 
 
 \chapter{Modelování fuzzy logických spojek}
-V následující kapitole je popsán experiment, při kterém jsem se snažila vyhodnotit, jak lidé v běžném vágním jazyce vnímají implikace. Využívám k tomu znalosti popsané výše, především pak znalosti o $\varphi$-transformacích t-norem a t-konorem. V 
-první části zjišťuji, zda-li lidé rozumí implikacím jakožto ekvivalencím nebo nikoliv. V druhé fázi experimentu hledám nejvhodnější fuzzy implikaci, která se nejvíce podobá vytvořené funkci ze získaných empirických dat pomocí dotazníku.
+Tato kapitola popisuje využití dříve popsaných znalostí o fuzzy logických spojkách a jejich konstrukcí k tvorbě programu pro vyhodnocení pochopení implikací v běžném jazyce. Snažila jsem se tedy najít nejvhodnější algoritmus pro modelování (S,N)-implikací za pomocí triangulárních konorem a klasického negátoru. Využila jsem některé již známé algoritmy, které po jistých \' upravách vyhovují specifickým podmínkám plynoucích z vlastností t-norem. Celý sv\r uj program jsem postavila na již existujícím programu, jehož autorem je Ing. Vojtěch Havlena, Ph.D., který popisuje přesné znění jeho aplikace ve své bakalářské práci. \cite{havlena}
 
-Pro vyhodnocení první části experimentu byl použit programovací jazyk Python, konkrétně pak verze 3.9.13., knihovny \textit{pandas a matplotlib.} 
+Pro modelování (S,N)-implikací je nejpodstatnější nalézt co nejvhodnější triangulární konormu, která co nejpřesněji odpovídá získaným empirickým dat\r um. Po \' upravě obecného principu aditivního generátoru spojité archimedovské t-normy \cite{alsina} lze na základě komplementarity funkcí získat předpis pro t-konormu takový, že $$S(x,y) = 1 - g^{(-1)}(g(1-x) + g(1-y)),$$ kde $g^{(-1)}$ je pseudoinverzní funkce k funkci g. Aproximace spojitých archimedovských t-norem poté po \' upravě pro t-konormy je vyjádřena následovně: $$S(x_1, x_2, \dots, x_n) = 1 - g^{-1}\left(\sum_{i = 1}^{n} g(1 - x_i)\right).$$
+Aditivní generátor spojité archimedovské t-normy T je funkce klesající, při práci s t-konormami je funkce klesající, v dalších částech práce budeme pracovat s funkcí neklesající. Je tedy snadnější aproximovat samotné generátory, namísto norem a konorem. Níže popisuji takový postup.
+
+\section{Aproximace aditivních generátor\r u}
+Aditivní generátor výše popsaný lze aproximovat r\r uznými zp\r usoby. V našem případě využijeme tzv. spline křivky, konkrétně pak B-spline křivku. Aproximovaný aditivní generátor po drobné \' upravě vypadá následovně: $$g(1-u) = S_{k,x}(1-u) = \sum_{i = 1}^{n-1}c_iB_{i,k}(1-u),$$ kde \textit{$c_i$} jsou ovládací body křivky, \textit{$B_{i,k}(1-u)$} jsou základní funkce B-spline řádu \textit{k} a \textit{n} je počet ovládacích bod\r u.
+
+Základní funkce B-spline řádu \textit{k} jsou definovány rekurzivně pro t-konormy: \\
+\begin{itemize}
+    \item Pro k = 1:
+\[
+N_{i,1}(u-1) = 
+\begin{cases}
+    0 & \text{pokud} \quad u_i \leq u < u_{i+1} \\
+    1 & \text{jinak}
+\end{cases}
+\]
+
+ \item Pro k > 1:
+\[
+N_{i,k}(u-1) = \frac{u - x_i}{x_{i + k - 1} - x_i} \cdot N_{i, k - 1}(u-1)
++ \frac{x_{i + k} - u}{x_{i + k} - x_{i + 1}} \cdot N_{i + 1, k - 1}(u-1)
+\]
+\end{itemize}
+
+
+
+V následující kapitole je popsán experiment, při kterém jsem se snažila vyhodnotit, jak lidé v běžném vágním jazyce vnímají implikace. Využívám k tomu znalosti popsané výše, především pak znalosti o konstrukci t-norem, t-konorem a implikátorů. V 
+první části zjišťuji, zda-li lidé chápou implikace jako ekvivalence nebo nikoliv. V druhé fázi experimentu hledám nejvhodnější fuzzy implikace, které  nejlépe aproximují funkce ze získaných empirických dat pomocí dotazníku.
+
 
 
 \section{Experiment modelování fuzzy implikace}
-V rámci své bakalářské práce provádím experiment, který využívá znalostí z předchozích kapitol a zaměřuje se na zjištění toho, zda lidé v běžném jazyce chápou implikace obdobně, jako je popisuje fuzzy matematika nebo nikoliv. Snažila jsem se tedy najít implikaci, která bude co nejvíce odpovídat získané funkci ze zpracovaných dat a vlastně celkově zkoumat, zda lidé nerozumí implikacím spíše jako výrok\r um sobě ekvivalentním.
+V rámci své bakalářské práce provádím experiment, který využívá znalostí z předchozích kapitol a zaměřuje se na zjištění toho, zda lidé v běžném jazyce chápou implikace obdobně, jako je popisuje fuzzy matematika nebo nikoliv. Snažila jsem se tedy najít implikace, které budou co nejvíce odpovídat získaným funkcím ze zpracovaných dat a vlastně celkově zkoumat, zda lidé nerozumí implikacím spíše jako výrok\r um sobě ekvivalentním.
 
 Data, která využívám pro provádění experimentu jsem získala pomocí mnou vytvořené dotazníkové webové aplikaci\footnote{Dotazník je dostupný pod odkazem: \href{https://www.stud.fit.vutbr.cz/~xjirmu00/bp/}{Dotazník}}. Dotazovaní měli za \' ukol přiřadit k předem připraveným výrok\r um nějakou číselnou hodnotu v rozmezí 0-10, přičemž 0 znamenalo, že s výrokem v\r ubec nesouhlasí a 10, že s ním plně souhlasí. Výrok\r u je celkově dvacet, přičemž se dělí na pět skupin po čtyřech výrocích, kde jsou první dva výroky $A$ a $B$ prosté, a další dva jsou tvořené implikací $A \to B$ a $B \to A$.
 
@@ -1197,7 +1224,7 @@ Použité výroky v dotazníku vypadaly následovně:
        \item  \clqq Mám-li hodně zkušeností, jsem starý.\crqq 
 \end{enumerate}
 
-Nakonec bylo získáno 149 vyplněných a odeslaných dotazník\r u od respondent\r u. Dotazník pracuje s celými hodnotami 0-10, které jsem poté pro lepší práci s daty namapovala na interval [0,1], se kterým pak v následujících částech experimentu pracuji.
+Nakonec bylo získáno 149 vyplněných a odeslaných dotazník\r u od respondent\r u. Dotazník pracuje s celými hodnotami 0-10, které jsem poté pro lepší práci s daty zobrazila na interval [0,1], se kterým pak v následujících částech experimentu pracuji.
 
 \subsection{Experiment zjiš\v tování, zda lidé chápou implikace jako ekvivalence}
 Implikace i ekvivalence jsou v běžném jazyce lidmi hojně využívány. Problém při využívání těchto logických spojek však nastává při převodu běžného jazyka do matematiky a naopak a v jejich obecném chápání lidmi. Lidské chápání logických spojek, především pak implikace, je velmi rozmanité a matematicky nepřesné. Mějme výrok: \textit{\clqq Pokud venku prší, zmoknu.\crqq } Takový výrok je zřejmě implikací. V běžném jazyce ale nastává problém takový, že tento výrok m\r uže být chápán jako ekvivalence, protože pokud někdo tvrdí, že zmokl, venku dozajista pršelo. Stává se tedy, že lidé zamě\v nují implikaci za ekvivalenci, protože klasické porozumění implikace přesně neodpovídá její matematické definici.
