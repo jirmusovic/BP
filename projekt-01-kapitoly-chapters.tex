@@ -16,16 +16,30 @@
 
 
 \chapter{Úvod}
-{\color{blue} Pár vět, které pak chci zakomponovat do \'uvodu nějak:
-                \color{black} Zatímco bivalentní logika pracuje s binárními hodnotami \crqq \space pravda\crqq \space a \crqq \space nepravda\crqq \space , fuzzy logika umožňuje pracovat s hodnotami, které se pohybují mezi těmito extrémy.
-}
+ Zatímco bivalentní logika pracuje s binárními hodnotami \uv {pravda} a \uv{nepravda}, fuzzy logika umožňuje pracovat s hodnotami, které se pohybují mezi těmito extrémy, a tedy představuje rozšíření klasické logiky o schopnost pracovat s neurčitostí a neostrostí, které jsou běžné v reálném světě. První zmínky o fuzzy logice představil na počátku 60. let 20. století Lotfi A. Zadeh, který položil základy nové oblasti logiky a to fuzzy logiky, která je vlastně zobecněním klasické a booleovské logiky. Tyto poznatky se využívají nejen v matematice, ale  v mnohých jiných oblastech jako je inženýrství, umělá inteligence, medicína a další. 
+ 
+ Stejně jako v klasické logice, i ve fuzzy logice jsou definovány operace negace, konjunkce, disjunkce a jiné s tím rozdílem, že se nepohybují pouze na hodnotách $0$ a $1$, ale na celém intervalu $[0,1].$
+
+ V této práci se zabýváme fuzzy množinami a logikou, konstrukcemi fuzzy logických spojek, především fuzzy implikacemi a následně i jejich modelování na základě empirických dat. Při konstrukci logických spojek se nejvíce věnujeme $\varphi-$transformacím t-norem a t-konorem.
+
+ Práce je rozdělena do tří hlavních kapitol. Kapitola \ref{kap2} se věnuje základnímu shrnutí problematiky fuzzy logických spojek a množin a představuje základní definice, které jsou dále v práci využívány. Nejvíce se pak zaměřuje na fuzzy implikace, kde jsou popsány jejich základní vlastnosti, třídy a jejich známé konstrukce.
+
+ Obsahem kapitoly \ref{kap3} jsou  konstrukce fuzzy logických spojek. V úvodu  kapitoly se věnujeme $\varphi-$transformaci minimové t-normy a následně i t-konormy. Poté se nejvíce soustředíme na konstrukce implikátorů založených na $\varphi-$transformaci triangulárních norem a konorem, přičemž jsou zde  popsány dva nové způsoby  konstrukce fuzzy implikátor\r u. 
+
+ V poslední kapitole \ref{kap4} je popsáno modelování fuzzy implikací s využitím empirických dat. Kapitola popisuje modifikovaný algoritmus pro aproximaci aditivního generátoru, experimenty modelování fuzzy implikace na základě empirických dat a samotný popis využitého programu. Tato část je inspirována prací Ing. Vojtěcha Havleny, PhD. \cite{havlena}, který se věnoval modelování fuzzy konjunkce. 
+
+ V práci jsou, krom obvyklých matematických symbol\r u, využívány symboly pro označení interval\r u, které vypadají následovně:
+ $$[a,b] = \{x \in \mathds{R}; a \leq x \leq b \},$$
+  $$]a,b] = \{x \in \mathds{R}; a \textless x \leq b \},$$
+   $$[a,b[ = \{x \in \mathds{R}; a \leq x \textless b \},$$
+    $$]a,b[ = \{x \in \mathds{R}; a \textless x \textless b \}.$$
 
 
-{\color{red} Po vasej vstupnej vete tam este nejaku taku vzletnu pridajte, mozno aj o Zadehovi nieco malo a potom by ste mali napisat strucne, co v ktorej kapitole je-preto asi aj bude lepsie, ak sa ta druha kapitola rozdeli na aspon dve dalsie. A skuste to pisat tak, aby ta informacia o kapitole zacinala pre kazdu kapitolu inak, aby to nebolo tak, ze druha kapitola sa venuje ..., treti kapitola sa venuje ..., proste o kazdej kapitole to napiste trosku inak. }
 
 
 
 \chapter {Fuzzy mno\v ziny a fuzzy logika}
+\label{kap2}
 \section{Fuzzy mno\v ziny} 
 
 %\comment{
@@ -624,12 +638,12 @@ Fuzzy implikace patří mezi nejd\r uležitější fuzzy pojmy a díky takovým 
 \end{definition}
 
 Modelov\'an\'i fuzzy implikace je ale o něco složitější, než modelov\'an\'i dříve zmíněných logických spojek. Tyto spojky ale mohou být využity pro konstrukci fuzzy implikace. Zřejmě jsou následující logické formule tautologicky ekvivalentní: $$ p\implies q, \mbox{   } \neg p \vee q, \mbox{   } \neg p\vee (p\wedge q) .$$ Lze tedy spojit informace o modelov\'an\'i p\v redchozích logických spojek a jejich vzájemných ekvivalentních \' upravách pro tvorbu fuzzy implikátoru. Konstrukce konjunkce lze vyjádřit t-normou, diskunkce t-konormou a negace standardn\'im negátorem. Vzniknou pak n\'asleduj\'ic\'i p\v redpisy:
-$$I(x,y)=S(N(x),y)\text{ neboli (S,N)-implikátory},$$
+$$I(x,y)=S(N(x),y)\text{ neboli $(S,N)-$implikátory},$$
 $$I(x,y)=S(N(x),T(x,y)) \text{ neboli Q-implikátory}.$$
 
 \begin{definition}
     \cite{Springer}
-    Funkce $I: [0,1]^2 \rightarrow [0,1]$ se nazývá (S,N)-implikace, pokud existuje t-konorma S a fuzzy negace N taková, že $$I(x,y) = S(N(x),y), x \in [0,1].$$
+    Funkce $I: [0,1]^2 \rightarrow [0,1]$ se nazývá $(S,N)-$implikace, pokud existuje t-konorma S a fuzzy negace N taková, že $$I(x,y) = S(N(x),y), x \in [0,1].$$
 \end{definition}
 
 \begin{example}
@@ -725,7 +739,7 @@ $$I(F(x, y), z) = I(x, I(y, z)); ~~~  x,y,z \in  [0, 1].$$}
 \end{definition}
 
 \begin{remark}
-    Bylo dok\'az\'ano, \v ze nap\v r. (S,N)-implikátory spl\v nují v\v zdy $(NP)$ a $(EP)$, reziduální implikátor zase spl\v nuje v\v zdy $(NP)$ a $(OP).$
+    Bylo dok\'az\'ano, \v ze nap\v r. $(S,N)-$implikátory spl\v nují v\v zdy $(NP)$ a $(EP)$, reziduální implikátor zase spl\v nuje v\v zdy $(NP)$ a $(OP).$
 \end{remark}
 
 \subsection{Konstrukce fuzzy implikátor\r u}
@@ -885,6 +899,7 @@ A na z\'av\v er uvedeme zp\r usob konstrukce, s kter\'ym jsme se potkali p\v ri 
 \end{definition}
 
 \chapter{Konstrukce fuzzy logick\'ych spojek}
+\label{kap3}
 
 V této kapitole se věnuji konstrukci fuzzy logických spojek pomocí funkcí jedné proměnné a již existujících spojek. Dále tyto poznatky budou využity při analýze lidského vyjadřování v běžném jazyce a při konstrukci fuzzy logických spojek na něm založených.
 
@@ -1152,6 +1167,7 @@ Pomocí výše popsané konstrukce získáváme další novou třídu fuzzy impl
 
 
 \chapter{Modelování fuzzy logických spojek}
+\label{kap4}
 
 \section{Experiment modelování fuzzy implikace}
 V rámci své bakalářské práce provádím experiment, který využívá znalostí z předchozích kapitol a zaměřuje se na zjištění toho, zda lidé v běžném jazyce chápou implikace obdobně, jako je popisuje fuzzy matematika nebo nikoliv. Snažila jsem se tedy najít implikace, které budou co nejvíce odpovídat získaným funkcím ze zpracovaných dat a vlastně celkově zkoumat, zda lidé nerozumí implikacím spíše jako výrok\r um sobě ekvivalentním.
@@ -1223,7 +1239,7 @@ Jako první zkoumám výroky \textit{\clqq Pokud je test z matematiky těžký, 
             \end{figure}
 
 \subsubsection{Skupina výrok\r u 2}
-Další skupina výrok\r u sestává z vět \textit{\clqq Když půjdu brzy spát, budu další den méně unavený,\crqq } \space a \textit{\clqq Jsem-li méně unavený, šel jsem předchozí noc dříve spát.\crqq } \space  $50.7$ \space $\%$ respondent\r u vnímá výroky jako ekvivalenci. Většina lidí tedy vnímá vztah mezi \' unavou a spánkem rovnocenně a nezáleží jim na rozdílu vstupních předpoklad\r u, pravděpodoBně z toho d\r uvodu, že obecně je jízda hromadnou dopravou brána jako méně pohodlná varianta přepravy, ale i jako varianta levnější. Proto lidé mohou vnímat výroky jakožto ekvivalenci.
+Další skupina výrok\r u sestává z vět \textit{\clqq Když půjdu brzy spát, budu další den méně unavený,\crqq } \space a \textit{\clqq Jsem-li méně unavený, šel jsem předchozí noc dříve spát.\crqq } \space  $50.7$ \space $\%$ respondent\r u vnímá výroky jako ekvivalenci. Většina lidí tedy vnímá vztah mezi \' unavou a spánkem rovnocenně a nezáleží jim na rozdílu vstupních předpoklad\r u, pravděpodobně z toho d\r uvodu, že obecně je jízda hromadnou dopravou brána jako méně pohodlná varianta přepravy, ale i jako varianta levnější. Proto lidé mohou vnímat výroky jakožto ekvivalenci.
 
     \begin{figure}[H]
     \caption{Koláčové grafy reprezentující shodu v druhé skupině výrok\r u s odchylkou 0.1, respektive 0.2.}
@@ -1262,18 +1278,27 @@ Na poslední skupinu výrok\r u bylo nahlíženo jako na výroky nejméně ekviv
 Celkově tedy z experimentu vyplývá, že lidé nahlížejí na složené výroky pomocí implikace spíše jako na výroky ekvivalentní, což pak zp\r usobuje problémy při výuce výrokové logiky, kdy studenti přirozeně zamě\v nují implikace za ekvivalence, protože je tak lidé v běžném jazyce používají. Lidské vnímání jazyka je ale natolik vágní, že nelze označit všechny implikované výroky v běžné řeči za ekvivalence. V experimentu je ve skupině 5 ukázáno, že méně než polovina respondent\r u vnímala věty ekvivalentně, přičemž onen totožný vzorek lidí z velké části výroky 4 vnímal rovnocenně. Každá skupina výrok\r u je zadána s jinou mírou vágnosti, což se na výsledcích také velmi projevilo.
 
 \section{Modelování fuzzy implikace}
-Tato kapitola popisuje využití dříve popsaných znalostí o fuzzy logických spojkách a jejich konstrukcí k tvorbě programu pro vyhodnocení pochopení implikací v běžném jazyce. Snažila jsem se tedy najít nejvhodnější algoritmus pro modelování $(S,N)-$implikací za pomocí triangulárních konorem a standardního negátoru  $N_S$. Využila jsem některé již známé algoritmy, které po jistých \' upravách vyhovují specifickým podmínkám plynoucích z vlastností t-norem. Celý sv\r uj program jsem postavila na  modifikaci již existujícím programu, jehož autorem je Ing. Vojtěch Havlena, Ph.D., který popisuje přesné znění jeho aplikace ve své bakalářské práci. \cite{havlena}
+Tato kapitola popisuje využití dříve popsaných znalostí o fuzzy logických spojkách a jejich konstrukcí k tvorbě programu pro vyhodnocení pochopení implikací v běžném jazyce. Snažila jsem se tedy najít nejvhodnější algoritmus pro modelování $(S,N)-$implikací za pomocí triangulárních konorem a standardního negátoru  $N_S$. Využila jsem některé již známé algoritmy, které po jistých \' upravách vyhovují specifickým podmínkám, plynoucích z vlastností t-norem. Celý sv\r uj program jsem postavila na  modifikaci již existujícího programu, jehož autorem je Ing. Vojtěch Havlena, Ph.D., který popisuje přesné znění jeho aplikace ve své bakalářské práci. \cite{havlena}
 
-Pro modelování $(S,N)-$implikací je nejpodstatnější nalézt vhodnou triangulární konormu, která co nejpřesněji odpovídá získaným empirickým dat\r um.
-{\color{red} Sem musite dat vzorecek pre S,N implikacie a vysvetlit, ze teda budete modifikovat prvu suradnicu (urobite z nej $N_S(x)$, co je $1-x$ a vyuzijete to, ze konormy vieme generovat. Dajte tam aj vzorecek pre (S,N)-impl.}
+Pro modelování $(S,N)-$implikací je nejpodstatnější nalézt vhodnou triangulární konormu, která co nejpřesněji odpovídá získaným empirickým dat\r um. Jak již bylo v práci zmíněno, předpis pro $(S,N)-$implikace, které jsou konstruovány nad standardním negátorem $N_S(x) = 1-x$ a t-konormou $S$, je následovný: $$I_{S,N_S}(x,y) = S(N_S(x),y).$$ Po  přepočtu vstupních hodnot proměnné $x$ na $N_S(x)$ se pak úloha modifikuje na hledání generované t-konormy.
 
-Po \' upravě obecného principu aditivního generátoru spojité archimedovské t-normy \cite{alsina} lze na základě komplementarity funkcí získat předpis pro t-konormu takový, že $$S(x,y) = 1 - g^{-1}(g(1-x) + g(1-y)),$$ kde $g$ je klesající funkce. Aproximace spojitých archimedovských t-norem poté po \' upravě pro t-konormy je vyjádřena následovně: \cite{Beliakov} $$S(x_1, x_2, \dots, x_n) = 1 - g^{-1}\left(\sum_{i = 1}^{n} g(1 - x_i)\right).$$
-Aditivní generátor spojité archimedovské t-normy T je funkce klesající, při práci s t-konormami je funkce klesající, v dalších částech práce budeme pracovat s funkcí neklesající. Je tedy snadnější aproximovat samotné generátory, namísto norem a konorem. Níže popisuji takový postup.
+Při hledání generované t-konormy využijeme dualitu t-norem a t-konorem. Potom pomocí  aditivního generátoru spojité archimedovské t-normy \cite{alsina} lze získat předpis pro t-konormu:
+$$S(x,y) = 1 - g^{-1}(g(1-x) + g(1-y)),$$ 
+kde $g$ je klesající funkce. 
+Po úpravě dostáváme
+$$1-S(x,y) =  g^{-1}(g(1-x) + g(1-y)),$$ 
+a díky vlastnostem inverzní funkce platí
+$$g(1-S(x,y)) = (g(1-x) + g(1-y)). $$
+
+Aproximace spojitých archimedovských t-norem poté po \' upravě pro t-konormy je vyjádřena následovně: \cite{Beliakov} $$S(x_1, x_2, \dots, x_n) = 1 - g^{-1}\left(\sum_{i = 1}^{n} g(1 - x_i)\right),$$
+nebo 
+$$g\left(1-S(x_1, x_2, \dots, x_n)\right) = \left(\sum_{i = 1}^{n} g(1 - x_i)\right).$$
+Budeme tedy aproximovat aditivní generátor spojité archimedovské t-normy $T$ , co je snadnější, než aproximovat t-normy a t-konormy. V následující podkapitole popisuji takový postup.
 
 \subsection{Aproximace aditivních generátor\r u}
-Aditivní generátor výše popsaný lze aproximovat r\r uznými zp\r usoby. V našem případě využijeme tzv. spline křivky, konkrétně pak B-spline křivky. Aproximovaný aditivní generátor po drobné \' upravě vypadá následovně: \cite{Beliakov} $$g(1-x) = S_{m,t}(1-x) = \sum_{j = 1}^{n-1}c_jB_{j,m}(1-x),$$ kde \textit{$c_j$} jsou ovládací body křivky, \textit{$B_{j,k}(1-x)$} jsou základní funkce B-spline řádu \textit{k} a \textit{n} je počet ovládacích bod\r u.
+V předchozí kapitole popsaný aditivní generátor  lze aproximovat r\r uznými zp\r usoby. V našem případě využijeme tzv. spline křivky, konkrétně pak $B-$spline křivky. Aproximovaný aditivní generátor po drobné \' upravě vypadá následovně: \cite{Beliakov} $$g(1-x) = S_{m,t}(1-x) = \sum_{j = 1}^{n-1}c_jB_{j,m}(1-x),$$ kde \textit{$c_j$} jsou ovládací body křivky, \textit{$B_{j,k}(1-x)$} jsou základní funkce B-spline řádu \textit{k} a \textit{n} je počet ovládacích bod\r u.
 
-Základní funkce B-spline řádu \textit{k} jsou definovány rekurzivně: \cite{Beliakov} \\
+Základní funkce $B-$spline řádu \textit{k} jsou definovány rekurzivně: \cite{Beliakov} \\
 \begin{itemize}
     \item Pro k = 1:
 \[
@@ -1295,13 +1320,15 @@ Předpokládejme $K$ empirických dat ve tvaru \cite{Beliakov}:
 $$
   \left\{ (x_1^k, x_2^k, \dots, x_{n_k}^k), y^k \right\}, \quad k~= 1, 2, \dots, K.
 $$
-Po dosažení empirických dat do rovnic uvedených výše pak získáme rovnici takovou, ze které lze při aproximaci vycházet:
+Po dosažení empirických dat do rovnic uvedených výše pak získáme rovnici takovou, ze které lze při aproximaci vycházet: 
 $$
-  g(x_1^k)+g(x_2^k)+\cdots + g(x_{n_k}^k) \approx g(y^k).
+  g(x_1^k)+g(x_2^k)+\cdots + g(x_{n_k}^k) \approx g(1-y^k).
 $$
 Po nahrazení funkce $g$ za upravený aproximovaný aditivní generátor a \' upravou výrazu získáváme následující tvar \cite{Beliakov}:
+
+
 $$
-  \sum_{j = 1}^Jc_j\left( \sum_{i=1}^{n_k}B_{j,m}(1-x_i^k) - B_{j,m}(y^k) \right)^2 \approx 0, \quad k~= 1,\dots,K.
+  \sum_{j = 1}^Jc_j\left( \sum_{i=1}^{n_k}B_{j,m}(1-x_i^k) - B_{j,m}(1-y^k) \right)^2 \approx 0, \quad k~= 1,\dots,K.
 $$
 Kv\r uli \' upravě p\r uvodního aditivního generátoru, musíme také upravit podmínky na něj kladené. Okrajové podmínky pak tedy vypadají následovně: $ g(1)=0$ a $g(\varepsilon) = 1$.
 Okrajové podmínky lze s~ohledem na aproximaci pomocí $B$-spline křivek zapsat jako:
@@ -1309,8 +1336,8 @@ $$
   \sum_{j = 1}^Jc_jB_{j,m}(1) = 0\quad\quad\sum_{j = 1}^Jc_jB_{j,m}(\varepsilon) = 1.
 $$
 
-Je tedy potřeba nalézt koeficienty $c_j$ takové, že budou spl\v novat uvedené podmínky. Vyjádřit je lze následujícím zp\r usobem: \cite{havlena} $$\mathbf{Ac} \approx \mathbf{0},\quad\mathbf{-c} \geq \mathbf{0},\quad\mathbf{Ec} = \begin{pmatrix} 0 \\ 1 \end{pmatrix},$$
-kde $$\mathbf{A} = (A_{kj}) = \sum_{i = 1}^{n_k}B_{j,m}(1-x_i^k) - B_{j,m}(y^k),\quad \mathbf{c} = \begin{pmatrix} c_1 & c_2 &\cdots&c_J \end{pmatrix}^T,\\$$
+Je tedy potřeba nalézt koeficienty $c_j$ takové, že budou spl\v novat uvedené podmínky. Vyjádřit je lze následujícím zp\r usobem: \cite{havlena} $$\mathbf{Ac} \approx \mathbf{0},\quad\mathbf{-c} \geq \mathbf{0},\quad\mathbf{Ec} = \begin{pmatrix} 0 \\ 1 \end{pmatrix},$$ 
+kde $$\mathbf{A} = (A_{kj}) = \sum_{i = 1}^{n_k}B_{j,m}(1-x_i^k) - B_{j,m}(1-y^k),\quad \mathbf{c} = \begin{pmatrix} c_1 & c_2 &\cdots&c_J \end{pmatrix}^T,\\$$
   $$\mathbf{E} = \begin{pmatrix} B_0(1) & B_1(1) &\cdots& B_J(1) \\ B_0(\varepsilon) & B_1(\varepsilon) &\cdots& B_J(\varepsilon) \end{pmatrix}.$$\\
 
 \section{Aproximační algoritmus}
@@ -1322,7 +1349,7 @@ Pokud tedy máme problém $$\mathbf{Ax}\approx\mathbf{b},\quad \mathbf{A}\in\mat
 Vzhledem k tomu, že jsou stanoveny dvě omezující podmínky, musíme rozdělit algoritmus na dvě jednotlivé části, ve kterých se samostatně řeší obě dané podmínky zvláš\v t.
 
 \subsection{Metoda váhování}
-Pro vyřešení problému $\mathbf{Ec} = \begin{pmatrix} 1 & 0 \end{pmatrix}^T$ je možné využít metody váhování. Jedná se o přiřazování vah koeficient\r um, na které se vztahují dané podmínky. Jde se o upravený vztah \cite{bjork} $$\mathbf{c}_{LSE} = \arg\min_{\mathbf{c}}\lim_{\gamma\rightarrow\infty}\left\|\begin{pmatrix} \gamma\mathbf{E} \\ \mathbf{A} 
+Pro vyřešení problému $\mathbf{Ec} = \begin{pmatrix} 1 & 0 \end{pmatrix}^T$ je možné využít metody váhování. Jedná se o přiřazování vah koeficient\r um, na které se vztahují dané podmínky. Jedná se o upravený vztah \cite{bjork} $$\mathbf{c}_{LSE} = \arg\min_{\mathbf{c}}\lim_{\gamma\rightarrow\infty}\left\|\begin{pmatrix} \gamma\mathbf{E} \\ \mathbf{A} 
   \end{pmatrix}\mathbf{c} - \begin{pmatrix} \gamma (0\quad1)^T \\ \mathbf{0} \end{pmatrix}\right\|_2^2.$$
 Pomocí této metody lze převést problém na \' ulohu, která lze řešit pomocí metody nejmenších čtverc\r u. Pro vyřešení problému podmínky na nerovnost je možné použít Lawson-Hanson\r uv algoritmus, čemuž se věnuji v následující podkapitole.
 \subsection{Lawson-Hanson\r uv algoritmus}
@@ -1331,33 +1358,59 @@ Tento algoritmus \cite{chen} pracuje na tom principu, že hledá vektor $\mathbf
 Je to tedy iterační algoritmus, který v každé své iteraci stanoví množinu, nad kterou je možné provést metodu nejmenších čtverc\r u a tím se vymění indexy proměnných. Využívá při tom metodu aktivní a pasivní množiny. V aktivní množině jsou indexy proměnných, které mají záporné regresní koeficienty. Dále dochází ke spočítání nové hodnoty vektoru $\mathbf{x}$ a pokud se hodnota index\r u ve vektoru $\mathbf{x}$ rovná nule, indexy se vymění.
 
 
-\subsection{Výsledný aproximační algoritmus}
+%\subsection{Výsledný aproximační algoritmus}
 
-Na základě předcházejících částí algoritmu a aplikace V. Havleny sestavuji výsledný algoritmus pro aproximaci aditivního generátoru a v této části se věnuji jeho popisu. Výstupem Lawson-Hansonova algoritmu jsou nezáporné koeficienty, které pak využívám pro konstrukci B-spline křivek.
+Na základě předcházejících částí algoritmu a aplikace V. Havleny jsem sestavila výsledný algoritmus pro aproximaci aditivního generátoru a v této části se věnuji jeho popisu. Výstupem Lawson-Hansonova algoritmu jsou nezáporné koeficienty, které pak využívám pro konstrukci B-spline křivek.
 
 Po zpracování empirických dat a krajních podmínek je potřeba sestavit matice $\mathbf{A}$ a $\mathbf{E}$. Pomocí metody váhování se pak plní krajní podmínky. Poté nad těmito maticemi provádím Lawson-Hanson\r uv algoritmus pro spočtení B-spline koeficient\r u. 
 
 
-\subsection{Experiment modelování fuzzy implikace na základě empirických dat}
+\subsection{Výsledky  modelování fuzzy implikace na základě empirických dat}
 
-V této části experimentu jsem se snažila najít libovolnou $(S,N)-$impliakci, která by odpovídala výslednému aproximovanému generátoru, který jsem na základě získaných dat modelovala pomocí výše popsané upravené aproximace aditivního generátoru s využitím B-spline křivek. Nasbírané hodnoty jsem opět rozdělila do pěti skupin, přičemž jsem v každé skupině modelovala ze získaných empirických dat generátory. Jak je již popsáno výše, z jednoduchých výrok\r u $A$ a $B$ jsem konstruovala implikace $A \to B$ a $B \to A$.
+V této části experimentu jsem se snažila najít libovolnou $(S,N)-$impliakci, která by odpovídala výslednému aproximovanému generátoru, který jsem na základě získaných dat modelovala pomocí výše popsané upravené aproximace aditivního generátoru s využitím B-spline křivek. Nasbírané hodnoty jsem opět rozdělila do pěti skupin, přičemž jsem v každé skupině modelovala ze získaných empirických dat generátory. Jak je již popsáno výše, z jednoduchých výrok\r u $A$ a $B$ jsem konstruovala implikace $A \to B$ a $B \to A$. V následující části je pro každou skupinu výrok\r u $i \in \{1, 2, 3, 4, 5\}$ vymodelován aproximovaný graf aditivního generátoru $g_{ij}(x)$ (modře) a jeho inverzní funkce $g_{ij}^{-1}(x)$ (oranžově), kde pokud $j = a$, generátor vychází z implikování výrok\r u $A$ a $B$ pomocí $A \to B$. Pokud $j = b$, generátor vychází z implikování výrok\r u $A$ a $B$ pomocí $B \to A$. V dalším představeném grafu se nachází vyobrazení zkonstruované fuzzy implikace na základě funkcí $g_{ij}(x)$ a $g_{ij}^{-1}(x)$, jejíž předpis je u každého grafu popsán. Implikace je konstruována pomocí výše zmíněných \' znalostí pomocí vzorce $$I_{S,N}(x,y) = 1-g^{-1}(g(1-(1-x))+g(1-y)),$$ tedy klasickým předpisem pro t-konormy a modifikací vstupní hodnoty $x$ pomocí fuzzy negátoru $N_S(x).$
 
-{\color{blue}zatim je to operativne! popisky a vse okolo budou, na implikacich se pracuje}
 \subsubsection{Skupina výrok\r u 1}
-a:\\
-$+0.10680x^2-2.92499x+2.82449$\\
-$+0.00674x^2-0.37026x+1.00250$\\
 
+
+
+    
+a:\\
+$-4.96124x^2+5.41040x-0.42921$\\
+$-0.23295x^2-0.10243x+0.99083$\\
+
+
+
+\begin{tikzpicture}
+        \begin{axis}[
+            width=7cm,  % Nastavte požadovanou šířku grafu
+            height=7cm, % Nastavte požadovanou výšku grafu
+            xlabel=$x$,
+            ylabel=$y$,
+            zlabel=$z$, % Popisek osy z
+            domain=0:1, % Rozsah hodnot x
+            y domain=0:1, % Rozsah hodnot y
+            zmin=0, zmax=1,
+            colormap/viridis, % Barevná mapa (nastavitelná)
+            view={15}{30}, % Náhled na graf (úhel pohledu)
+            legend style={at={(0.5,-0.2)}, anchor=north}
+        ]
+        
+     \addplot3 [surf, shader=interp, mesh] {1-(-0.23295*((-4.96124*x^2+5.41040*x-0.42921) + -4.96124*(1-y)^2+5.41040*(1-y)-0.42921)^2-0.10243*((-4.96124*x^2+5.41040*x-0.42921) + -4.96124*(1-y)^2+5.41040*(1-y)-0.42921)+0.99083)};
+        \legend{$I_{1a}$}
+        \end{axis}
+    \end{tikzpicture}\\
+    
 \begin{figure}[H]
-    \caption{1a}
+    \caption{Generátor zkonstruován nad 1. skupinou při $A \to B$ a k němu náležící $(S,N)-$implikace}
         \hspace{-1cm}
         \includegraphics[scale=0.5]{template-fig/p0.pdf}
+        %\includegraphics[scale=0.7]{template-fig/I1a.PNG}
         \centering
 \end{figure}
 
 b:\\
-$+2.50114x^2-6.88952x+4.38598$\\
-$+0.11373x^2-0.46546x+0.99500$\\
+$-2.20157x^2+0.86431x+1.34916$\\
+$-0.10469x^2-0.25281x+1.00058$\\
 
 \begin{figure}[H]
     \caption{1b}
@@ -1365,10 +1418,14 @@ $+0.11373x^2-0.46546x+0.99500$\\
         \includegraphics[scale=0.5]{template-fig/p1.pdf}
         \centering
 \end{figure}
+
+
+
+
 \subsubsection{Skupina výrok\r u 2}
 a:\\
-$-3.43682x^2+2.90444x+0.54834$\\
-$-0.16538x^2-0.18524x+0.99705$\\
+$-6.52413x^2+7.99490x-1.44542$\\
+$-0.29812x^2-0.01887x+0.98312$\\
 
 \begin{figure}[H]
     \caption{2a}
@@ -1377,8 +1434,9 @@ $-0.16538x^2-0.18524x+0.99705$\\
         \centering
 \end{figure}
 b:\\
-$-4.19079x^2+4.15162x+0.05777$\\
-$-0.20209x^2-0.14282x+0.99413$
+$-3.62482x^2+3.21480x+0.42657$\\
+$-0.17445x^2-0.17477x+0.99637$\\
+
 \begin{figure}[H]
     \caption{2b}
         \hspace{-1cm}
@@ -1387,8 +1445,8 @@ $-0.20209x^2-0.14282x+0.99413$
 \end{figure}
 \subsubsection{Skupina výrok\r u 3}
 a:\\
-$-4.98038x^2+5.43831x-0.43823$\\
-$-0.23250x^2-0.10214x+0.99079$\\
+$-0.37372x^2-2.15262x+2.53242$\\
+$-0.01540x^2-0.34575x+1.00229$\\
 \begin{figure}[H]
     \caption{3a}
         \hspace{-1cm}
@@ -1396,8 +1454,8 @@ $-0.23250x^2-0.10214x+0.99079$\\
         \centering
 \end{figure}
 b:\\
-$-3.87762x^2+3.61957x+0.27435$\\
-$-0.18305x^2-0.16227x+0.99543$\\
+$+0.89041x^2-4.23567x+3.34760$\\
+$+0.04377x^2-0.40316x+1.00071$\\
 \begin{figure}[H]
     \caption{3b}
         \hspace{-1cm}
@@ -1406,8 +1464,8 @@ $-0.18305x^2-0.16227x+0.99543$\\
 \end{figure}
 \subsubsection{Skupina výrok\r u 4}
 a:\\
-$-1.76734x^2+0.18220x+1.59860$\\
-$-0.08809x^2-0.27616x+1.00200$\\
+$-6.37984x^2+7.76810x-1.36239$\\
+$-0.29771x^2-0.02285x+0.98355$\\
 \begin{figure}[H]
     \caption{4a}
         \hspace{-1cm}
@@ -1415,8 +1473,8 @@ $-0.08809x^2-0.27616x+1.00200$\\
         \centering
 \end{figure}
 b:\\
-$-2.62145x^2+1.58238x+1.05444$\\
-$-0.13016x^2-0.22915x+0.99984$\\
+$-3.22839x^2+2.57407x+0.67077$\\
+$-0.15846x^2-0.19570x+0.99784$\\
 \begin{figure}[H]
     \caption{4b}
         \hspace{-1cm}
@@ -1425,8 +1483,8 @@ $-0.13016x^2-0.22915x+0.99984$\\
 \end{figure}
 \subsubsection{Skupina výrok\r u 5}
 a:\\
-$-3.63335x^2+3.23454x+0.41588$\\
-$-0.17634x^2-0.17369x+0.99635$\\
+$-6.17567x^2+7.42872x-1.22804$\\
+$-0.28883x^2-0.03410x+0.98465$\\
 \begin{figure}[H]
     \caption{5a}
         \hspace{-1cm}
@@ -1434,8 +1492,8 @@ $-0.17634x^2-0.17369x+0.99635$\\
         \centering
 \end{figure}
 b:\\
-$-9.29065x^2+12.56377x-3.23872$\\
-$-0.37006x^2+0.09461x+0.97112$\\
+$+0.21927x^2-3.11527x+2.90155$\\
+$+0.01227x^2-0.37499x+1.00225$\\
 \begin{figure}[H]
     \caption{5b}
         \hspace{-1cm}
@@ -1444,15 +1502,64 @@ $-0.37006x^2+0.09461x+0.97112$\\
 \end{figure}
 
 \section{Implementace programů}
-bla, bla
-\subsection{Dotaznik}
-\subsection{Aprox}
+V této části se věnuji popisu implementace dvou program\r u, které jsem využila v rámci své bakalářské práce. V prvním programu se jedná o dotazníkovou aplikaci, v druhém o algoritmus pro aproximaci aditivního generátoru.
+\subsection{Dotazníková aplikace}
+Pro \' učely implementace byl zvolen skriptovací jazyk PHP (konkrétně pak verze $8.1.16$) pro lepší práci s webovým rozhraním a daty. Pro zpracování dat jsem využila programovacího jazyka Python, verzi $3.11.1$. 
+
+Hlavní část programu je rozdělena do dvou adresář\r u \textit{src} a \textit{wwwroot}. Soubor \textit{src$\slash$db.php} obsahuje třídu \textit{DBContext}, která je navržena podle návrhového vzoru singleton a slouží jako databázový kontext, který umožňuje připojení k databázi, vytváření databázových tabulek a ukládání dat z formulářů. Soubor \textit{src$\slash$form.php} využívá metody $POST$ a spravuje odeslání formuláře na server, ukládání dat a pracuje se souborem cookie, pro kontrolu počtu odeslaných odpovědí. Dále zobrazuje některé prvky dotazníku. Soubor \textit{wwwroot$\slash$index.php} vykresluje HTML stránku s formulářem a kontroluje, zda byl formulář již odeslán (a tím pádem uložen do databáze). Pokud formulář nebyl ještě odeslán (tj. cookie \clqq form$\textunderscore$sent\crqq \space není nastaven), formulář je zobrazen na stránce. Pokud byl formulář již odeslán (tj. cookie \clqq form$\textunderscore$sent\crqq \space je nastaven), zobrazí se zpráva, že formulář byl již vyplněn.
+
+Druhá část programu se váže k prvnímu experimentu mojí práce a sestává z adresáře \textit{py$\textunderscore$check}, který zpracovává získaná data ze souboru \textit{data.csv}, provádí jejich analýzu a vytváří vizualizaci ve formě koláčových grafů pro všechny skupiny otázek.
+\subsection{Aproximační algoritmus}
+V této podkapitole je popsána implementace programu pro aproximaci aditivních generátor\r u, který staví na znalostech popsaných v předchozích kapitolách. Pro tvorbu programu byl zvolen programovací jazyk Python, konkrétně pak verze $3.11.1$, převážně z d\r uvodu již existujících funkcí pro tvorbu $B-$splinu a jednoduché práce s maticemi.
+
+Program obsahuje funkce \textit{BSplineEval} pro rekurzivní výpočet $B-$spline funkce v bodě \textit{x}, s stupněm \textit{k}, indexem \textit{i} a uzly \textit{t}, \textit{CalcPoints}, která provádí výpočty pomocí $B-$spline interpolace na datech z \textit{DataFrame} a funkce pro vykreslování a získávání předpis\r u pro výsledné generátory.
+
+Algoritmus nejprve musí transformovat vstupní hodnoty, aby byl aproximovaný aditivní generátor klesající, tedy koeficienty $B-$splinu musejí být záporné. Provede se tedy následující transformace: $$
+  \mathcal{F}(x) = \mathcal{F}^{-1}(x) = 1-x.
+$$
+Po vytvoření matic $\mathbf{A}$ a $\mathbf{E}$ s upravenými vstupními hodnotami se pomocí Lawson-Hansonova algoritmu spočítají hodnotu $B-$splinu. Nastavení počtu uzl\r u $B-$splinu je nutné provádět experimentálně, stejně tak pak i jejich hodnoty. Na základě těchto hodnot je pak ovlivněná výsledná podoba generátoru. Na základě těchto \' uprav se pak mohou vykreslit požadované aproximované generátory a k nim i funkce inverzní, kterou poté využívám pro generaci implikace na nich postavené. Algoritmus v pseudok\'odu vypadá následovně:
+
+\begin{algorithm}[H]
+ \SetKwInput{Input}{Vstup}\SetKwInOut{Output}{Výstup}
+ \SetNlSty{}{}{:}
+ \SetNlSkip{-1.2em}
+ \SetInd{1em}{1em}
+ \Input{Množina empirických dat ve tvaru $\{\mathbf{x_1}^k, \mathbf{x_2}^k, y^k\}, k~= 1,2,\dots,n$}
+ \Output{Vypočítané hodnoty bod\r u}
+ \BlankLine
+ \Indentp{1.7em}
+    $x_1\textunderscore list \gets$ hodnoty $x_1$ z $\textit{DataFrame} / 10$, $x_2\textunderscore list \gets$ hodnoty $x_2$ z $\textit{DataFrame} / 10$, $y\textunderscore list \gets$ hodnoty $y$ z $\textit{DataFrame} / 10$\\
+    $\mathbf{A} \gets \mathbf{0}, \mathbf{b} \gets \mathbf{0}, \mathbf{C} \gets \mathbf{0}, \mathbf{c} \gets (0\quad1)^T$\\
+    $\widetilde{\mathbf{x}}^k \gets \mathcal{F}(\mathbf{x}^k)$, $\widetilde{y}^k \gets \mathcal{F}(y^k)$ pro $k = 1,2,\dots,n$\\
+    $\textbf{for } \mathbf{ X_k}$ a $\mathbf{j < J}$\\
+    $\qquad A_{kj} \gets \sum_{i = 1}^{n_k}B_{j,m}(\widetilde{x}_i^k) - B_{j,m}(\widetilde{y}^k)$ \\
+    $\mathbf{A} \gets \begin{pmatrix} \gamma\mathbf{E} \\ \mathbf{A} \end{pmatrix}$, 
+      $\mathbf{b} \gets \begin{pmatrix} \gamma\mathbf{d} \\ \mathbf{b} \end{pmatrix}$\\
+    $\mathbf{c} \gets Lawson-Hanson(\mathbf{A}, \mathbf{b})$ \\
+    $pointer \gets START$\\
+    \While{$pointer \leq END$} {
+    {
+	$val \gets \sum_{j = 1}^Jc_jB_{j,m}(\mathcal{F}^{-1}(i))$\\
+	
+      }
+      $pointer \gets pointer + STEP$
+    }
+ \caption{\textsc{Aproximační algoritmus}}
+\end{algorithm}
+
+Načítání dat pak probíhá opět ze souboru \textit{data.csv}. Data se zpracují podle výše popsaného pravidla na hodnoty $0-1$ a je pak s nimi dále pracováno. Výstupem celého programu je předpis a graf aproximovaného generátoru a jeho inverzní funcke.
+
 
 \chapter{Závěr}
-{\color{red} Tu treba najskor velmi strucne napisat, comu sa praca venuje, co sa v nej da najst-cize nieco v tom zmysle, ze sa to venuje fuzzy log. spojkam, najma implikaciam a ich vlastnostiam a konstrukciam, navyse sa tam experimentom snazite zistit, ako ludia v beznom jazyku chapu implikacie. 
 
-Potom sa trochu povenujte vysledku tych kosntrukcii, zdoraznite, ze sme nasli nove triedy fuzzy implikacii a ze je to aj zaslane na konferenciu MITAV. Napiste tam aj o tom, ze ako by sa to dalo vylepsit, teda zovseobecnit, inspirujte sa tym, co som napisala do zaverecnej casti tych kapitol 2.3.2 a 2.3.3.
+Tato práce se zabývá fuzzy logickými spojkami, nejvíce pak fuzzy implikacemi, jejich vlastnostmi, konstrukcemi, $\varphi-$transformacemi t-norem a t-konorem a následně modelováním spojek na základě empirických dat. Nejprve byly představeny  základní fuzzy logické spojky a poté konstrukce některých tříd fuzzy implikací i pomocí t-norem a t-konorem. V neposlední řadě se v práci věnuji experimentu, ve kterém bylo za \' ukol zjistit, jak lidé rozumí implikacím v běžném jazyce.
 
-No a potom napiste par viet o experimente, o tom, co ste urobili, ale aj svoje dojmy z vysledkov tam mozete napisat.
+Velkou částí této práce je samotná konstrukce fuzzy implikátor\r u, zejména pak pomocí $\varphi-$transformací triangulárních norem a konorem. Graficky i algebraicky jsem vyjádřila vliv pr\r uběhu funkce $\varphi$ na pr\r uběh t-normy a t-konormy, které vznikly $\varphi-$transformací a poté i z nich zkonstruované implikátory. Tímto zp\r usobem jsme našly nové třídy fuzzy implikací. 
 
-V uplnom zavere napiste nejake take zhodnotenie, co vam praca na tomto dala a uplne kludne (bez zavazkov) tam mozete dat, ze sa tomu hodlate dalej a intenzivne venovat.}
+Pomocí $\varphi-$transformace minimové t-normy nevznikne nutně nová t-norma, v práci je uvedená podmínka pro funkci $\varphi$, která nám zaručí, že výslední funkce je t-norma. Když je tato podmínka porušena, dostáváme funkci, která není asociativní, ale pořád splňuje podmínky pro fuzzy konjunkci, proto s ní můžeme pracovat jako s konjunktorem a použít ji např. při konstrukci fuzzy implikátorů. Podobně to funguje také pro transformaci duální t-konormy $S_M.$ Díky tomu dostáváme nové třídy fuzzy implikací. První takovou třídu dostaneme, pokud  konstruujeme $(S,N)-$implikátor pomocí $\varphi-$transformované $S_M$, druhou třídu dostaneme díky konstrukci residuálního implikátora založeného na $\varphi-$transformaci $T_M,$ kterou modifikujeme, aby byla zleva spojitá. 
+ Zjištěné výsledky byly také zaslány na konferenci \textit{MITAV 2024}(Mathematics, Information Technologies, and Applied Sciences).
+
+V poslední části práce se věnuji experimentu zjiš\v tování lidského chápání implikací. Nejprve testuji, zda lidé nevnímají implikace jakožto ekvivalence. Výsledky experimentu se přiklánějí k p\r uvodní hypotéze a to, že v běžném jazyce jsou tyto dvě logické spojky běžně zamě\v novány a lidé implikace nevnímají stejným zp\r usobem, jak je popisuje matematika. Překvapivě ale nebyly výsledky tak očividné, jak jsem prvotně očekávala. V druhé části experimentu modeluji $(S,N)-$implikace na základě empirických dat pomocí aproximace aditivního generátoru za využití $B-$spline křivek a Lawson-Hansonova algoritmu. Tento algoritmus lze dále rozšířit o konstrukce dalších skupin implikátor\r u.
+
+Práce by se dále mohla rozšířit o další konstrukce fuzzy implikací a modelování vícero spojek na základě empirických dat. Tomuto tématu se dále hodlám věnovat například v rámci diplomové práce nebo při dalších zajímavých experimentech s běžným jazykem.
+
