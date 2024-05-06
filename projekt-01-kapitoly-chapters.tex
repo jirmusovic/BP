@@ -29,11 +29,8 @@
  V poslední kapitole \ref{kap4} je popsáno modelování fuzzy implikací s využitím empirických dat. Kapitola popisuje modifikovaný algoritmus pro aproximaci aditivního generátoru, experimenty modelování fuzzy implikace na základě empirických dat a samotný popis využitého programu. Tato část je inspirována prací Ing. Vojtěcha Havleny, PhD. \cite{havlena}, který se věnoval modelování fuzzy konjunkce. 
 
  V práci jsou, krom obvyklých matematických symbol\r u, využívány symboly pro označení interval\r u, které vypadají následovně:
- $$[a,b] = \{x \in \mathds{R}; a \leq x \leq b \},$$
-  $$]a,b] = \{x \in \mathds{R}; a \textless x \leq b \},$$
-   $$[a,b[ = \{x \in \mathds{R}; a \leq x \textless b \},$$
-    $$]a,b[ = \{x \in \mathds{R}; a \textless x \textless b \}.$$
-
+ $$[a,b] = \{x \in \mathds{R}; a \leq x \leq b \}, ~~]a,b] = \{x \in \mathds{R}; a \textless x \leq b \},$$
+   $$[a,b[ = \{x \in \mathds{R}; a \leq x \textless b \}, ~~]a,b[ = \{x \in \mathds{R}; a \textless x \textless b \}.$$
 
 
 
@@ -61,7 +58,7 @@ Nech\v t je např. vypsáno výběrové řízení modelingové agentury s požad
         Fuzzy podmnožina univerza X (stručně fuzzy množina) je objekt A, který popisuje (zobecněná) charakteristická funkce, která se nazývá funkce příslušnosti $\mu: X \rightarrow [0,1]$. 
     \end{definition}
     
-    Fuzzy množina nebo také neostrá množina je pak množina prvků takových, jejichž afiliace je k této množině odstupňovaná. Fuzzy množina staví na stejných pravidlech, jako klasická množina, s tím rozdílem, že příslušnost nemusí nabývat jen hodnot 0 a 1, ale jakoukoliv hodnotu z intervalu [0,1]. 
+    Fuzzy množina nebo také neostrá množina je pak množina prvků takových, jejichž afiliace je k této množině odstupňována. Fuzzy množina staví na stejných pravidlech, jako klasická množina, s tím rozdílem, že příslušnost nemusí nabývat jen hodnot 0 a 1, ale jakoukoliv hodnotu z intervalu [0,1]. 
    
     Funkce příslušnosti umož\v nuje vyjádřit částečnou příslušnost k množinám na intervalu [0,1], tedy jak moc lze označit pojem za \clqq pravdu\crqq \space či \clqq nepravdu\crqq. Díky čemuž se pak dají matematicky vyjádřit vágní pojmy jako \clqq docela dost\crqq, \clqq málo\crqq \space nebo \clqq mnoho\crqq \space apod.
 
@@ -70,7 +67,6 @@ Nech\v t je např. vypsáno výběrové řízení modelingové agentury s požad
     $$\mu_V(x)=\begin{cases} 1, & \mbox{pokud }  180\leq x \leq 250,\\ 
     \frac{x}{20} - 8, & \mbox{pokud } 160 \leq x < 180,\\
     0, & \mbox{pokud } x < 160,  \end{cases}$$
-
     jíž graf je vykreslen níže.
 
 \begin{figure}[h]
@@ -95,7 +91,6 @@ Pokud bychom chtěli modelovat funkci např. pojmu \clqq asi 3\crqq, lze zvolit 
 \section{Fuzzy logick\'e spojky}
 
 Fuzzy logické spojky n\'am umo\v z\v nují vyjádřit vágnost a neurčitost v logických operacích. Tyto spojky se často využívají v aplikacích jako jsou řízení průmyslových procesů, rozpoznávání vzorů, vývoj umělé inteligence a dalších oblastech, kde je potřeba pracovat s neurčitými informacemi.\\
-
 V\v sechny fuzzy logick\'e spojky jsou monot\'onn\'im roz\v s\'i\v ren\'im klasick\'ych logick\'ych spojek. V dalších kapitolách budou postupně představeny základní fuzzy spojky, mezi kter\'e  patří 
 fuzzy negace, konjunkce, disjunkcie a implikace. 
 
@@ -109,7 +104,7 @@ Pro hodnoty $0$ a $1$ se fuzzy negace shoduje s klasickou negac\'i.
     \item \textbf{Kontinuita hodnot:} \\
         Fuzzy negace nepracuje jenom s  ostrými hodnotami „pravda“ a „nepravda“, ale na stupni neurčitosti, či specifickým číselném zápisu, který reflektuje stupeň nepravdivosti.
     \item \textbf{Monotonie:} \\
-        Fuzzy negace jsou monot\'onn\'im roz\v s\'i\v ren\'im klasick\'e negace, což znamená, že s rostoucími vstupn\'imi hodnotami klesaj\'i hodnoty výstupn\'e.
+        Fuzzy negace jsou monot\'onn\'im roz\v s\'i\v ren\'im klasick\'e negace, což znamená, že s rostoucími vstupn\'imi hodnotami klesaj\'i hodnoty výstupn\'i.
     
 \end{enumerate}
 
@@ -142,9 +137,9 @@ Pro hodnoty $0$ a $1$ se fuzzy negace shoduje s klasickou negac\'i.
          Tedy i tyto funkce jsou fuzzy negace.
 
             \begin{figure}[H]
-            \caption{ Grafy dříve zmíněných funkcí $N_s$, $N_{\bot}$,$ N_{\top}$, $N_1$ a $N_2.$\\}
+            \caption{ Grafy dříve zmíněných negátorů $N_s$, $N_{\bot}$,$ N_{\top}$, $N_1$ a $N_2.$\\}
                 %\hspace{-0.1cm}
-                \includegraphics[scale=0.56]{template-fig/negace.pdf}
+                \includegraphics[scale=0.60]{template-fig/negace.pdf}
                 \centering
             \end{figure}
 
@@ -172,10 +167,10 @@ Takže negace $N_S$ a $N_2$ jsou involutivní a tím pádem tak\'e siln\'e negac
         Z rovnosti $N(N(x))=x$ plyne pro bijektivn\'i funkce tak\'e rovnost $N(x)= N^{-1}(x).$ 
          Grafick\'a interpretace  t\'eto rovnosti  pro fuzzy negace je taková, že grafy involutivních fuzzy negací jsou osově souměrné podle osy $y = x$.
 
-    \begin{figure}[h]
-            \caption{ Ukázka osové souměrnosti bijektivní funkce f(x) = $\sqrt{1-x^2}$ podle osy y = x pro $x \in [0,1]$.\\}
+    \begin{figure}[H]
+            \caption{ Ukázka osové souměrnosti bijektivní funkce f(x) =~$\sqrt{1-x^2}$ podle osy $y = x$ pro $x \in [0,1]$.\\}
                 \hspace{-1cm}
-                \includegraphics[scale=0.65]{template-fig/soumernost.pdf}
+                \includegraphics[scale=0.50]{template-fig/soumernost.pdf}
                 \centering
     \end{figure}
 
@@ -197,7 +192,7 @@ Základní vlastnosti fuzzy konjunkcí jsou:
 \end{enumerate}
 \begin{definition}
     \cite{KMP}
-    Neklesající zobrazení C: $[0,1]^2 \rightarrow [0,1]$ se nazývá konjunktor, pokud pro libovolné a,b $\in$ [0,1] platí
+    Neklesající zobrazení C: $[0,1]^2 \rightarrow [0,1]$ se nazývá konjunktor, pokud pro libovolné $a,b \in [0,1]$ platí
     C(a,b) = 0 pokud a = 0, nebo b = 0,
     C(1,1) = 1.
     \end{definition}
@@ -261,7 +256,7 @@ Mezi základní triangulární normy se řadí minimová, součinová, Łukasiew
    \begin{figure}[H]
    \caption{ Minimová t-norma $T_M$, Součinová t-norma $T_P$, Łukasiewiczova t-norma $T_L$, Drastický součin $T_D$.}
     \hspace{-1cm}
-        \includegraphics[scale=0.6]{template-fig/t_normy.pdf}
+        \includegraphics[scale=0.65]{template-fig/t_normy.pdf}
         \centering
     \end{figure}
 
@@ -271,20 +266,19 @@ Mezi základní triangulární normy se řadí minimová, součinová, Łukasiew
     $$T(1,x)=T(x,1)=x,$$
     $$T(0,x)=T(x,0)=0.$$
 \end{remark}
+\newpage
 \begin{definition}
 \cite{KMP}
     \begin{itemize}
         \item Pokud pro t-normy $T_1$ a $T_2$ je
         pro každý bod $(x,y) \in [0,1]^2$ splněná nerovnost\\
-        $T_1(x,y)\leq ~T_2(x,y),$ hovo\v ríme, že $T_1$ je slabší než $T_2$,
+        $T_1(x,y)\leq ~T_2(x,y),$ říkáme, že $T_1$ je slabší než $T_2$,
         nebo $T_2$ je silnější než $T_1$ a píšeme $T_1\leq T_2$.
         \item  Pokud pro t-normy $T_1$ a $T_2$ platí, že $T_1 \leq T_2$ a
         $T_1 \ne T_2,$ t.j. pokud $T_1 \leq T_2$, ale $T_1(x_0,y_0) <
-        T_2(x_0,y_0)$ pro nějaký bod $(x_0,y_0) \in [0,1]^2$, tak $T_1<T_2$.
+        T_2(x_0,y_0)$ pro nějaký bod $(x_0,y_0) \in [0,1]^2$, pak $T_1<T_2$.
     \end{itemize}
 \end{definition}
-
-
 Existuje nekone\v cn\v e mnoho t-norem, dokonce pak i cel\'e t\v r\'idy parametrick\' ych  t-norem. Mezi nejzn\' am\v ej\v s\' i parametrické třídy patří:
 \begin{itemize}
     \item \textbf{Frankovy t-normy:}
@@ -323,11 +317,11 @@ Každou \' usečku délky $b$ lze pokrýt nějakým počtem \' useček délky $a
 \end{definition}
 Ověřit archimedovskou vlastnost lze následovným zp\r usobem:
 \begin{sentence} \cite{KMP}
-    Triangulární norma T je archimedovská právě, když pro každé $(x,y) \in ]0,1[^2$ je $$\lim_{n \to \infty}x_T^{(n)} = 0.$$
+    Triangulární norma T je archimedovská právě když pro každé $(x,y) \in ]0,1[^2$ je $$\lim_{n \to \infty}x_T^{(n)} = 0.$$
 \end{sentence}
 \begin{sentence} \cite{KMP}
     Pokud je t-norma T archimedovská, tak pro každé $x \in ]0,1[$ platí $T(x,x) < x.$\\
-    Pokud je t-norma spojitá zprava, pak je archimedovská právě, když pro každé $x \in ]0,1[$ platí $T(x,x) < x.$
+    Pokud je t-norma spojitá zprava, pak je archimedovská právě když pro každé $x \in ]0,1[$ platí $T(x,x) < x.$
 \end{sentence}
 
     Díky p\v redchozí v\v et\v e lze  archimedovskou vlastnost t-norem pro zprava spojit\'e t-normy také definovat pomocí diagonální nerovnosti $$T(x,x) < x, \mbox{ pro } x \in ]0,1[.$$
@@ -374,7 +368,7 @@ Ověřit archimedovskou vlastnost lze následovným zp\r usobem:
     
      Vztah nilpotentních a striktních t-norem, které jsou archimedovské a spojité, lze pak vyjádřit následovně:
     \begin{sentence}\cite{KMP}
-        Nech\' t je T spojitá archimedovská t-norma. Potom jsou následující tvrzení ekvivalentní:
+        Nech\v t je T spojitá archimedovská t-norma. Potom jsou následující tvrzení ekvivalentní:
         \begin{itemize}
         \item T je nilpotentní.
         \item  Existuje alespo\v n jeden nilpotentní prvek dané t-normy T.
@@ -395,7 +389,7 @@ V t\'eto pr\'aci se v\v enuji tak\'e konstrukc\'im t-norem. Triangul\'arn\'i nor
         nech\v t $(]a_\alpha,e_\alpha[)_{\alpha \in A}$ je třída po dvojcích
         disjunktních otevřených podinterval\r u intervalu $[0,1].$ Potom funkce
         \hbox{$T:[0,1]^2\rightarrow [0,1]$} daná předpisem
-        $$T(x,y)=\begin{cases} a_\alpha + (e_\alpha - a_\alpha ).T_\alpha (\frac
+        $$T(x,y)=\begin{cases} a_\alpha + (e_\alpha - a_\alpha )T_\alpha (\frac
         {x-a_\alpha}{e_\alpha - a_\alpha}, \frac {y-a_\alpha}{e_\alpha - a_\alpha}),
         &\mbox {pokud $(x,y) \in ]a_\alpha ,e_\alpha [^2$,}
         \\\min(x,y), &\mbox {jinak,} \end{cases}$$
@@ -427,12 +421,12 @@ V t\'eto pr\'aci se v\v enuji tak\'e konstrukc\'im t-norem. Triangul\'arn\'i nor
 \end{itemize}
 
 \begin{remark}
-    Triangul\'arn\'i norma $T$ je striktní právě tehdy, když pro její aditivní generátor platí $f(0) = +\infty$. Nilpotentní je v momentě, když pro  její aditivní generátor platí $f(0) < +\infty$.
+    Triangul\'arn\'i norma $T$ je striktní právě tehdy, když pro její aditivní generátor platí $f(0) = +\infty$. Nilpotentní je v momentě, když pro  její aditivní generátor platí $f(0)~<~+\infty$.
 \end{remark}
 \subsection{Pseudoinverzn\'i funkce}
 
 Krom\v e   spojit\'ych t-norem existuj\'i tak\'e t-normy nespojit\'e a dokonce se daj\'i generovat. Jak je tedy možné konstruovat nespojité t-normy? Například funkce $t: [0,1] \rightarrow [1,2],$ daná předpisem $$t(x)= \begin{cases} 2-x, & \mbox {pokud }x \in [0,1[,
-    \\ 0, & \mbox {pokud} x = 1,
+    \\ 0, & \mbox {pokud } x = 1,
     \end{cases}$$
     
     je aditivním generátorem drastického součinu, což zřejmě znamená, že generátory nespojitých t-norem nemusejí být nutně bijekce. Z toho d\r uvodu je potřeba zobecnění inverzní funkce.
@@ -449,7 +443,7 @@ Pro lep\v s\'i pochopen\'i t\'eto definice, uv\'ad\'ime ilustra\v cn\'i p\v r\'i
 \begin{example} 
     Nech\v t je  $f_1:[0,1] \rightarrow [0,1]$  dána předpisem:
     $$f_1(x)=x^2.$$
-   Pro bijektivn\'i funkce jsou inverzn\'i a pseudoinverzn\'i funkce toto\v zn\'e: \newline$f_1^{(-1)}:[0,1] \rightarrow [0,1]$ zřejmě bude platit:
+   Pro bijektivn\'i funkce jsou inverzn\'i a pseudoinverzn\'i funkce toto\v zn\'e: \newline$f_1^{(-1)}:[0,1] \rightarrow [0,1],$ zřejmě bude platit:
     $$f_1^{(-1)}(x)=f_1^{-1}(x)= \sqrt{x}.$$
     Proto složením funkcí $f_1$ a $f_1^{(-1)}$ je
     identita na intervale $[0,1].$
@@ -472,7 +466,7 @@ Pro lep\v s\'i pochopen\'i t\'eto definice, uv\'ad\'ime ilustra\v cn\'i p\v r\'i
     \item Nech\v t je $f_2:[0,1] \rightarrow [0,1]$ dána předpisem:
     $$f_2(x)= \begin{cases} \frac x2, & \mbox{pokud~} x \in [0,\frac 12],
     \\ \frac 14, & \mbox{pokud~} x \in ]\frac 12,\frac 34],
-    \\ 3.x-2, & \mbox{pokud~} x \in ]\frac 34,1].
+    \\ 3x-2, & \mbox{pokud~} x \in ]\frac 34,1].
     \end{cases}$$
     Funkce $f_2$ není injekce, což znamená, že k ní neexistuje inverzní funkce. Na intervalu $[0,\frac 12]$ je funkce $f_2$ spojitá a injektivní, proto na daném oboru hodnot $[f(0),f(\frac 12)]$ je
     funkce $f_2^{(-1)}$ totožná s~inverzní funkcí
@@ -501,9 +495,9 @@ Pro lep\v s\'i pochopen\'i t\'eto definice, uv\'ad\'ime ilustra\v cn\'i p\v r\'i
 Následující grafy zobrazují zmíněné funkce $f_2$ a $f_3$ a jejich složení s inverzními funkcemi.\\
 
      \begin{figure}[H]
-     \caption{Zobrazení funkcí z Příkladu \ref{sec: funkce}. Modře jsou vyznačeny (zleva) funkce $f_2$ a $f_3$, zeleně jejich zevšeobecněné inverzní funkce a červeně složené funkce $f_2^{(-1)} \circ f_2(x) $~a~$ f_3^{(-1)}\circ ~f_3(x).$}
+     \caption{Zobrazení funkcí z Příkladu \ref{sec: funkce}. Modře jsou vyznačeny (zleva) funkce $f_2$ a $f_3$, zeleně jejich zevšeobecněné inverzní funkce a červeně složené funkce $f_2^{(-1)}~\circ~f_2(x) $~a~$ f_3^{(-1)}\circ ~f_3(x).$}
                 \hspace{-1cm}
-                \includegraphics[scale=0.65]{template-fig/zevs_inverz.pdf}
+                \includegraphics[scale=0.56]{template-fig/zevs_inverz.pdf}
                 \centering
      \label{sec: inverz}
             \end{figure}
@@ -522,13 +516,13 @@ Na Obrázku \ref{sec: inverz} lze zřejmě pozorovat následující situaci: $$f
 
 \begin{remark} Na předchozích příkladech bylo naznačeno konstruování pseudoinverzní funkce. Nech\v t je $f:[a,b] \rightarrow [x,d]$ neklesající funkce, lze si pak všimnout určitých poznatk\r u:
     \begin{itemize}
-        \item pokud je funkce $f$ bijekce, tak platí $f^{(-1)}(x) = f^{-1}(x),$
+        \item pokud je funkce $f$ bijekce, pak platí $f^{(-1)}(x) = f^{-1}(x),$
         \item  pokud je funkce $f$ rostoucí, její pseudoinverzní funkce je spojitá,
         \item  pro každé $x \in [a,b]$ platí: $f^{(-1)}\circ f(x)\leq x.$
     \end{itemize}
     Nech\v t je $f:[a,b] \rightarrow [x,d]$ nerostoucí funkce:
     \begin{itemize}
-        \item pokud je funkce $f$ bijekce, tak platí $f^{(-1)}(x) = f^{-1}(x),$
+        \item pokud je funkce $f$ bijekce, pak platí $f^{(-1)}(x) = f^{-1}(x),$
         \item  pokud je funkce $f$ klesající, její pseudoinverzní funkce je spojitá,
         \item  pro každé $x \in [a,b]$ platí: $f^{(-1)}\circ f(x)\leq x.$
     \end{itemize}
@@ -571,7 +565,7 @@ Základní vlastnosti fuzzy disjunkcí jsou:
     $D(0,0) = 0.$
 \end{definition}
 
-Nej\v cast\v eji pou\v z\'iv\'any funkce pro modelov\'an\'i fuzzy disjunkce jsou triangul\'arn\'i konormy, kter\'ym je v\v enov\'ana n\'asleduj\'ic\'i podkapitola.
+Nej\v cast\v eji pou\v z\'iv\'aně funkce pro modelov\'an\'i fuzzy disjunkce jsou triangul\'arn\'i konormy, kter\'ym je v\v enov\'ana n\'asleduj\'ic\'i podkapitola.
 
 \subsection{Triangul\'arn\'i konormy} 
 \label{sec: Triangulární konormy}
@@ -587,7 +581,7 @@ Triangulární konormy (zkráceně t-konormy) jsou, podobn\v e jako  t-normy, re
     \end{enumerate}
 \end{definition}
 
-Triangulární konormy (zkráceně t-konormy) a t-normy jsou du\'aln\'i funkce:
+T-konormy a t-normy jsou du\'aln\'i funkce:
 
 \begin{sentence}
     \cite{Springer}
@@ -595,7 +589,7 @@ Triangulární konormy (zkráceně t-konormy) a t-normy jsou du\'aln\'i funkce:
 \end{sentence}
 
 
-Mezi základní triangulární konormy se obdobně (ale komplementárně) jako u t-norem řadí maximová a Łukasiewiczova t-norma, pravděpodobnostní a drastický součet.
+Mezi základní triangulární konormy se obdobně (ale komplementárně) jako u t-norem řadí maximová a Łukasiewiczova t-konorma, pravděpodobnostní a drastický součet.
 \begin{example}
 \cite{Springer}
     \begin{enumerate}
@@ -614,9 +608,9 @@ Mezi základní triangulární konormy se obdobně (ale komplementárně) jako u
 
 
    \begin{figure}[H]
-   \caption{ Maximová t-konorma $S_M$, Pravděpodobnostní součet $S_P$, Łukasiewiczova t-konorma $S_L$, Drastický součet $S_D$.\\}
+   \caption{ Maximová t-konorma $S_M$, pravděpodobnostní součet $S_P$, Łukasiewiczova t-konorma $S_L$, drastický součet $S_D$.\\}
                 \hspace{-1cm}
-                \includegraphics[scale=0.5]{template-fig/konormy.pdf}
+                \includegraphics[scale=0.65]{template-fig/konormy.pdf}
                 \centering
     \end{figure}
 
@@ -627,7 +621,7 @@ Je zajímavé sledovat podobnosti v grafické reprezentaci t-norem a t-konorem, 
 \subsection{Fuzzy implikace} 
 
 
-Fuzzy implikace patří mezi nejd\r uležitější fuzzy pojmy a díky takovým spojením výrok\r u je možné mnohem jednodušeji popsat lidské vyjadřování matematicky. Implikace se v obecném jazyce vyjadřuje mnoha zp\r usoby, nejtypičtěji pak slovním spojením \textit{když-tak}. Fuzzy implikace je, podobn\v e jako p\v redchoz\'i logick\'e spojky, monot\'onn\'im roz\v s\'i\v ren\'im klasick\'e implikace.
+Fuzzy implikace patří mezi nejd\r uležitější pojmy fuzzy logiky a díky takovým spojením výrok\r u je možné mnohem jednodušeji popsat lidské vyjadřování matematicky. Implikace se v obecném jazyce vyjadřuje mnoha zp\r usoby, nejtypičtěji pak slovním spojením \textit{když-tak}. Fuzzy implikace je, podobn\v e jako p\v redchoz\'i logick\'e spojky, monot\'onn\'im roz\v s\'i\v ren\'im klasick\'e implikace.
 \begin{definition} \label{impl}
     Zobrazení $I: [0,1]^2 \rightarrow [0,1] $ se nazývá implikátor, pokud
     \begin{itemize}
@@ -658,16 +652,13 @@ Pro základní t-konormy zmíněné v kapitole \ref{sec: Triangulární konormy}
 \end{example}
 
 Pro představu jsou níže představeny grafy implikátorů $I_{S_M}, I_{S_P}, I_{S_L}$ a $I_{S_D}.$
-
-
-
-    \begin{figure}[H]
+\begin{figure}[H]
     \caption{ Uk\' azka implik\' ator\r u.}
                 \hspace{-1cm}
-                \includegraphics[scale=0.65]{template-fig/impl1.pdf}
+                \includegraphics[scale=0.650]{template-fig/impl1.pdf}
                 \centering
                 \hspace{1cm}
-                \includegraphics[scale=0.65]{template-fig/impl2.pdf}
+                \includegraphics[scale=0.650]{template-fig/impl2.pdf}
                 \centering
     \end{figure}
 
@@ -685,7 +676,7 @@ Podobným zp\r usobem je samozřejmě možné tvořit nekonečné množství imp
 \begin{figure}[H]
 \caption{Implikátory $I_Z, I_P, I_L, I_D.$}
                 \hspace{-1cm}
-                \includegraphics[scale=0.6]{template-fig/impl3.pdf}
+                \includegraphics[scale=0.65]{template-fig/impl3.pdf}
                 \centering
             \end{figure}
 
@@ -706,13 +697,13 @@ V následujícím příkladu jsou rezidu\'aln\'i implik\'atry odvozen\'e ze zn\'
 \begin{figure}[H]
 \caption{Grafické znázornění R-implikátor\r u.\\}
                 \hspace{-1cm}
-                \includegraphics[scale=0.6]{template-fig/impl4.pdf}
+                \includegraphics[scale=0.60]{template-fig/impl4.pdf}
                 \centering
             \end{figure}
 
 
 
-Z uveden\'eho je z\v rejm\'e, \v ze fuzzy implikace jsou funkce dvou prom\v enn\'ych.
+Z uveden\'eho je z\v rejm\'e, \v ze jsou fuzzy implikace funkce dvou prom\v enn\'ych.
 V klasick\'e logice m\'a implikace r\r uzn\'e vlastnosti, kter\'e nemus\'i tyto funkce nutn\v e spl\v novat, p\v ritom spl\v nuj\'i v\v sechny podm\'inky z Definice \ref{impl}.
 
 \begin{definition}
@@ -826,7 +817,7 @@ Následuje ilustrační příklad třídy generovaných implikátor\r u.\\
 \infty]$ funkce daná předpisem:
  $$f_1(x)= -\ln(x).$$
 
-Je d\r uležité zmínit, že je funkce klesající. Pro $f_1^{(-1)}$ pak platí:
+Je d\r uležité zmínit, že je to funkce klesající. Pro $f_1^{(-1)}$ pak platí:
  $$f_1^{(-1)}(x)=\min \{ e^{-x},1 \}.$$
 Pro  funkci $f_1$ pak lze dostat následující implik\'ator:
 $$I_{f_1}(x,y)= \begin{cases} 1,    &\mbox{pokud $x \leq y$}, \\
@@ -858,7 +849,7 @@ Dalším typem generovaných implikátor\r u jsou $I^g$ implikátory. Narozdíl 
     Pro jejich pseudo-inverzn\'i funkce  $g_1^{(-1)}$ a $g_2^{(-1)}$ plat\'i:
     \begin{itemize}
     \item $g_1^{(-1)}(x)=\begin{cases} x, &\mbox{pokud $x \leq 0,5$}, \\
-    0,5,   &\mbox{pokud $0,5 < x \leq 0,75$}, \\
+    0.5,   &\mbox{pokud $0,5 < x \leq 0,75$}, \\
     2x-1,   &\mbox{pokud $0,75 < x \leq 1$}, \\
     1,   &\mbox{pokud $1 < x$}, \end{cases}$
     \item $g_2^{(-1)}(x)=1-e^{-x} ~ \mbox{pro $x \in [0, \infty]$}.$
@@ -881,15 +872,15 @@ Dalším typem generovaných implikátor\r u jsou $I^g$ implikátory. Narozdíl 
     které jsou zalo\v zen\'e na  funkcích $g$ a $c \cdot g$, jsou
     identick\'e.
 \end{sentence}
-A na z\'av\v er uvedeme zp\r usob konstrukce, s kter\'ym jsme se potkali p\v ri konstrukci t-norem.
+A na z\'av\v er uvedeme zp\r usob konstrukce, se kter\'ym jsme se potkali p\v ri konstrukci t-norem.
 
 \begin{sentence}\cite{Springer}
-    Nech\v t $\varphi \in B$, potom pro libovolný implikátor $I: [0,1]^2 \rightarrow [0,1]$ je $\varphi$-transformace $I_\varphi$ také implikátor.
+    Nech\v t $\varphi \in B$, potom pro libovolný implikátor $I: [0,1]^2 \rightarrow [0,1]$ je $\varphi-$transformace $I_\varphi$ také implikátor.
 \end{sentence}
 
 \begin{definition}\cite{Springer}
     Nech\v t je $\varphi:[0,1] \rightarrow [0,1]$  rostoucí
-    bijekce a množina všech takových bijekcí Nech\v t je B. Nech\v t je funkce
+    bijekce a množina všech takových bijekcí nech\v t je B. Nech\v t je funkce
     $I:[0,1]^2\rightarrow [0,1]$ 
     implikátor.
     Pak je funkce
@@ -909,12 +900,12 @@ Následující část se věnuje zobecn\v en\'i $\varphi-$transformaci t-norem, 
 \begin{sentence}\cite{KMP}\label{subnorma}
      Nech\v t je $\varphi : [0,1] \rightarrow [0,1]$ neklesající funkce a  spojitá na otev\v ren\'em intervalu
  $]0,1[$ a nech\v t $T: [0,1]^2 \rightarrow [0,1]$ je t-norma. Potom funkce
-    $(T)_\varphi : [0,1]^2 \rightarrow [0,1]$ je dána p\v redpisem $$(T)_\varphi (x,y)= \begin{cases} \min(x,y), & \mbox {pokud } \max(x,y) = 1,
+    $(T)_\varphi : [0,1]^2 \rightarrow [0,1]$ dána p\v redpisem $$(T)_\varphi (x,y)= \begin{cases} \min(x,y), & \mbox {pokud } \max(x,y) = 1,
     \\ \varphi^{(-1)}[T(\varphi(x), \varphi(y))], & \mbox {jinak,}
     \end{cases}$$
     je t-norma.
   \end{sentence}
-  V této práci se blí\v ze seznámíme s $\varphi-$transformaci $T_M$ a využijeme zobecnění předchozí věty:
+  V této práci se blí\v ze seznámíme s $\varphi-$transformací $T_M$ a využijeme zobecnění předchozí věty:
 
 \begin{sentence} 
 \cite{hlinena}
@@ -924,7 +915,7 @@ pro každé $x\in[0,1],$ kde $\varphi^{(-1)}\circ\varphi\circ\varphi^{(-1)}\circ
 \end{sentence}
 \begin{remark}
 \cite{mitav}
-    Nech\v t $\varphi\colon[0,1]\to [0,1]$ je neklesající, zleva spojitá  funkce a nechť $a=\inf\{x \in [0,1]\colon \varphi(x)=1\}.$ Potom operace $(T_M)_\varphi\colon[0,1]^2\to[0,1]$ je t-normou právě když platí $\varphi^{(-1)}\circ\varphi\circ\varphi^{(-1)}\circ\varphi(x)=\varphi^{(-1)}\circ\varphi(x)$ pro každé $x \in [0,a].$ Tato  t-norma je zleva spojitá na intervalu  $]0,1[^2$, ale není zleva spojitá na  intervalu $[0,1]^2.$
+    Nech\v t $\varphi\colon[0,1]\to [0,1]$ je neklesající, zleva spojitá  funkce a nechť $a=\inf\{x \in [0,1]\colon \varphi(x)=1\}.$ Potom operace $(T_M)_\varphi\colon[0,1]^2\to[0,1]$ t-normou právě když platí $\varphi^{(-1)}\circ\varphi\circ\varphi^{(-1)}\circ\varphi(x)=\varphi^{(-1)}\circ\varphi(x)$ pro každé $x \in [0,a].$ Tato  t-norma je zleva spojitá na intervalu  $]0,1[^2$, ale není zleva spojitá na  intervalu $[0,1]^2.$
 \end{remark}
 
 Uveden\'e podm\'inky znamenaj\'i, \v ze funkce $\varphi$ nem\r u\v ze m\'it dva konstantn\'i \'useky v bezprost\v redn\'i bl\'izkosti. P\v ri poru\v sen\'i t\'eto podm\'inky by v\'ysledn\'a funkce nebyla asociativn\'i.
@@ -949,16 +940,16 @@ Pro lep\v s\'i n\'azornost uv\'ad\'im graf  funkce $\varphi$ a jej\'i pseudoinve
 
    
 \begin{figure}[H]
-\caption{ Vizu\' aln\' i zobrazení funkce $\varphi$ a jej\'i pseudoinverzn\'i funkce}
+\caption{ Vizu\' aln\' i zobrazení funkce $\varphi$ a jej\'i pseudoinverzn\'i funkce.}
                 \hspace{-1cm}
-                \includegraphics[scale=0.70]{template-fig/phi_transform.pdf}
+                \includegraphics[scale=0.60]{template-fig/phi_transform.pdf}
                 \centering
             \end{figure}
 
 \begin{figure}[H]
-\caption{ Vizu\' aln\' i rozd\v elen\'i grafu $\varphi$-transformace minimov\' e t-normy\\}
+\caption{ Vizu\' aln\' i rozd\v elen\'i grafu $\varphi$-transformace minimov\' e t-normy.\\}
                 \hspace{-1cm}
-                \includegraphics[scale=0.70]{template-fig/phi-tnorm.pdf}
+                \includegraphics[scale=0.60]{template-fig/phi-tnorm.pdf}
                 \centering
             \end{figure}
 
@@ -992,14 +983,16 @@ $(x,y)\in [a_i,1[\times[a_i,b_i]$ nebo}
 
 Na základě uvedeného předpisu lze pak sestavit obecný graf znázor\v nující pr\r uběh funkce $\varphi^{(-1)}$ a poté na ní založené t-normy. Obrázek uvádím níže.
 
+\medskip
 
 \begin{figure}[H]
 \caption{ Příklad obecné funkce $\varphi^{(-1)}$ a obecné $\varphi$-transformace minimové t-normy.\\}
                 \centering
-        \includegraphics[scale=0.41]{template-fig/basic.pdf}
+        \includegraphics[scale=0.50]{template-fig/basic.pdf}
         \centering
-        \includegraphics[scale=0.41]{template-fig/t-norma.pdf}
+        \includegraphics[scale=0.50]{template-fig/t-norma.pdf}
             \end{figure}
+\medskip
 
 \begin{example}
     \label{conormphi}
@@ -1009,9 +1002,9 @@ Na základě uvedeného předpisu lze pak sestavit obecný graf znázor\v nujíc
     \end{cases}$$
 
 \begin{figure}[H]
-\caption{ Vizu\' aln\' i rozd\v elen\'i grafu $\varphi$-transformace maximové t-konormy}
+\caption{Vizu\' aln\' i rozd\v elen\'i grafu $\varphi$-transformace maximové t-konormy.}
 \centering
-\includegraphics[scale=0.8]{template-fig/phi-t-conorm.pdf}
+\includegraphics[scale=0.61]{template-fig/phi-t-conorm.pdf}
     \label{graph: max-conorm}
 \end{figure}
 
@@ -1041,7 +1034,7 @@ Na základě uvedeného předpisu lze pak opět sestavit obecný graf znázor\v 
     \begin{figure}[H]
     \caption{Příklad obecné $\varphi$-transformace minimové t-konormy.}
                 \hspace{-1cm}
-                \includegraphics[scale=0.5]{template-fig/t-konorma.pdf}
+                \includegraphics[scale=0.47]{template-fig/t-konorma.pdf}
                 \centering
             \end{figure}
 
@@ -1054,7 +1047,7 @@ Na základě uvedeného předpisu lze pak opět sestavit obecný graf znázor\v 
 \end{example}
 
 \begin{figure}[H]
-\caption{ Vizu\' aln\' i rozd\v elen\'i grafu $\varphi$-transformace $(S,N)-$implikace tvořené maximovou t-konormou\\}
+\caption{ Vizu\' aln\' i rozd\v elen\'i grafu $\varphi$-transformace $(S,N)-$implikace tvořené maximovou t-konormou.}
         \centering
         \includegraphics[scale=0.8]{template-fig/phi-impli.pdf}
 \end{figure}
@@ -1118,7 +1111,7 @@ $(x,y)\in [a_i,1]\times[a_i,b_i]$ nebo}
 
 
 \begin{figure}[H]
-    \caption{Zkonstruovaná reziduální implikace\\}
+    \caption{Zkonstruovaná reziduální implikace.\\}
         \centering
         \includegraphics[scale=0.8]{template-fig/RPhi-impl.pdf}
 \end{figure}
@@ -1126,11 +1119,11 @@ $(x,y)\in [a_i,1]\times[a_i,b_i]$ nebo}
 \end{example}
 
 Konstrukci tohoto reziduálního implikátoru lze popsat následovn\v e:\\
-    Nech\v t  $\varphi:[0,1]\rightarrow [0,1]$ je funkce z příkladu \ref{sub: fi}.
+    Nech\v t je  $\varphi:[0,1]\rightarrow [0,1]$ funkce z příkladu \ref{sub: fi}.
 Pak je reziduální implikace zalo\v zena na $C_\varphi$ dána p\v redpisem
-$$ R_{C_\varphi}(x,y) = \begin{cases} 1, & \mbox{pokud } x\leq y \mbox{ nebo } (x,y) \in [\frac{1}{3},\frac{2}{3}]^2\\
+$$ R_{C_\varphi}(x,y) = \begin{cases} 1, & \mbox{pokud } x\leq y \mbox{ nebo } (x,y) \in [\frac{1}{3},\frac{2}{3}]^2,\\
 \frac{2}{3}, &\mbox {pokud }
-(x,y)\in [\frac{2}{3},1[\times[\frac{1}{3},\frac{2}{3}]
+(x,y)\in [\frac{2}{3},1[\times[\frac{1}{3},\frac{2}{3}],
 \\ y, &\mbox {jinak.}
 \end{cases} $$
 
@@ -1145,9 +1138,9 @@ $\{[a_i,b_i]\}_{i\in I}$ množina podintervalů intevalu $[0,1]$, přičemž $\v
 [a_i,b_i]$.
 Potom je operátor $R_{C_\varphi}$ fuzzy implikací dán formulí
 
-$$ R_{C_\varphi}(x,y) = \begin{cases} 1, & \mbox{pokud } x\leq y \mbox{ nebo } (x,y) \in [a_i,b_i]^2\\
+$$ R_{C_\varphi}(x,y) = \begin{cases} 1, & \mbox{pokud } x\leq y \mbox{ nebo } (x,y) \in [a_i,b_i]^2,\\
 1-\varphi^{(-1)}(c_i)=1-a_i, &\mbox {pokud }
-(x,y)\in [b_i,1[\times[a_i,b_i]
+(x,y)\in [b_i,1[\times[a_i,b_i],
 \\ y, &\mbox {jinak.}
 \end{cases} $$
 \end{sentence}
@@ -1170,11 +1163,11 @@ Pomocí výše popsané konstrukce získáváme další novou třídu fuzzy impl
 \label{kap4}
 
 \section{Experiment modelování fuzzy implikace}
-V rámci své bakalářské práce provádím experiment, který využívá znalostí z předchozích kapitol a zaměřuje se na zjištění toho, zda lidé v běžném jazyce chápou implikace obdobně, jako je popisuje fuzzy matematika nebo nikoliv. Snažila jsem se tedy najít implikace, které budou co nejvíce odpovídat získaným funkcím ze zpracovaných dat a vlastně celkově zkoumat, zda lidé nerozumí implikacím spíše jako výrok\r um sobě ekvivalentním.
+V rámci své bakalářské práce provádím experiment, který využívá znalostí z předchozích kapitol a zaměřuje se na zjištění toho, zda lidé v běžném jazyce chápou implikace obdobně, jako je popisuje fuzzy matematika nebo nikoliv. Snažila jsem se tedy modelovat implikace, které budou co nejvíce odpovídat získaným funkcím ze zpracovaných dat a vlastně celkově zkoumat, zda lidé nerozumí implikacím spíše jako výrok\r um sobě ekvivalentním.
 
 Data, která využívám pro provádění experimentu jsem získala pomocí mnou vytvořené dotazníkové webové aplikace\footnote{Dotazník je dostupný pod odkazem: \href{https://www.stud.fit.vutbr.cz/~xjirmu00/bp/}{Dotazník}}. Dotazovaní měli za \' ukol přiřadit k předem připraveným výrok\r um nějakou číselnou hodnotu v rozmezí 0-10, přičemž 0 znamenalo, že s výrokem v\r ubec nesouhlasí a 10, že s ním plně souhlasí. Výrok\r u je celkově dvacet, přičemž se dělí na pět skupin po čtyřech výrocích, kde jsou první dva výroky $A$ a $B$ prosté, a další dva jsou tvořené implikacemi $A \to B$ a $B \to A$.
 
-Respondenty jsem pečlivě vybírala velmi rozmanitě, protože je zřejmé, že technicky založené osoby vnímají výrokovou logiku více matematicky než-li ostatní lidé. Zvolila jsem tedy rozsáhlou škálu osob a na dotazník odpovídali jak studenti z informatických fakult, tak pracující z r\r uzných obor\r u netýkajících se informačních technologií, ale i lidé d\r uchodového věku a další.
+Respondenty jsem pečlivě vybírala velmi rozmanité, protože je zřejmé, že technicky založené osoby vnímají výrokovou logiku více matematicky než-li ostatní lidé. Zvolila jsem tedy rozsáhlou škálu osob a na dotazník odpovídali jak studenti z informatických fakult, tak pracující z r\r uzných obor\r u netýkajících se informačních technologií, ale i lidé d\r uchodového věku a další.
 
 Použité výroky v dotazníku vypadaly následovně:
 \begin{enumerate}
@@ -1200,7 +1193,7 @@ Použité výroky v dotazníku vypadaly následovně:
        \item  \clqq Mám-li hodně zkušeností, jsem starý.\crqq 
 \end{enumerate}
 
-Nakonec bylo získáno 149 vyplněných a odeslaných dotazník\r u od respondent\r u. Dotazník pracuje s celými hodnotami 0-10, které jsem poté pro lepší práci s daty zobrazila na interval [0,1], se kterým pak v následujících částech experimentu pracuji.
+Nakonec bylo získáno 148 vyplněných a odeslaných dotazník\r u od respondent\r u. Dotazník pracuje s celými hodnotami 0-10, které jsem poté pro lepší práci s daty zobrazila na interval [0,1], se kterým pak v následujících částech experimentu pracuji.
 
 \subsection{Experiment zjiš\v tování, zda lidé chápou implikace jako ekvivalence}
 Implikace i ekvivalence jsou v běžném jazyce lidmi hojně využívány. Problém při využívání těchto logických spojek však nastává při převodu běžného jazyka do matematiky a naopak a v jejich obecném chápání lidmi. Lidské chápání logických spojek, především pak implikace, je velmi rozmanité a matematicky nepřesné. Mějme výrok: \textit{\clqq Pokud venku prší, zmoknu.\crqq } Takový výrok je zřejmě implikací. V běžném jazyce ale nastává problém takový, že tento výrok m\r uže být chápán jako ekvivalence, protože pokud někdo tvrdí, že zmokl, venku dozajista pršelo. Stává se tedy, že lidé zamě\v nují implikaci za ekvivalenci, protože klasické porozumění implikace přesně neodpovídá její matematické definici.
@@ -1360,146 +1353,49 @@ Je to tedy iterační algoritmus, který v každé své iteraci stanoví množin
 
 %\subsection{Výsledný aproximační algoritmus}
 
-Na základě předcházejících částí algoritmu a aplikace V. Havleny jsem sestavila výsledný algoritmus pro aproximaci aditivního generátoru a v této části se věnuji jeho popisu. Výstupem Lawson-Hansonova algoritmu jsou nezáporné koeficienty, které pak využívám pro konstrukci B-spline křivek.
+Na základě předcházejících částí algoritmu a aplikace V. Havleny jsem sestavila výsledný algoritmus pro aproximaci aditivního generátoru a v této části se věnuji jeho popisu. Výstupem Lawson-Hansonova algoritmu jsou nezáporné koeficienty, které pak využívám pro konstrukci $B-$spline křivek.
 
-Po zpracování empirických dat a krajních podmínek je potřeba sestavit matice $\mathbf{A}$ a $\mathbf{E}$. Pomocí metody váhování se pak plní krajní podmínky. Poté nad těmito maticemi provádím Lawson-Hanson\r uv algoritmus pro spočtení B-spline koeficient\r u. 
+Po zpracování empirických dat a krajních podmínek je potřeba sestavit matice $\mathbf{A}$ a $\mathbf{E}$. Pomocí metody váhování se pak plní krajní podmínky. Poté nad těmito maticemi provádím Lawson-Hanson\r uv algoritmus pro spočtení $B-$spline koeficient\r u. 
 
 
 \subsection{Výsledky  modelování fuzzy implikace na základě empirických dat}
 
-V této části experimentu jsem se snažila najít libovolnou $(S,N)-$impliakci, která by odpovídala výslednému aproximovanému generátoru, který jsem na základě získaných dat modelovala pomocí výše popsané upravené aproximace aditivního generátoru s využitím B-spline křivek. Nasbírané hodnoty jsem opět rozdělila do pěti skupin, přičemž jsem v každé skupině modelovala ze získaných empirických dat generátory. Jak je již popsáno výše, z jednoduchých výrok\r u $A$ a $B$ jsem konstruovala implikace $A \to B$ a $B \to A$. V následující části je pro každou skupinu výrok\r u $i \in \{1, 2, 3, 4, 5\}$ vymodelován aproximovaný graf aditivního generátoru $g_{ij}(x)$ (modře) a jeho inverzní funkce $g_{ij}^{-1}(x)$ (oranžově), kde pokud $j = a$, generátor vychází z implikování výrok\r u $A$ a $B$ pomocí $A \to B$. Pokud $j = b$, generátor vychází z implikování výrok\r u $A$ a $B$ pomocí $B \to A$. V dalším představeném grafu se nachází vyobrazení zkonstruované fuzzy implikace na základě funkcí $g_{ij}(x)$ a $g_{ij}^{-1}(x)$, jejíž předpis je u každého grafu popsán. Implikace je konstruována pomocí výše zmíněných \' znalostí pomocí vzorce $$I_{S,N}(x,y) = 1-g^{-1}(g(1-(1-x))+g(1-y)),$$ tedy klasickým předpisem pro t-konormy a modifikací vstupní hodnoty $x$ pomocí fuzzy negátoru $N_S(x).$
+V této části experimentu jsem se snažila najít libovolnou $(S,N)-$implikaci, která by odpovídala výslednému aproximovanému generátoru, který jsem na základě získaných dat modelovala pomocí výše popsané upravené aproximace aditivního generátoru s využitím $B-$spline křivek. Nasbírané hodnoty jsem opět rozdělila do pěti skupin, přičemž jsem v každé skupině modelovala ze získaných empirických dat generátory. Jak je již popsáno výše, z jednoduchých výrok\r u $A$ a $B$ jsem konstruovala implikace $A \to B$ a $B \to A$. V následující části je pro každou skupinu výrok\r u $i \in \{1, 2, 3, 4, 5\}$ vymodelován aproximovaný graf aditivního generátoru $g_{ij}(x)$ (modře) a jeho inverzní funkce $g_{ij}^{-1}(x)$ (oranžově), kde pokud $j = a$, generátor vychází z implikování výrok\r u $A$ a $B$ pomocí $A \to B$. Pokud $j = b$, generátor vychází z implikování výrok\r u $A$ a $B$ pomocí $B \to A$. V dalším představeném grafu se nachází vyobrazení zkonstruované fuzzy implikace na základě funkcí $g_{ij}(x)$ a $g_{ij}^{-1}(x)$. Implikace je konstruována pomocí výše zmíněných znalostí pomocí vzorce $$I_{S,N}(x,y) = 1-g^{-1}(g(1-(1-x))+g(1-y)),$$ tedy klasickým předpisem pro t-konormy a modifikací vstupní hodnoty $x$ pomocí fuzzy negátoru $N_S(x).$
+
+Při konstrukci následujících generátor\r u jsem využila stejné množiny $B-$spline uzl\r u, tudíž jsou generátory pro všechny skupiny téměř totožné, i když se empirické hodnoty liší. Níže tedy uvádím výsledek pouze první skupiny. Pokud bychom chtěli modelovat generátory s jiným pr\r uběhem, museli bychom si vhodně zvolit jiný počet $B-$spline uzl\r u a odlišné hodnoty, kterých uzly nabývají.
 
 \subsubsection{Skupina výrok\r u 1}
 
-
-
-    
-a:\\
-$-4.96124x^2+5.41040x-0.42921$\\
-$-0.23295x^2-0.10243x+0.99083$\\
-
-
-
-\begin{tikzpicture}
-        \begin{axis}[
-            width=7cm,  % Nastavte požadovanou šířku grafu
-            height=7cm, % Nastavte požadovanou výšku grafu
-            xlabel=$x$,
-            ylabel=$y$,
-            zlabel=$z$, % Popisek osy z
-            domain=0:1, % Rozsah hodnot x
-            y domain=0:1, % Rozsah hodnot y
-            zmin=0, zmax=1,
-            colormap/viridis, % Barevná mapa (nastavitelná)
-            view={15}{30}, % Náhled na graf (úhel pohledu)
-            legend style={at={(0.5,-0.2)}, anchor=north}
-        ]
-        
-     \addplot3 [surf, shader=interp, mesh] {1-(-0.23295*((-4.96124*x^2+5.41040*x-0.42921) + -4.96124*(1-y)^2+5.41040*(1-y)-0.42921)^2-0.10243*((-4.96124*x^2+5.41040*x-0.42921) + -4.96124*(1-y)^2+5.41040*(1-y)-0.42921)+0.99083)};
-        \legend{$I_{1a}$}
-        \end{axis}
-    \end{tikzpicture}\\
     
 \begin{figure}[H]
-    \caption{Generátor zkonstruován nad 1. skupinou při $A \to B$ a k němu náležící $(S,N)-$implikace}
-        \hspace{-1cm}
-        \includegraphics[scale=0.5]{template-fig/p0.pdf}
-        %\includegraphics[scale=0.7]{template-fig/I1a.PNG}
-        \centering
-\end{figure}
-
-b:\\
-$-2.20157x^2+0.86431x+1.34916$\\
-$-0.10469x^2-0.25281x+1.00058$\\
-
-\begin{figure}[H]
-    \caption{1b}
-        \hspace{-1cm}
-        \includegraphics[scale=0.5]{template-fig/p1.pdf}
-        \centering
-\end{figure}
+              \centering
+              \begin{minipage}[b]{0.45\textwidth}
+                \includegraphics[width=\textwidth]{template-fig/p0.pdf}
+                \caption{Generátor zkonstruován nad 1. skupinou při $A \to B.$ }
+              \end{minipage}
+              \hfill
+              \begin{minipage}[b]{0.4\textwidth}
+                \includegraphics[width=\textwidth]{template-fig/i0.png}
+                \caption{A k němu náležící $(S,N)-$implikace.}
+              \end{minipage}
+            \end{figure}
 
 
+\begin{figure}[H]
+              \centering
+              \begin{minipage}[b]{0.45\textwidth}
+                \includegraphics[width=\textwidth]{template-fig/p1.pdf}
+                \caption{Generátor zkonstruován nad 1. skupinou při $B \to A.$ }
+              \end{minipage}
+              \hfill
+              \begin{minipage}[b]{0.4\textwidth}
+                \includegraphics[width=\textwidth]{template-fig/i1.png}
+                \caption{A k němu náležící $(S,N)-$implikace.}
+              \end{minipage}
+            \end{figure}
 
 
-\subsubsection{Skupina výrok\r u 2}
-a:\\
-$-6.52413x^2+7.99490x-1.44542$\\
-$-0.29812x^2-0.01887x+0.98312$\\
 
-\begin{figure}[H]
-    \caption{2a}
-        \hspace{-1cm}
-        \includegraphics[scale=0.5]{template-fig/p2.pdf}
-        \centering
-\end{figure}
-b:\\
-$-3.62482x^2+3.21480x+0.42657$\\
-$-0.17445x^2-0.17477x+0.99637$\\
-
-\begin{figure}[H]
-    \caption{2b}
-        \hspace{-1cm}
-        \includegraphics[scale=0.5]{template-fig/p3.pdf}
-        \centering
-\end{figure}
-\subsubsection{Skupina výrok\r u 3}
-a:\\
-$-0.37372x^2-2.15262x+2.53242$\\
-$-0.01540x^2-0.34575x+1.00229$\\
-\begin{figure}[H]
-    \caption{3a}
-        \hspace{-1cm}
-        \includegraphics[scale=0.5]{template-fig/p4.pdf}
-        \centering
-\end{figure}
-b:\\
-$+0.89041x^2-4.23567x+3.34760$\\
-$+0.04377x^2-0.40316x+1.00071$\\
-\begin{figure}[H]
-    \caption{3b}
-        \hspace{-1cm}
-        \includegraphics[scale=0.5]{template-fig/p5.pdf}
-        \centering
-\end{figure}
-\subsubsection{Skupina výrok\r u 4}
-a:\\
-$-6.37984x^2+7.76810x-1.36239$\\
-$-0.29771x^2-0.02285x+0.98355$\\
-\begin{figure}[H]
-    \caption{4a}
-        \hspace{-1cm}
-        \includegraphics[scale=0.5]{template-fig/p6.pdf}
-        \centering
-\end{figure}
-b:\\
-$-3.22839x^2+2.57407x+0.67077$\\
-$-0.15846x^2-0.19570x+0.99784$\\
-\begin{figure}[H]
-    \caption{4b}
-        \hspace{-1cm}
-        \includegraphics[scale=0.5]{template-fig/p7.pdf}
-        \centering
-\end{figure}
-\subsubsection{Skupina výrok\r u 5}
-a:\\
-$-6.17567x^2+7.42872x-1.22804$\\
-$-0.28883x^2-0.03410x+0.98465$\\
-\begin{figure}[H]
-    \caption{5a}
-        \hspace{-1cm}
-        \includegraphics[scale=0.5]{template-fig/p8.pdf}
-        \centering
-\end{figure}
-b:\\
-$+0.21927x^2-3.11527x+2.90155$\\
-$+0.01227x^2-0.37499x+1.00225$\\
-\begin{figure}[H]
-    \caption{5b}
-        \hspace{-1cm}
-        \includegraphics[scale=0.5]{template-fig/p9.pdf}
-        \centering
-\end{figure}
 
 \section{Implementace programů}
 V této části se věnuji popisu implementace dvou program\r u, které jsem využila v rámci své bakalářské práce. V prvním programu se jedná o dotazníkovou aplikaci, v druhém o algoritmus pro aproximaci aditivního generátoru.
@@ -1512,7 +1408,7 @@ Druhá část programu se váže k prvnímu experimentu mojí práce a sestává
 \subsection{Aproximační algoritmus}
 V této podkapitole je popsána implementace programu pro aproximaci aditivních generátor\r u, který staví na znalostech popsaných v předchozích kapitolách. Pro tvorbu programu byl zvolen programovací jazyk Python, konkrétně pak verze $3.11.1$, převážně z d\r uvodu již existujících funkcí pro tvorbu $B-$splinu a jednoduché práce s maticemi.
 
-Program obsahuje funkce \textit{BSplineEval} pro rekurzivní výpočet $B-$spline funkce v bodě \textit{x}, s stupněm \textit{k}, indexem \textit{i} a uzly \textit{t}, \textit{CalcPoints}, která provádí výpočty pomocí $B-$spline interpolace na datech z \textit{DataFrame} a funkce pro vykreslování a získávání předpis\r u pro výsledné generátory.
+Program obsahuje funkce \textit{BSplineEval} pro rekurzivní výpočet $B-$spline funkce v bodě \textit{x}, se stupněm \textit{k}, indexem \textit{i} a uzly \textit{t}, \textit{CalcPoints}, která provádí výpočty pomocí $B-$spline interpolace na datech z \textit{DataFrame} a funkce pro vykreslování a získávání předpis\r u pro výsledné generátory.
 
 Algoritmus nejprve musí transformovat vstupní hodnoty, aby byl aproximovaný aditivní generátor klesající, tedy koeficienty $B-$splinu musejí být záporné. Provede se tedy následující transformace: $$
   \mathcal{F}(x) = \mathcal{F}^{-1}(x) = 1-x.
